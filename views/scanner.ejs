@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="vendor/bootstrap/bootstrap.min.css">
+    <link rel="stylesheet" href="style/style.css">
+    <title>Document</title>
+</head>
+
+<body>
+    <main>
+        <div class="panel d-none">
+            <button id="switchFrontBtn">Front Camera</button>
+            <button id="switchBackBtn">Back Camera</button>
+            <button id="snapBtn">Snap</button>
+        </div>
+        <div style="height: 100%;">
+            <video id="cam" autoplay muted playsinline>Not available</video>
+            <canvas id="canvas" style="display:none"></canvas>
+            <img id="photo" class="d-none" alt="The screen capture will appear in this box.">
+        </div>
+    </main>
+    <script src="js/script.js"></script>
+</body>
+
+</html>
