@@ -60,24 +60,24 @@ const registerPost = async (req, res) => {
     }
 }
 const getUser = (req, res) => {
-    try{
-        con.query('select * from user',(error,result)=>{
+    try {
+        con.query('select * from user', (error, result) => {
             if (error) {
                 return res.status(500).json({
                     message: 'Database query error'
                 });
             }
             res.status(200).json({
-                result:true,
-                message:"Get all user successfully",
-                data:result
+                result: true,
+                message: "Get all user successfully",
+                data: result
             })
         })
-    }catch(error){
+    } catch (error) {
         res.status(500).json({
             message: 'Error get data',
             error: error.message
-        }); 
+        });
     }
 }
 const loginPost = async (req, res) => {
