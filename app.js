@@ -9,6 +9,8 @@ const apiEmployee = require('./routes/api/emloyee');
 const app = new express();
 const port = process.env.PORT || 8080;
 
+// Web 
+
 app.set('view engine', 'ejs');
 app.use(express.static('public'));
 app.use(fileUpload());  
@@ -21,6 +23,7 @@ app.use(allpage);
 app.use(apiAuth);
 app.use(apiEmployee);
 
+
 app.listen(port, () => {
     console.log(`Server is running on port ${port}`);
-})
+})  

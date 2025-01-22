@@ -60,3 +60,14 @@ INSERT INTO `employee`(`user_id`,`sex`,`phone`) VALUES
 -- user.last_name AS user_lname, 
 -- CONCAT(user.first_name, user.last_name) AS fullname
 
+-- Jan-20-2025
+CREATE TABlE `branch`(
+    `id` BIGINT UNSIGNED NOT NULL AUTO_INCREMENT,
+    `name` VARCHAR(255) NOT NULL,
+    `address` VARCHAR(255) NULL,
+    `latitude` DECIMAL(10, 7) NOT NULL,
+    `longitude` DECIMAL(10, 7) NOT NULL,
+    `created_at` TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    `updated_at` TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+    PRIMARY KEY (`id`)
+)
