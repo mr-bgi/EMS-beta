@@ -5,6 +5,7 @@ const allpage = require('./routes/web/AllPage');
 require('dotenv').config();
 // * api AUTH
 const apiAuth = require('./routes/api/auth');
+const apiEmployee = require('./routes/api/emloyee');
 const app = new express();
 const port = process.env.PORT || 8080;
 
@@ -20,6 +21,7 @@ app.use(express.urlencoded({ extended: true }));
 app.use(allpage);
 // * API auth
 app.use(apiAuth);
+app.use(apiEmployee);
 
 
 app.listen(port, () => {
