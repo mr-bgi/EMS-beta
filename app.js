@@ -7,6 +7,9 @@ const apiEmp = require('./routes/api/position');
 const apiDept = require('./routes/api/department');
 require('dotenv').config();
 // * api AUTH
+
+const apiAuth = require('./routes/api/auth');
+const apiEmployee = require('./routes/api/emloyee');
 const app = new express();
 const port = process.env.PORT || 8080;
 
@@ -20,6 +23,12 @@ app.use(express.urlencoded({ extended: true }));
 app.use(cookieParser());
 
 // app.get('*', checkUser);
+=======
+// * Static 
+app.use(allpage);
+// * API auth
+app.use(apiAuth);
+app.use(apiEmployee);
 
 //API
 app.use(apiAuth);
