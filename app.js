@@ -8,7 +8,7 @@ const apiDept = require('./routes/api/department');
 require('dotenv').config();
 // * api AUTH
 
-const apiEmployee = require('./routes/api/emloyee');
+const apiEmployee = require('./routes/api/employee');
 const app = new express();
 const port = process.env.PORT || 8080;
 
@@ -24,12 +24,9 @@ app.use(cookieParser());
 // app.get('*', checkUser);
 // * Static 
 // app.use(allpage);
-// * API auth
-app.use(apiAuth);
-app.use(apiEmployee);
-
 //API
 app.use(apiAuth);
+app.use(apiEmployee);
 app.use(apiEmp);
 app.use(apiDept);
 //Web
