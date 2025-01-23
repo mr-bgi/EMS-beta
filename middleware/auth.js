@@ -3,7 +3,6 @@ const con = require('../config/db');
 
 const requireAuth = (req, res, next) => {
     const token = req.cookies.jwtToken;
-    // console.log('Token in middleware', token);
     if (token) {
         jwt.verify(token, process.env.JWT_SECRET_TOKEN, (error, decodedToken) => {
             if (error) {
