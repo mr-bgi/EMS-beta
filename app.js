@@ -3,12 +3,12 @@ const fileUpload = require('express-fileupload');
 const cookieParser = require('cookie-parser');
 // const { checkUser } = require('./middleware/auth');
 const apiAuth = require('./routes/api/auth');
+const apiEmployee = require('./routes/api/employee');
 const apiEmp = require('./routes/api/position');
 const apiDept = require('./routes/api/department');
 require('dotenv').config();
 // * api AUTH
 
-const apiEmployee = require('./routes/api/employee');
 const app = new express();
 const port = process.env.PORT || 8080;
 

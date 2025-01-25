@@ -5,11 +5,12 @@ const { requireAuth } = require('../../middleware/auth.js');
 const router = express.Router();
 
 //Get all data
-router.get('/employee', getEmployeeData);
+router.get('/employee',requireAuth, getEmployeeData);
 router.get('/employee/:id',getEmployeeById)
 
 //post create
-router.post('/createEmp',requireAuth, postfrmCreate);
+// router.get('/createEmp',requireAuth, postfrmCreate);
+router.post('/createEmp', postfrmCreate);
 
 //delete
 router.delete('/delete/:id', deleteEmp);
