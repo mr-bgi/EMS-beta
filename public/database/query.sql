@@ -189,3 +189,45 @@ INSERT INTO `positions`( `name`, `description`) VALUES
 INSERT INTO `departments`( `name`, `department_head`) VALUES 
 ('IT',1),
 ('Web',2);
+
+--* 27-01-2025 KH
+CREATE TABLE `user`(
+    `id` BIGINT UNSIGNED AUTO_INCREMENT,
+    `first_name` VARCHAR(100) NOT NULL,
+    `last_name` VARCHAR(100) NOT NULL,
+    `email` VARCHAR(255) NOT NULL UNIQUE,
+    `role` TINYINT(1) UNSIGNED NOT NULL COMMENT `1 for user 2 for admin`,
+    `avarta` VARCHAR(255) NULL,
+    `status` TINYINT(1) UNSIGNED NOT NULL COMMENT `1 for old pass 2 for new pass`,
+    `password` VARCHAR(255) NOT NULL,
+    `created_at` TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    `updated_at` TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+PRIMARY KEY(`id`));
+
+CREATE TABLE `employees`(
+    `id` BIGINT UNSIGNED AUTO_INCREMENT,
+    `user_id` BIGINT UNSIGNED NULL, 
+    `sex` TINYINT(1) UNSIGNED NOT NULL COMMENT '1 For Male and 2 For Female',
+    `dob` DATE NOT NULL,
+    `phone` VARCHAR(255) UNIQUE NOT NULL,
+    `address` VARCHAR(255) NOT NULL,
+    `department_id` BIGINT UNSIGNED NULL, 
+    `position_id` BIGINT UNSIGNED NULL, 
+    `hire_date` DATE NOT NULL,
+    `cv_filename` VARCHAR(255),
+    `base_salary` DECIMAL(10,2),
+    `created_at` TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    `updated_at` TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+    PRIMARY KEY(`id`)
+);
+
+CREATE TABLE `card`(
+     `id` BIGINT UNSIGNED AUTO_INCREMENT,
+     `employee_id`  BIGINT UNSIGNED,
+     `issued_date` DATE,
+     `expired_date` DATE,
+     `status` TINYINT(1) UNSIGNED NOT NULL COMMENT '1 For active and 2 For Inactive',
+     `pdf_name` VARCHAR(255) NULL
+     `created_at` TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+     `updated_at` TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+PRIMARY KEY(`id`));

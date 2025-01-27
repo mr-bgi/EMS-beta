@@ -5,7 +5,7 @@ let con = mysql.createConnection({
     user:'root',
     password:"",
     database:'ems1',
-    port: 3308
+    // port: 3308
 })
 
 con.connect(function(error){
@@ -13,4 +13,11 @@ con.connect(function(error){
     console.log("connected to sql");
 })
 
-module.exports = con;
+exports.query = (sql,value)=>{
+    return new Promise((resolv,reject)=>{
+        con.query(sql,value,(err,result)=>{
+            if(err) reject(err);
+            resolv(result)
+        })
+    })
+}
