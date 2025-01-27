@@ -6,6 +6,18 @@ const apiAuth = require('./routes/api/auth');
 const apiEmployee = require('./routes/api/employee');
 const apiEmp = require('./routes/api/position');
 const apiDept = require('./routes/api/department');
+
+const allFolderApps = require('./routes/web/allApps')
+const auth = require('./routes/web/auth')
+const allFolderBootstrap = require('./routes/web/allBootstrap')
+const allCharts = require('./routes/web/allCharts')
+const allDashbaord = require('./routes/web/allDashbaord')
+const allError = require('./routes/web/allError')
+const allForm = require('./routes/web/AllForm')
+const allPlugins = require('./routes/web/allPlugins')
+const allTable = require('./routes/web/allTable')
+
+
 require('dotenv').config();
 // * api AUTH
 
@@ -29,7 +41,17 @@ app.use(apiAuth);
 app.use(apiEmployee);
 app.use(apiEmp);
 app.use(apiDept);
+
 //Web
+app.use(allFolderApps);
+app.use(auth);
+app.use(allFolderBootstrap);
+app.use(allCharts);
+app.use(allDashbaord);
+app.use(allError);
+app.use(allForm);
+app.use(allPlugins);
+app.use(allTable);
 
 app.listen(port, () => {
     console.log(`Server is running on port ${port}`);
