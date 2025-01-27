@@ -1,0 +1,302 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="keywords" content="">
+	<meta name="author" content="">
+	<meta name="robots" content="">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta name="description" content="Fillow : Fillow Saas Admin  Bootstrap 5 Template">
+	<meta property="og:title" content="Fillow : Fillow Saas Admin  Bootstrap 5 Template">
+	<meta property="og:description" content="Fillow : Fillow Saas Admin  Bootstrap 5 Template">
+	<meta property="og:image" content="https://fillow.dexignlab.com/xhtml/social-image.png">
+	<meta name="format-detection" content="telephone=no">
+	
+	<!-- PAGE TITLE HERE -->
+	<title>Fillow Saas Admin Dashboard</title>
+	
+	<!-- FAVICONS ICON -->
+	<link rel="shortcut icon" type="image/png" href="images/favicon.png">
+	<link href="vendor/jquery-nice-select/css/nice-select.css" rel="stylesheet">
+	<link href="vendor/jquery-nice-select/css/nice-select.css" rel="stylesheet">
+    <link href="css/style.css" rel="stylesheet">
+
+</head>
+
+<body>
+
+    <!--*******************
+        Preloader start
+    ********************-->
+	<%- include('../../partials/preloader.ejs') %>
+    <!--*******************
+        Preloader end
+    ********************-->
+
+
+    <!--**********************************
+        Main wrapper start
+    ***********************************-->
+    <div id="main-wrapper">
+
+        <!--**********************************
+            Nav header start
+        ***********************************-->
+		<%- include('../../partials/nav-header.ejs') %>
+        <!--**********************************
+            Nav header end
+        ***********************************-->
+		
+		<!--**********************************
+            Chat box start
+        ***********************************-->
+		<%- include('../../partials/chatbox.ejs') %>
+		<!--**********************************
+            Chat box End
+        ***********************************-->
+
+
+		
+		
+        <!--**********************************
+            Header start
+        ***********************************-->
+        <div class="header">
+            <div class="header-content">
+                <nav class="navbar navbar-expand">
+                    <div class="collapse navbar-collapse justify-content-between">
+                        <div class="header-left">
+							<div class="dashboard_bar">
+                                Chart-Chartjs
+                            </div>
+							
+                        </div>
+                        <%- include('../../partials/header.ejs') %>
+                    </div>
+				</nav>
+			</div>
+		</div>
+                    
+        <!--**********************************
+            Header end ti-comment-alt
+        ***********************************-->
+
+        <!--**********************************
+            Sidebar start
+        ***********************************-->
+		<%-  include('../../partials/sidebar.ejs') %>
+        <!--**********************************
+            Sidebar end
+        ***********************************-->
+
+        <!--**********************************
+            Content body start
+        ***********************************-->
+        <div class="content-body">
+            <div class="container-fluid">
+				<div class="row page-titles">
+					<ol class="breadcrumb">
+						<li class="breadcrumb-item active"><a href="javascript:void(0)">Charts</a></li>
+						<li class="breadcrumb-item"><a href="javascript:void(0)">ChartJS</a></li>
+					</ol>
+                </div>
+                <!-- row -->
+
+                <div class="row">
+                    <div class="col-12">
+                        <div class="row">
+                            <div class="col-xl-6 col-lg-12 col-sm-12">
+                                <div class="card">
+                                    <div class="card-header">
+                                        <h4 class="card-title">Basic Bar Chart</h4>
+                                    </div>
+                                    <div class="card-body">
+                                        <canvas id="barChart_1"></canvas>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-xl-6 col-lg-12 col-sm-12">
+                                <div class="card">
+                                    <div class="card-header">
+                                        <h4 class="card-title">Gradient Bar Chart</h4>
+                                    </div>
+                                    <div class="card-body">
+                                        <canvas id="barChart_2"></canvas>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-xl-6 col-lg-12 col-sm-12">
+                                <div class="card">
+                                    <div class="card-header">
+                                        <h4 class="card-title">Stalked Bar Chart</h4>
+                                    </div>
+                                    <div class="card-body">
+                                        <canvas id="barChart_3"></canvas>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-xl-6 col-lg-12 col-sm-12">
+                                <div class="card">
+                                    <div class="card-header">
+                                        <h4 class="card-title">Basic Line Chart</h4>
+                                    </div>
+                                    <div class="card-body">
+                                        <canvas id="lineChart_1"></canvas>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-xl-6 col-lg-12 col-sm-12">
+                                <div class="card">
+                                    <div class="card-header">
+                                        <h4 class="card-title">Gradient Line Chart</h4>
+                                    </div>
+                                    <div class="card-body">
+                                        <canvas id="lineChart_2"></canvas>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-xl-6 col-lg-12 col-sm-12">
+                                <div class="card">
+                                    <div class="card-header">
+                                        <h4 class="card-title">Dual Line Chart</h4>
+                                    </div>
+                                    <div class="card-body">
+                                        <canvas id="lineChart_3"></canvas>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-xl-6 col-lg-12 col-sm-12">
+                                <div class="card">
+                                    <div class="card-header">
+                                        <h4 class="card-title">Basic Area Chart</h4>
+                                    </div>
+                                    <div class="card-body">
+                                        <canvas id="areaChart_1"></canvas>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-xl-6 col-lg-12 col-sm-12">
+                                <div class="card">
+                                    <div class="card-header">
+                                        <h4 class="card-title">Gradinet Area Chart</h4>
+                                    </div>
+                                    <div class="card-body">
+                                        <canvas id="areaChart_2"></canvas>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-xl-6 col-lg-12 col-sm-12">
+                                <div class="card">
+                                    <div class="card-header">
+                                        <h4 class="card-title">Dual Area Chart</h4>
+                                    </div>
+                                    <div class="card-body">
+                                        <canvas id="areaChart_3"></canvas>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6">
+                                <div class="card">
+                                    <div class="card-header">
+                                        <h4 class="card-title">Radar Chart</h4>
+                                    </div>
+                                    <div class="card-body">
+                                        <canvas id="radar_chart"></canvas>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6">
+                                <div class="card">
+                                    <div class="card-header">
+                                        <h4 class="card-title">Pie Chart</h4>
+                                    </div>
+                                    <div class="card-body">
+                                        <canvas id="pie_chart"></canvas>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6">
+                                <div class="card">
+                                    <div class="card-header">
+                                        <h4 class="card-title">Doughnut Chart</h4>
+                                    </div>
+                                    <div class="card-body">
+                                        <div class="chart-point">
+											<div class="check-point-area">
+												<canvas id="doughnut_chart"></canvas>
+											</div>
+											<ul class="chart-point-list">
+												<li><i class="fa fa-circle text-primary me-1"></i> 40% Tickets</li>
+												<li><i class="fa fa-circle text-success me-1"></i> 35% Events</li>
+												<li><i class="fa fa-circle text-warning me-1"></i> 25% Other</li>
+											</ul>
+										</div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6">
+                                <div class="card">
+                                    <div class="card-header">
+                                        <h4 class="card-title">Polar Chart</h4>
+                                    </div>
+                                    <div class="card-body">
+                                        <canvas id="polar_chart"></canvas>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!--**********************************
+            Content body end
+        ***********************************-->
+
+
+        <!--**********************************
+            Footer start
+        ***********************************-->
+        <%- include('../../partials/footer.ejs') %>
+        <!--**********************************
+            Footer end
+        ***********************************-->
+
+        <!--**********************************
+           Support ticket button start
+        ***********************************-->
+
+        <!--**********************************
+           Support ticket button end
+        ***********************************-->
+
+        
+    </div>
+    <!--**********************************
+        Main wrapper end
+    ***********************************-->
+
+    <!--**********************************
+        Scripts
+    ***********************************-->
+    <!-- Required vendors -->
+    <script src="vendor/global/global.min.js"></script>
+    <script src="vendor/chart.js/Chart.bundle.min.js"></script>
+	<!-- Apex Chart -->
+	<script src="vendor/apexchart/apexchart.js"></script>
+    
+	<script src="vendor/jquery-nice-select/js/jquery.nice-select.min.js"></script>
+
+    <!-- Chart ChartJS plugin files -->
+    <script src="vendor/chart.js/Chart.bundle.min.js"></script>
+    <script src="js/plugins-init/chartjs-init.js"></script>
+	
+    <script src="js/custom.min.js"></script>
+	<script src="js/dlabnav-init.js"></script>
+	<script src="js/demo.js"></script>
+    <script src="js/styleSwitcher.js"></script>
+	
+</body>
+</html>
