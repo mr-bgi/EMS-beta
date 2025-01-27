@@ -1,0 +1,256 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="keywords" content="">
+	<meta name="author" content="">
+	<meta name="robots" content="">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta name="description" content="Fillow : Fillow Saas Admin  Bootstrap 5 Template">
+	<meta property="og:title" content="Fillow : Fillow Saas Admin  Bootstrap 5 Template">
+	<meta property="og:description" content="Fillow : Fillow Saas Admin  Bootstrap 5 Template">
+	<meta property="og:image" content="https://fillow.dexignlab.com/xhtml/social-image.png">
+	<meta name="format-detection" content="telephone=no">
+	
+	<!-- PAGE TITLE HERE -->
+	<title>Admin Dashboard</title>
+	
+	<!-- FAVICONS ICON -->
+	<link rel="shortcut icon" type="image/png" href="images/favicon.png">
+	<link href="vendor/jquery-nice-select/css/nice-select.css" rel="stylesheet">
+    <link href="css/style.css" rel="stylesheet">
+
+</head>
+
+<body>
+
+    <!--*******************
+        Preloader start
+    ********************-->
+	<%- include('../../partials/preloader.ejs') %>
+    <!--*******************
+        Preloader end
+    ********************-->
+
+
+    <!--**********************************
+        Main wrapper start
+    ***********************************-->
+    <div id="main-wrapper">
+
+        <!--**********************************
+            Nav header start
+        ***********************************-->
+		<%- include('../../partials/nav-header.ejs') %>
+        <!--**********************************
+            Nav header end
+        ***********************************-->
+		
+		<!--**********************************
+            Chat box start
+        ***********************************-->
+		<%- include('../../partials/chatbox.ejs') %>
+		<!--**********************************
+            Chat box End
+        ***********************************-->
+
+
+		
+		
+        <!--**********************************
+            Header start
+        ***********************************-->
+        <div class="header">
+            <div class="header-content">
+                <nav class="navbar navbar-expand">
+                    <div class="collapse navbar-collapse justify-content-between">
+                        <div class="header-left">
+							<div class="dashboard_bar">
+                                Chart-Flot
+                            </div>
+							
+                        </div>
+                        <%- include('../../partials/header.ejs') %>
+                    </div>
+				</nav>
+			</div>
+		</div>
+                    
+        <!--**********************************
+            Header end ti-comment-alt
+        ***********************************-->
+
+        <!--**********************************
+            Sidebar start
+        ***********************************-->
+		<%-  include('../../partials/sidebar.ejs') %>
+        <!--**********************************
+            Sidebar end
+        ***********************************-->
+
+        <!--**********************************
+            Content body start
+        ***********************************-->
+        <div class="content-body">
+            <div class="container-fluid">
+				
+				<div class="row page-titles">
+					<ol class="breadcrumb">
+						<li class="breadcrumb-item active"><a href="javascript:void(0)">Charts</a></li>
+						<li class="breadcrumb-item"><a href="javascript:void(0)">Flot</a></li>
+					</ol>
+                </div>
+                <!-- row -->
+
+
+                <div class="row">
+                    <div class="col-12">
+                        <div class="row">
+                            <div class="col-lg-6 col-sm-6">
+                                <div class="card">
+                                    <div class="card-header">
+                                        <h4 class="card-title">Bar Chart</h4>
+                                    </div>
+                                    <div class="card-body">
+                                        <div id="flotBar1" class="flot-chart"></div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-6 col-sm-6">
+                                <div class="card">
+                                    <div class="card-header">
+                                        <h4 class="card-title">Bar Chart</h4>
+                                    </div>
+                                    <div class="card-body">
+                                        <div id="flotBar2" class="flot-chart"></div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-6 col-sm-6">
+                                <div class="card">
+                                    <div class="card-header">
+                                        <h4 class="card-title">Line Chart</h4>
+                                    </div>
+                                    <div class="card-body">
+                                        <div id="flotLine1" class="flot-chart"></div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-6 col-sm-6">
+                                <div class="card">
+                                    <div class="card-header">
+                                        <h4 class="card-title">Line Chart</h4>
+                                    </div>
+                                    <div class="card-body">
+                                        <div id="flotLine2" class="flot-chart"></div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-6 col-sm-6">
+                                <div class="card">
+                                    <div class="card-header">
+                                        <h4 class="card-title">Line Chart</h4>
+                                    </div>
+                                    <div class="card-body">
+                                        <div id="flotLine3" class="flot-chart"></div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-6 col-sm-6">
+                                <div class="card">
+                                    <div class="card-header">
+                                        <h4 class="card-title">Area Chart</h4>
+                                    </div>
+                                    <div class="card-body">
+                                        <div id="flotArea1" class="flot-chart"></div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-6 col-sm-6">
+                                <div class="card">
+                                    <div class="card-header">
+                                        <h4 class="card-title">Area Chart</h4>
+                                    </div>
+                                    <div class="card-body">
+                                        <div id="flotArea2" class="flot-chart"></div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-6 col-sm-6">
+                                <div class="card">
+                                    <div class="card-header">
+                                        <h4 class="card-title">Realtime Chart</h4>
+                                    </div>
+                                    <div class="card-body">
+                                        <div id="flotRealtime1" class="flot-chart"></div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-6 col-sm-6">
+                                <div class="card">
+                                    <div class="card-header">
+                                        <h4 class="card-title">Realtime Chart</h4>
+                                    </div>
+                                    <div class="card-body">
+                                        <div id="flotRealtime2" class="flot-chart"></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!--**********************************
+            Content body end
+        ***********************************-->
+
+
+        <!--**********************************
+            Footer start
+        ***********************************-->
+        <%- include('../../partials/footer.ejs') %>
+        <!--**********************************
+            Footer end
+        ***********************************-->
+
+        <!--**********************************
+           Support ticket button start
+        ***********************************-->
+
+        <!--**********************************
+           Support ticket button end
+        ***********************************-->
+
+        
+    </div>
+    <!--**********************************
+        Main wrapper end
+    ***********************************-->
+
+    <!--**********************************
+        Scripts
+    ***********************************-->
+    <!-- Required vendors -->
+    <script src="vendor/global/global.min.js"></script>
+    <script src="vendor/chart.js/Chart.bundle.min.js"></script>
+	<!-- Apex Chart -->
+	<script src="vendor/apexchart/apexchart.js"></script>
+    
+	<script src="vendor/jquery-nice-select/js/jquery.nice-select.min.js"></script>
+
+
+    <script src="vendor/flot/jquery.flot.js"></script>
+    <script src="vendor/flot/jquery.flot.pie.js"></script>
+    <script src="vendor/flot/jquery.flot.resize.js"></script>
+    <script src="vendor/flot-spline/jquery.flot.spline.min.js"></script>
+    <script src="js/plugins-init/flot-init.js"></script>
+	
+    <script src="js/custom.min.js"></script>
+	<script src="js/dlabnav-init.js"></script>
+	<script src="js/demo.js"></script>
+    <script src="js/styleSwitcher.js"></script>
+</body>
+</html>

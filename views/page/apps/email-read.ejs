@@ -1,0 +1,284 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="keywords" content="">
+	<meta name="author" content="">
+	<meta name="robots" content="">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta name="description" content="Fillow : Fillow Saas Admin  Bootstrap 5 Template">
+	<meta property="og:title" content="Fillow : Fillow Saas Admin  Bootstrap 5 Template">
+	<meta property="og:description" content="Fillow : Fillow Saas Admin  Bootstrap 5 Template">
+	<meta property="og:image" content="https://fillow.dexignlab.com/xhtml/social-image.png">
+	<meta name="format-detection" content="telephone=no">
+	
+	<!-- PAGE TITLE HERE -->
+	<title>Admin Dashboard</title>
+	
+	<!-- FAVICONS ICON -->
+	<link rel="shortcut icon" type="image/png" href="images/favicon.png">
+	<link href="vendor/jquery-nice-select/css/nice-select.css" rel="stylesheet">
+    <link href="css/style.css" rel="stylesheet">
+
+</head>
+
+<body>
+
+    <!--*******************
+        Preloader start
+    ********************-->
+	<%- include('../../partials/preloader.ejs') %>
+    <!--*******************
+        Preloader end
+    ********************-->
+
+
+    <!--**********************************
+        Main wrapper start
+    ***********************************-->
+    <div id="main-wrapper">
+
+        <!--**********************************
+            Nav header start
+        ***********************************-->
+		<%- include('../../partials/nav-header.ejs') %>
+        <!--**********************************
+            Nav header end
+        ***********************************-->
+		
+		<!--**********************************
+            Chat box start
+        ***********************************-->
+		<%- include('../../partials/chatbox.ejs') %>
+		<!--**********************************
+            Chat box End
+        ***********************************-->
+
+
+		
+		
+        <!--**********************************
+            Header start
+        ***********************************-->
+        <div class="header">
+            <div class="header-content">
+                <nav class="navbar navbar-expand">
+                    <div class="collapse navbar-collapse justify-content-between">
+                        <div class="header-left">
+							<div class="dashboard_bar">
+                                Read
+                            </div>
+							
+                        </div>
+                        <%- include('../../partials/header.ejs') %>
+                    </div>
+				</nav>
+			</div>
+		</div>
+                    
+        <!--**********************************
+            Header end ti-comment-alt
+        ***********************************-->
+
+        <!--**********************************
+            Sidebar start
+        ***********************************-->
+        <%- include('../../partials/sidebar.ejs') %>
+        <!--**********************************
+            Sidebar end
+        ***********************************-->
+
+        <!--**********************************
+            Content body start
+        ***********************************-->
+		<div class="content-body">
+            <div class="container-fluid">
+				
+				<div class="row page-titles">
+					<ol class="breadcrumb">
+						<li class="breadcrumb-item active"><a href="javascript:void(0)">Amil</a></li>
+						<li class="breadcrumb-item"><a href="javascript:void(0)">Read</a></li>
+					</ol>
+                </div>
+				
+                <!-- row -->
+                <div class="row">
+                    <div class="col-lg-12">
+                        <div class="card">
+                            <div class="card-body">
+                                <div class="email-left-box generic-width px-0 mb-5">
+                                    <div class="p-0">
+                                        <a href="email-compose.html" class="btn btn-primary btn-block">Compose</a>
+                                    </div>
+                                    <div class="mail-list rounded mt-4">
+                                        <a href="email-inbox.html" class="list-group-item active"><i class="fa fa-inbox font-18 align-middle me-2"></i> Inbox <span class="badge badge-primary badge-sm float-end">198</span> </a>
+                                        <a href="javascript:void()" class="list-group-item"><i class="fa fa-paper-plane font-18 align-middle me-2"></i>Sent</a> <a href="javascript:void()" class="list-group-item"><i class="fa fa-star font-18 align-middle me-2"></i>Important <span class="badge badge-danger badge-sm text-white float-end">47</span>
+                                        </a>
+                                        <a href="javascript:void()" class="list-group-item"><i class="mdi mdi-file-document-box font-18 align-middle me-2"></i>Draft</a><a href="javascript:void()" class="list-group-item"><i class="fa fa-trash font-18 align-middle me-2"></i>Trash</a>
+                                    </div>
+                                    <div class="mail-list rounded overflow-hidden mt-4">
+										<div class="intro-title d-flex my-0 justify-content-between">
+											<h5>Categories</h5>
+											<i class="fa fa-chevron-down" aria-hidden="true"></i>
+										</div>
+                                        <a href="email-inbox.html" class="list-group-item"><span class="icon-warning"><i class="fa fa-circle" aria-hidden="true"></i></span>
+                                            Work </a>
+                                        <a href="email-inbox.html" class="list-group-item"><span class="icon-primary"><i class="fa fa-circle" aria-hidden="true"></i></span>
+                                            Private </a>
+                                        <a href="email-inbox.html" class="list-group-item"><span class="icon-success"><i class="fa fa-circle" aria-hidden="true"></i></span>
+                                            Support </a>
+                                        <a href="email-inbox.html" class="list-group-item"><span class="icon-dpink"><i class="fa fa-circle" aria-hidden="true"></i></span>
+                                            Social </a>
+                                    </div>
+                                </div>
+                                <div class="email-right-box ms-0 ms-sm-4 ms-sm-0">
+                                    <div class="row">
+                                        <div class="col-12">
+                                            <div class="right-box-padding">
+                                                <div class="toolbar mb-4" role="toolbar">
+													<div class="btn-group mb-1">
+														<button type="button" class="btn btn-primary light px-3"><i class="fa fa-archive"></i></button>
+														<button type="button" class="btn btn-primary light px-3"><i class="fa fa-exclamation-circle"></i></button>
+														<button type="button" class="btn btn-primary light px-3"><i class="fa fa-trash"></i></button>
+													</div>
+													<div class="btn-group mb-1">
+														<button type="button" class="btn btn-primary light dropdown-toggle px-3" data-bs-toggle="dropdown">
+															<i class="fa fa-folder"></i> <b class="caret m-l-5"></b>
+														</button>
+														<div class="dropdown-menu"> 
+															<a class="dropdown-item" href="javascript: void(0);">Social</a> 
+															<a class="dropdown-item" href="javascript: void(0);">Promotions</a> 
+															<a class="dropdown-item" href="javascript: void(0);">Updates</a>
+															<a class="dropdown-item" href="javascript: void(0);">Forums</a>
+														</div>
+													</div>
+													<div class="btn-group mb-1">
+														<button type="button" class="btn btn-primary light dropdown-toggle px-3" data-bs-toggle="dropdown">
+															<i class="fa fa-tag"></i> <b class="caret m-l-5"></b>
+														</button>
+														<div class="dropdown-menu"> 
+															<a class="dropdown-item" href="javascript: void(0);">Updates</a> 
+															<a class="dropdown-item" href="javascript: void(0);">Social</a> 
+															<a class="dropdown-item" href="javascript: void(0);">Promotions</a>
+															<a class="dropdown-item" href="javascript: void(0);">Forums</a>
+														</div>
+													</div>
+													<div class="btn-group mb-1">
+														<button type="button" class="btn btn-primary light dropdown-toggle v" data-bs-toggle="dropdown">More <span class="caret m-l-5"></span>
+														</button>
+														<div class="dropdown-menu"> <a class="dropdown-item" href="javascript: void(0);">Mark as Unread</a> <a class="dropdown-item" href="javascript: void(0);">Add to Tasks</a>
+															<a class="dropdown-item" href="javascript: void(0);">Add Star</a> <a class="dropdown-item" href="javascript: void(0);">Mute</a>
+														</div>
+													</div>
+												</div>
+                                                <div class="read-content">
+                                                    <div class="media pt-3 d-sm-flex d-block justify-content-between">
+														<div class="clearfix mb-3 d-flex">
+															<img class="me-3 rounded" width="70" height="70" alt="image" src="images/avatar/1.jpg">
+															<div class="media-body me-2">
+																<h5 class="text-primary mb-0 mt-1">Ingredia Nutrisha</h5>
+																<p class="mb-0">20 May 2020</p>
+															</div>
+														</div>
+														<div class="clearfix mb-3">
+															<a href="javascript:void()" class="btn btn-primary px-3 my-1 light me-2"><i class="fa fa-reply"></i> </a>
+															<a href="javascript:void()" class="btn btn-primary px-3 my-1 light me-2"><i class="fas fa-arrow-right"></i> </a>
+															<a href="javascript:void()" class="btn btn-primary px-3 my-1 light me-2"><i class="fa fa-trash"></i></a>
+														</div>
+													</div>
+                                                    <hr>
+                                                    <div class="media mb-2 mt-3">
+                                                        <div class="media-body"><span class="pull-end">07:23 AM</span>
+                                                            <h5 class="my-1 text-primary">A collection of textile samples lay spread</h5>
+                                                            <p class="read-content-email">
+                                                                To: Me, info@example.com</p>
+                                                        </div>
+                                                    </div>
+                                                    <div class="read-content-body">
+                                                        <h5 class="mb-4">Hi,Ingredia,</h5>
+                                                        <p class="mb-2"><strong>Ingredia Nutrisha,</strong> A collection of textile samples lay spread out on the table - Samsa was a travelling salesman - and above it there hung a picture</p>
+                                                        <p class="mb-2">Even the all-powerful Pointing has no control about the blind texts it is an almost unorthographic life One day however a small line of blind text by the name of Lorem Ipsum decided to leave for
+                                                            the far World of Grammar. Aenean vulputate eleifend tellus. Aenean leo ligula, porttitor eu, consequat vitae, eleifend ac, enim. Aliquam lorem ante, dapibus in, viverra quis, feugiat a, tellus.
+                                                        </p>
+                                                        <p class="mb-2">Aenean vulputate eleifend tellus. Aenean leo ligula, porttitor eu, consequat vitae, eleifend ac, enim. Aliquam lorem ante, dapibus in, viverra quis, feugiat a, tellus. Phasellus viverra nulla ut
+                                                            metus varius laoreet. Quisque rutrum. Aenean imperdiet. Etiam ultricies nisi vel augue. Curabitur ullamcorper ultricies nisi. Nam eget dui. Etiam rhoncus. Maecenas tempus, tellus eget condimentum
+                                                            rhoncus, sem quam semper libero, sit amet adipiscing sem neque sed ipsum. Nam quam nunc, blandit vel, luctus pulvinar,</p>
+                                                        <h5 class="pt-3">Kind Regards</h5>
+                                                        <p>Mr Smith</p>
+                                                        <hr>
+                                                    </div>
+                                                    <div class="read-content-attachment">
+                                                        <h6><i class="fa fa-download mb-2"></i> Attachments
+                                                            <span>(3)</span></h6>
+                                                        <div class="row attachment">
+                                                            <div class="col-auto">
+                                                                <a href="javascript:void()" class="text-muted">My-Photo.png</a>
+                                                            </div>
+                                                            <div class="col-auto">
+                                                                <a href="javascript:void()" class="text-muted">My-File.docx</a>
+                                                            </div>
+                                                            <div class="col-auto">
+                                                                <a href="javascript:void()" class="text-muted">My-Resume.pdf</a>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <hr>
+                                                    <div class="mb-3 pt-3">
+                                                        <textarea name="write-email" id="write-email" cols="30" rows="5" class="form-control" placeholder="It's really an amazing.I want to know more about it..!"></textarea>
+                                                    </div>
+                                                </div>
+                                                <div class="text-end">
+                                                    <button class="btn btn-primary " type="button">Send</button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!--**********************************
+            Content body end
+        ***********************************-->
+
+
+        <!--**********************************
+            Footer start
+        ***********************************-->
+        <%- include('../../partials/footer.ejs') %>
+        <!--**********************************
+            Footer end
+        ***********************************-->
+
+        <!--**********************************
+           Support ticket button start
+        ***********************************-->
+
+        <!--**********************************
+           Support ticket button end
+        ***********************************-->
+
+        
+    </div>
+    <!--**********************************
+        Main wrapper end
+    ***********************************-->
+
+    <!--**********************************
+        Scripts
+    ***********************************-->
+    <!-- Required vendors -->
+    <script src="vendor/global/global.min.js"></script>
+	<script src="vendor/jquery-nice-select/js/jquery.nice-select.min.js"></script>
+    <script src="js/custom.min.js"></script>
+	<script src="js/dlabnav-init.js"></script>
+	<script src="js/demo.js"></script>
+    <script src="js/styleSwitcher.js"></script>
+	
+</body>
+</html>
