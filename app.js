@@ -22,12 +22,13 @@ require('dotenv').config();
 // * api AUTH
 
 const app = new express();
-const port = process.env.PORT || 8080;
+const port = process.env.PORT || 3308;
 
 // Web 
 
 app.set('view engine', 'ejs');
 app.use(express.static('public'));
+app.use(express.static('storage'));
 app.use(fileUpload());  
 app.use(cookieParser());
 app.use(express.urlencoded({ extended: true }));
