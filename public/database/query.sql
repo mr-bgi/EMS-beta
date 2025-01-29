@@ -189,3 +189,19 @@ INSERT INTO `positions`( `name`, `description`) VALUES
 INSERT INTO `departments`( `name`, `department_head`) VALUES 
 ('IT',1),
 ('Web',2);
+
+-------Jan-27-2025------
+
+---Create Table Position
+CREATE TABLE `positions`(
+    `id` TINYINT AUTO_INCREMENT,
+`name` VARCHAR(255),
+    `description` VARCHAR(255),
+PRIMARY KEY(`id`));
+
+---Create Table Departments
+CREATE TABLE `departments`(
+    `id` TINYINT AUTO_INCREMENT,
+`name` VARCHAR(255),
+    `department_head` BIGINT ,
+PRIMARY KEY(`id`));
