@@ -1,6 +1,6 @@
 const { result } = require('lodash');
 const con = require('../../config/db');
-const vPosition= require('../../validation/position')
+const vPosition = require('../../validation/position')
 const fs = require('fs');
 
 const getAllPosition = async (req, res) => {
@@ -29,10 +29,10 @@ const postCreatePosition = (req, res) => {
         const { error, value } = vPosition(req.body);
 
         if (error) {
-            res.json({result:false, msg: error.details});
+            res.json({ result: false, msg: error.details });
             return;
         }
-    
+
 
         let sql = "INSERT INTO `positions`(`name`,`description`) VALUES (?, ?)";
         let arrData = [positionName, req.body.description];
@@ -102,25 +102,49 @@ const postEditPosition = (req, res) => {
         if (results.length === 0) {
             return res.status(404).json({
                 result: false,
-                msg: 'This ID is not valid.Try another ID to update!'
+                msg: 'This ID is not valid. Try another ID to update!'
             });
         }
 
-        // If record exists, proceed with the update
-        const sql = "UPDATE `positions` SET name = ?, description = ? WHERE id = ?";
-        let myArr = [req.body.name, req.body.description, req.body.id];
+        const existingPositionName = results[0].name;
+        if (existingPositionName !== req.body.name) {
+            const checkNameSql = "SELECT * FROM `positions` WHERE name = ? AND id != ?";
+            con.query(checkNameSql, [req.body.name, req.body.id], (err, nameResults) => {
+                if (err) {
+                    console.log(err);
+                    return res.status(500).json({
+                        msg: 'Error'
+                    });
+                }
 
-        con.query(sql, myArr, (err, data) => {
-            if (err) {
-                console.log(err);
-                return res.status(500).json({
-                    msg: 'Error'
+                if (nameResults.length > 0) {
+                    return res.status(400).json({
+                        result: false,
+                        msg: 'This position already exists.'
+                    });
+                }
+
+                const sql = "UPDATE `positions` SET name = ?, description = ? WHERE id = ?";
+                let myArr = [req.body.name, req.body.description, req.body.id];
+
+                con.query(sql, myArr, (err, data) => {
+                    if (err) {
+                        console.log(err);
+                        return res.status(500).json({
+                            msg: 'Error'
+                        });
+                    }
+                    return res.status(200).json({
+                        msg: 'Update successfully!'
+                    });
                 });
-            }
-            return res.status(200).json({
-                msg: 'Update successfully!'
             });
-        });
+        } else {
+            return res.status(400).json({
+                result: false,
+                msg: 'This position already exists.'
+            });
+        }
     });
 };
 
