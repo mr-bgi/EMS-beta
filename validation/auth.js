@@ -28,7 +28,7 @@ const login = Joi.object({
     password: Joi.string().min(8).required(),
 })
 const changePass = Joi.object({
-    userId:Joi.number().required(),
+    id:Joi.number().required(),
     oldPassword:Joi.string().min(8).required(),
     newPassword:Joi.string().min(8).required(),
     confirmPassword:Joi.string().valid(Joi.ref('newPassword')).required()

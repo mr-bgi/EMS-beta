@@ -24,7 +24,7 @@ require('dotenv').config();
 // * api AUTH
 
 const app = new express();
-const port = process.env.PORT || 3308;
+const port = process.env.PORT || 3308 || 3306;
 
 // Web 
 

@@ -60,7 +60,7 @@ exports.getAllEmp = async(req,res)=>{
         res.status(500).json({ message: 'Internal Server Error' });
     }
 }
-exports.deleteEmloyee = async(req,res)=>{
+exports.deleteEmployee = async(req,res)=>{
     try {
         await deleteEmp(req,res);
     } catch (error) {
