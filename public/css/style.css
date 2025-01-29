@@ -2501,7 +2501,7 @@ progress {
   font-weight: 400;
   line-height: 1.5;
   color: #393939;
-  background-color: #C4D7F8 !important;
+  background-color: #fff;
   background-clip: padding-box;
   border: 1px solid #f5f5f5;
   appearance: none;
@@ -3057,7 +3057,7 @@ textarea.form-control-lg {
   white-space: nowrap;
   background-color: #e9ecef;
   border: 1px solid #f5f5f5;
-  border-radius: 1.25rem;
+  border-radius: 1rem;
 }
 
 .input-group-lg>.form-control,
@@ -6323,7 +6323,7 @@ fieldset:disabled .btn {
 
   .modal-lg,
   .modal-xl {
-    max-width: 800px;
+    max-width: 900px;
   }
 }
 
@@ -7353,7 +7353,7 @@ fieldset:disabled .btn {
 }
 
 .shadow {
-  box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15) !important;
+  box-shadow: 0rem 0rem 0.7em rgba(0, 0, 0, 0.1) !important;
 }
 
 .shadow-sm {
@@ -28159,19 +28159,19 @@ Fixing Order => Base + Typography >> General Layout + Grid >> Page Layout + Comp
 }
 
 .photo-content .cover-photo {
-  background: url(../images/profile/cover.jpg);
+  /* background: url(../images/profile/cover.jpg); */
   background-size: cover;
   background-position: center;
-  min-height: 15.625rem;
+  /* min-height: 100px; */
   width: 100%;
 }
 
 .profile .profile-photo {
-  max-width: 6.25rem;
+  max-width: 80px;
   position: relative;
   z-index: 1;
-  margin-top: -4.5rem;
-  margin-right: 0.625rem;
+  /* margin-top: -4.5rem; */
+  /* margin-right: 0.625rem; */
 }
 
 @media only screen and (max-width: 35.9375rem) {
@@ -29182,7 +29182,7 @@ Fixing Order => Base + Typography >> General Layout + Grid >> Page Layout + Comp
   border: 0.0625rem solid #f5f5f5;
   padding: 0.3125rem 1.25rem;
   color: #6e6e6e;
-  height: 3.5rem;
+  height: 45px;
   border-radius: 1rem;
 }
 
@@ -33691,8 +33691,7 @@ button:focus {
   position: relative;
   border: 0rem solid transparent;
   border-radius: 1.25rem;
-  box-shadow: 0rem 0.3125rem 0.3125rem 0rem rgba(82, 63, 105, 0.05);
-  height: calc(100% - 30px);
+  /* height: calc(100% - 30px); */
 }
 
 @media only screen and (max-width: 35.9375rem) {

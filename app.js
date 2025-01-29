@@ -16,6 +16,8 @@ const allError = require('./routes/web/allError')
 const allForm = require('./routes/web/AllForm')
 const allPlugins = require('./routes/web/allPlugins')
 const allTable = require('./routes/web/allTable')
+const manageProfile = require('./routes/web/profile-manage')
+
 
 
 require('dotenv').config();
@@ -53,6 +55,7 @@ app.use(allError);
 app.use(allForm);
 app.use(allPlugins);
 app.use(allTable);
+app.use(manageProfile);
 
 app.listen(port, () => {
     console.log(`Server is running on port ${port}`);
