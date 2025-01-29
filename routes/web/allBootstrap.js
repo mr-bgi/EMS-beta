@@ -14,7 +14,7 @@ router.get('/ui-carousel', allBootstrap.getCarousel);
 router.get('/ui-dropdown', allBootstrap.getDropdown);
 router.get('/ui-grid', allBootstrap.getGrid);
 router.get('/ui-list-group', allBootstrap.getListGroup);
-router.get('/ui-model', allBootstrap.getModel);
+router.get('/ui-modal', allBootstrap.getModel);
 router.get('/ui-pagination', allBootstrap.getPagination);
 router.get('/ui-popover', allBootstrap.getPopover);
 router.get('/ui-progressbar', allBootstrap.getProgressbar);
