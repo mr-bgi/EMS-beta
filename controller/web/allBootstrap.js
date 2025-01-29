@@ -31,7 +31,7 @@ const getListGroup = (req, res) => {
     res.render("page/bootstrap/ui-list-group");
 };
 const getModel = (req, res) => {
-    res.render("page/bootstrap/ui-model");
+    res.render("page/bootstrap/ui-modal");
 };
 const getPagination = (req, res) => {
     res.render("page/bootstrap/ui-pagination");
