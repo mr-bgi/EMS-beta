@@ -13,4 +13,11 @@ con.connect(function(error){
     console.log("connected to sql");
 })
 
-module.exports = con;
+exports.query = (sql,value)=>{
+    return new Promise((resolv,reject)=>{
+        con.query(sql,value,(err,result)=>{
+            if(err) reject(err);
+            resolv(result)
+        })
+    })
+}

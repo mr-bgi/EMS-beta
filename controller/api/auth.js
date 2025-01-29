@@ -1,153 +1,70 @@
-const con = require('../../config/db');
-const bcrypt = require('bcrypt');
-const jwt = require('jsonwebtoken');
-const { validator, register, login } = require('../../validation/auth');
+const { createUser, getUser, login, updatepass, updateEmployee, getEmployee, deleteEmp } = require("../../resource/user");
 
-const generateToken = (id) => {
-    return jwt.sign({ id }, process.env.JWT_SECRET_TOKEN, { expiresIn: '3d' });
-}
 
-const registerPost = async (req, res) => {
+exports.registerPost = async (req, res) => {
     try {
-        const { first_name, last_name, email, role, password, confirmPassword } = req.body;
-
-        //* validation 
-        const { error, value } = validator(register)(req.body);
-        if (error) {
-            return res.status(400).json({
-                message: 'All fields are required!',
-                details: error.message
-            });
-        }
-        con.query('select * from user where email = ?', [email], async (error, result) => {
-            if (error) {
-                return res.status(500).json({
-                    message: 'Database query error'
-                });
-            }
-            if (result.length > 0) {
-                return res.status(400).json({
-                    message: 'Email already exists!'
-                });
-            }
-            try {
-                const mysql = "INSERT INTO `user`(`first_name`, `last_name`, `email`, `role`, `password`) VALUES (?,?,?,?,?)";
-                const hashedPassword = await bcrypt.hash(password, 10);
-                console.log(hashedPassword);
-                con.query(mysql, [first_name, last_name, email, role, hashedPassword], (error, result) => {
-                    if (error) {
-                        return res.status(500).json({
-                            message: 'Database query error'
-                        });
-                    }
-                    res.status(200).json({
-                        result: true,
-                        message: 'User registered successfully!',
-                        data: [],
-                    })
-                })
-            } catch (hashError) {
-                res.status(500).json({
-                    message: 'Error hashing password'
-                });
-            }
-        })
-
+        await createUser(req, res);
     } catch (error) {
-        res.status(500).json({
-            message: 'Error registering user'
-        });
-    }
-}
-const getUser = (req, res) => {
-    try {
-        con.query('select * from user', (error, result) => {
-            if (error) {
-                return res.status(500).json({
-                    message: 'Database query error'
-                });
-            }
-            res.status(200).json({
-                result: true,
-                message: "Get all user successfully",
-                data: result
-            })
-        })
-    } catch (error) {
-        res.status(500).json({
-            message: 'Error get data',
-            error: error.message
-        });
-    }
-}
-const loginPost = async (req, res) => {
-    try {
-        const { email, password } = req.body;
-        const { error, value } = validator(login)(req.body);
-
-        if (error) {
-            return res.status(400).json({
-                message: 'All fields are required!',
-                details: error.message
-            });
-        }
-
-        con.query("select * from user where email = ?", [email], async (error, result) => {
-            if (error) {
-                return res.status(500).json({
-                    message: 'Database query error'
-                });
-            }
-            if (result.length === 0) {
-                return res.status(400).json({
-                    message: 'Invalid email!'
-                });
-            }
-            try {
-                let decryptPassword = await bcrypt.compare(password, result[0].password);
-                if (decryptPassword) {
-                    const token = generateToken(result[0].id);
-                    console.log(token);
-                    res.cookie('jwtToken', token, {
-                        maxAge: 3 * 24 * 60 * 60 * 1000,
-                        httpOnly: true,
-                    })
-                    res.status(200).json({
-                        result: true,
-                        message: 'Login Successfully!'
-                    })
-                } else {
-                    res.status(401).json({
-                        message: 'Invalid password'
-                    })
-                }
-            } catch (compareError) {
-                return res.status(500).json({
-                    message: 'Error comparing passwords',
-                    error: compareError.message
-                });
-            }
-
-        })
-    } catch (error) {
-        res.status(500).json({
-            message: 'Error logging in',
-            error: error.message
-        });
+        console.error(error);
+        res.status(500).json({ message: 'Internal Server Error' });
     }
 }
 
-const logout = (req, res) => {
+
+exports.getUser = async (req, res) => {
+    try {
+        await getUser(req, res);
+    } catch (error) {
+        console.error(error);
+        res.status(500).json({ message: 'Internal Server Error' });
+    }
+}
+exports.loginPost = async (req, res) => {
+    try {
+        await login(req, res);
+    } catch (error) {
+        console.error(error);
+        res.status(500).json({ message: 'Internal Server Error' });
+    }
+}
+
+exports.updatePassword = async (req, res) => {
+    try {
+        await updatepass(req, res);
+    } catch (error) {
+        console.error(error);
+        res.status(500).json({ message: 'Internal Server Error' });
+    }
+}
+exports.logout = (req, res) => {
     res.cookie('jwtToken', '', { maxAge: 1, httpOnly: true });
     res.status(200).json({
         message: "Logout successfully!"
     });
 }
 
+exports.updateEmp = async (req, res) => {
+    try {
+        await updateEmployee(req, res);
+    } catch (error) {
+        console.error(error);
+        res.status(500).json({ message: 'Internal Server Error' });
+    }
+}
 
-module.exports = {
-    registerPost,
-    loginPost,
-    logout,
-    getUser
+exports.getAllEmp = async(req,res)=>{
+    try {
+        await getEmployee(req,res);
+    } catch (error) {
+        console.error(error);
+        res.status(500).json({ message: 'Internal Server Error' });
+    }
+}
+exports.deleteEmloyee = async(req,res)=>{
+    try {
+        await deleteEmp(req,res);
+    } catch (error) {
+        console.error(error);
+        res.status(500).json({ message: 'Internal Server Error' });
+    } 
 }
