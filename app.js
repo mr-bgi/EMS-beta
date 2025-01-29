@@ -16,6 +16,7 @@ const allError = require('./routes/web/allError')
 const allForm = require('./routes/web/AllForm')
 const allPlugins = require('./routes/web/allPlugins')
 const allTable = require('./routes/web/allTable')
+const allDepartment = require('./routes/web/department');
 const manageProfile = require('./routes/web/profile-manage')
 
 
@@ -55,6 +56,7 @@ app.use(allError);
 app.use(allForm);
 app.use(allPlugins);
 app.use(allTable);
+app.use(allDepartment);
 app.use(manageProfile);
 
 app.listen(port, () => {

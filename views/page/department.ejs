@@ -1,0 +1,376 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<%- include('../partials/head.ejs') %>
+<body>
+
+    <!--*******************
+        Preloader start
+    ********************-->
+    <%- include('../partials/preloader.ejs') %>
+    <!--*******************
+        Preloader end
+    ********************-->
+
+    <!--**********************************
+        Main wrapper start
+    ***********************************-->
+    <div id="main-wrapper">
+
+        <!--**********************************
+            Nav header start
+        ***********************************-->
+		<%- include('../partials/nav-header.ejs') %>
+        <!--**********************************
+            Nav header end
+        ***********************************-->
+		
+		<!--**********************************
+            Chat box start
+        ***********************************-->
+		<%- include('../partials/chatbox.ejs') %>
+		<!--**********************************
+            Chat box End
+        ***********************************-->
+
+        <!--**********************************
+            Header start
+        ***********************************-->
+        <div class="header">
+            <div class="header-content">
+                <nav class="navbar navbar-expand">
+                    <div class="collapse navbar-collapse justify-content-between">
+                        <div class="header-left">
+							<div class="dashboard_bar">
+                                Table-Bootstrap
+                            </div>
+							
+                        </div>
+                        <%- include('../partials/header.ejs') %>
+                    </div>
+				</nav>
+			</div>
+		</div>
+                    
+        <!--**********************************
+            Header end ti-comment-alt
+        ***********************************-->
+
+        <!--**********************************
+            Sidebar start
+        ***********************************-->
+        <%- include('../partials/sidebar.ejs')  %>
+        <!--**********************************
+            Sidebar end
+        ***********************************-->
+
+        <!--**********************************
+            Content body start
+        ***********************************-->
+        <div class="content-body">
+            <div class="container-fluid">
+
+                <!-- row -->
+
+                <div class="row">
+                    <div class="col-12">
+                        <div class="department d-flex align-items-center justify-content-between">
+                            <h2 class="title pb-3">ដេប៉ាតឺម៉ង់</h2>
+
+                            <div class="left-item d-flex align-items-center pb-3 justify-content-evenly ">
+                                <search  class="search me-4">
+                                    <span><i class="fa-solid fa-magnifying-glass"></i></span>&nbsp; Search
+                                </search>
+                                
+    
+                                <div class="filter me-4">
+                                    <span><i class="fa-solid fa-filter"></i></span>&nbsp; Filter
+                                </div>
+                               
+                                <div class="created">
+                                    <span>+</span>&nbsp; បង្កើត
+                                </div>
+    
+                            </div>
+
+                        </div>
+                        
+                    </div>
+                    <div class="col-lg-12">
+                        <div class="card pb-3">
+                           
+                            <div class="card-body p-0">
+                                <div class="table-responsive">
+                                    <table class="table table-striped table-responsive-sm">
+                                        <thead>
+                                            <tr>
+                                                <th class="ps-4">ដេប៉ាតឺម៉ង់</th>
+                                                <th>ប្រធាន</th>
+                                                <th>បង្កើត</th>
+                                                <th>បច្ចុប្បន្នភាព</th>
+                                                <th>កែតម្រូវ</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <td class="ps-4">អប់រំ</td>
+                                                <td>អូន​ គីមហុង</td>
+                                                <td>Jan 4, 2022</td>
+                                                <td>January 22</td>
+                                                <td>
+                                                    <span>
+                                                        
+                                                         <!-- Delete Button -->
+                                                         <a  href="#" class="text-danger">
+                                                            <i class="fa-regular fa-trash-can" data-bs-toggle="modal" data-bs-target="#deleteModal"></i> &nbsp;
+                                                         </a>
+                                                        
+                                                            <!-- Modal -->
+                                                            <div class="modal fade mb-4" id="deleteModal" tabindex="-1" aria-labelledby="deleteModalLabel" aria-hidden="true">
+                                                                <div class="modal-dialog">
+                                                                <div class="modal-content mb-4">
+                                                                    <div class="modal-header">
+                                                                    <h1 class="modal-title fs-4 fw-medium" id="deleteModalLabel">កែតម្រូវ​ ដេប៉ាតឺម៉ង់</h1>
+                                                                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                                                    </div>
+                                                                    <div class="modal-body border-0">
+                                                                       <form action="">
+                                                                            <div class="mb-3">
+                                                                                <label for="departmentinput" class="form-label">ដេប៉ាតឺម៉ង់</label>
+                                                                                <input type="text" class="form-control bg-transparent fs-5" id="departmentinput" placeholder="អប់រំ">
+                                                                            </div>
+                                                                            <div class="mb-3">
+                                                                                <label for="selectLeader" class="form-label">ប្រធាន</label>
+                                                                                <select  class="form-control bg-transparent fs-5" name="selectLeader" id="selectLeader">
+                                                                                    <option value="អូន​ គីមហុង">អូន​ គីមហុង</option>
+                                                                                    <option value="អូន​ គីមហុង">អូន​ គីមហុង</option>
+                                                                                    <option value="អូន​ គីមហុង">អូន​ គីមហុង</option>
+                                                                                </select>
+                                                                               
+                                                                            </div>
+                                                                       </form>
+                                                                    </div>
+                                                                    <div class="modal-footer border-0 d-flex justify-content-center">
+                                                                        <button type="button" class="btn btn-danger  text-center" data-bs-dismiss="modal"> <span class="me-3 text-center"><i class="fa-solid fa-x"></i></span>បោះបង់</button>
+                                                                        <button type="button" class="btn btn-primary text-center"> <span class="me-3 text-center"><i class="fa-solid fa-download"></i></span>រក្សាទុក</button>
+                                                                    </div>
+                                                                </div>
+                                                                </div>
+                                                            </div>
+                                                        
+                                                        <!-- Delete Button -->
+                                                         <a  href="#" class="icon-edit">
+                                                            <i class="fa-regular fa-pen-to-square"></i>
+                                                         </a>
+                                                    </span>
+                                                </td>
+                                            </tr>
+
+                                            <tr>
+                                                <td class="ps-4">អប់រំ</td>
+                                                <td>ញ៉ិក ភីឡែន</td>
+                                                <td>Jan 4, 2022</td>
+                                                <td>January 22</td>
+                                                <td>
+                                                    <span>
+                                                        
+                                                        <!-- Delete Button -->
+                                                        <a  href="#" class="text-danger">
+                                                           <i class="fa-regular fa-trash-can"></i> &nbsp;
+                                                        </a>
+                                                       
+                                                       <!-- Delete Button -->
+                                                        <a  href="#" class="icon-edit">
+                                                           <i class="fa-regular fa-pen-to-square"></i>
+                                                        </a>
+                                                   </span>
+                                                </td>
+                                            </tr>
+
+                                            <tr>
+                                                <td class="ps-4">អប់រំ</td>
+                                                <td>អូន​ គីមហុង</td>
+                                                <td>Jan 4, 2022</td>
+                                                <td>January 22</td>
+                                                <td>
+                                                    <span>
+                                                        
+                                                        <!-- Delete Button -->
+                                                        <a  href="#" class="text-danger">
+                                                           <i class="fa-regular fa-trash-can"></i> &nbsp;
+                                                        </a>
+                                                       
+                                                       <!-- Delete Button -->
+                                                        <a  href="#" class="icon-edit">
+                                                           <i class="fa-regular fa-pen-to-square"></i>
+                                                        </a>
+                                                   </span>
+                                                </td>
+                                            </tr>
+
+                                            <tr>
+                                                <td class="ps-4">អប់រំ</td>
+                                                <td>ញ៉ិក ភីឡែន</td>
+                                                <td>Jan 4, 2022</td>
+                                                <td>January 22</td>
+                                                <td>
+                                                    <span>
+                                                        
+                                                        <!-- Delete Button -->
+                                                        <a  href="#" class="text-danger">
+                                                           <i class="fa-regular fa-trash-can"></i> &nbsp;
+                                                        </a>
+                                                       
+                                                       <!-- Delete Button -->
+                                                        <a  href="#" class="icon-edit">
+                                                           <i class="fa-regular fa-pen-to-square"></i>
+                                                        </a>
+                                                   </span>
+                                                </td>
+                                            </tr>
+
+                                            <tr>
+                                                <td class="ps-4">អប់រំ</td>
+                                                <td>អូន​ គីមហុង</td>
+                                                <td>Jan 4, 2022</td>
+                                                <td>January 22</td>
+                                                <td>
+                                                    <span>
+                                                        
+                                                        <!-- Delete Button -->
+                                                        <a  href="#" class="text-danger">
+                                                           <i class="fa-regular fa-trash-can"></i> &nbsp;
+                                                        </a>
+                                                       
+                                                       <!-- Delete Button -->
+                                                        <a  href="#" class="icon-edit">
+                                                           <i class="fa-regular fa-pen-to-square"></i>
+                                                        </a>
+                                                   </span>
+                                                </td>
+                                            </tr>
+
+                                            <tr>
+                                                <td class="ps-4">អប់រំ</td>
+                                                <td>ញ៉ិក ភីឡែន</td>
+                                                <td>Jan 4, 2022</td>
+                                                <td>January 22</td>
+                                                <td>
+                                                    <span>
+                                                        
+                                                        <!-- Delete Button -->
+                                                        <a  href="#" class="text-danger">
+                                                           <i class="fa-regular fa-trash-can"></i> &nbsp;
+                                                        </a>
+                                                       
+                                                       <!-- Delete Button -->
+                                                        <a  href="#" class="icon-edit">
+                                                           <i class="fa-regular fa-pen-to-square"></i>
+                                                        </a>
+                                                   </span>
+                                                </td>
+                                            </tr>
+                                          
+                                        </tbody>
+                                    </table>
+                                </div>
+
+                                <div class="amount mt-2 ps-4">
+                                    <p class="fs-4 fw-medium">ដេប៉ាតឺម៉ង់សរុប​ 04</p>
+                                </div>
+
+                                <nav aria-label="Page navigation w-100 pb-3">
+                                    <ul class="pagination w-100 d-flex align-items-center justify-content-between">
+                                      <div class="ps-4">
+                                        <li class="page-item disabled previous ">
+                                            <a class="page-link text-dark"><span class="text-dark"><i class="fa-solid fa-arrow-left"></i></span>&nbsp; ថយក្រោយ</a>
+                                          </li>
+                                      </div>
+                                      <div class="d-flex justify-content-center align-items-center">
+                                        <li class="page-item"><a class="page-link" href="#">1</a></li>
+                                        <li class="page-item"><a class="page-link" href="#">2</a></li>
+                                        <li class="page-item"><a class="page-link" href="#">.</a></li>
+                                        <li class="page-item"><a class="page-link" href="#">.</a></li>
+                                        <li class="page-item"><a class="page-link" href="#">8</a></li>
+                                        <li class="page-item"><a class="page-link" href="#">9</a></li>
+                                      </div>
+                                      <div class="pe-4">
+                                        <li class="page-item next">
+                                            <a class="page-link" href="#">បន្ត&nbsp; <span class="text-dark"><i class="fa-solid fa-arrow-right"></i></span></a>
+                                          </li>
+                                      </div>
+                                      
+                                      
+                                    </ul>
+                                  </nav>
+                            </div>
+                        </div>
+                    </div>
+                   
+                </div>
+            </div>
+        </div>
+        <!--**********************************
+            Content body end
+        ***********************************-->
+
+
+        <!--**********************************
+            Footer start
+        ***********************************-->
+        <%- include('../partials/footer.ejs') %>
+        <!--**********************************
+            Footer end
+        ***********************************-->
+
+        <!--**********************************
+           Support ticket button start
+        ***********************************-->
+
+        <!--**********************************
+           Support ticket button end
+        ***********************************-->
+
+        
+    </div>
+    <!--**********************************
+        Main wrapper end
+    ***********************************-->
+
+    <!--**********************************
+        Scripts
+    ***********************************-->
+    <!-- Required vendors -->
+     <script>
+        const exampleModal = document.getElementById('exampleModal')
+        if (exampleModal) {
+        exampleModal.addEventListener('show.bs.modal', event => {
+            // Button that triggered the modal
+            const button = event.relatedTarget
+            // Extract info from data-bs-* attributes
+            const recipient = button.getAttribute('data-bs-whatever')
+            // If necessary, you could initiate an Ajax request here
+            // and then do the updating in a callback.
+
+            // Update the modal's content.
+            const modalTitle = exampleModal.querySelector('.modal-title')
+            const modalBodyInput = exampleModal.querySelector('.modal-body input')
+
+            modalTitle.textContent = `New message to ${recipient}`
+            modalBodyInput.value = recipient
+        })
+        }
+
+        const myModalEl = document.getElementById('myModal')
+            myModalEl.addEventListener('hidden.bs.modal', event => {
+        // do something...
+        })
+     </script>
+    <script src="vendor/global/global.min.js"></script>
+	<script src="vendor/jquery-nice-select/js/jquery.nice-select.min.js"></script>
+    <script src="js/custom.min.js"></script>
+	<script src="js/dlabnav-init.js"></script>
+	<script src="js/demo.js"></script>
+    <script src="js/styleSwitcher.js"></script>
+</body>
+</html>

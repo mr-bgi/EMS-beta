@@ -26,7 +26,7 @@ const getAllEmployees = async () => {
     return await query(sql);
 };
 
-const getAllUsers = async () => {
+const getAllUsers = async () => { 
     const sql = "SELECT * FROM users";
     return await query(sql);
 };
