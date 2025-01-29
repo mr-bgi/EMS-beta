@@ -3,6 +3,7 @@ const bcrypt = require('bcrypt');
 const jwt = require('jsonwebtoken');
 const { validator, register, login, changePass, updateEmp } = require('../validation/auth');
 const fs = require('fs');
+const { result } = require('lodash');
 
 
 const generateToken = (id) => {
@@ -42,9 +43,9 @@ exports.createUser = async (req, res) => {
 
 
         const hashedPassword = await bcrypt.hash(password, 10);
-        const insertUserSQL = "INSERT INTO `user` (`first_name`, `last_name`, `email`, `role`, `avatar`, `password`) VALUES (?, ?, ?, ?, ?, ?)";
+        const insertUserSQL = "INSERT INTO `user` (`first_name`, `last_name`, `email`, `role`, `avarta`, status,`password`) VALUES (?, ?, ?, ?, ?, ?,?)";
         //* user query
-        const userQuery = await query(insertUserSQL, [first_name, last_name, email, role, sampleFileName, hashedPassword]);
+        const userQuery = await query(insertUserSQL, [first_name, last_name, email, role, sampleFileName, 1, hashedPassword]);
 
 
         const insertId = userQuery.insertId;
@@ -144,7 +145,8 @@ exports.login = async (req, res) => {
 
 exports.updatepass = async (req, res) => {
     try {
-        const { userId, oldPassword, newPassword } = req.body;
+        const id = req.params.id;
+        const { oldPassword, newPassword } = req.body;
         const { error, value } = validator(changePass)(req.body);
         if (error) {
             return res.status(400).json({
@@ -152,28 +154,45 @@ exports.updatepass = async (req, res) => {
                 details: error.message
             });
         }
-        const user = await query('select * from user where id = ?', [userId]);
-        if (!user) {
+
+        const user = await query('select * from user where id = ?', [id]);
+        if (!user || user.length === 0) {
             return res.status(404).json({
-                message: "User not found"
+                message: 'User not found'
+            });
+        }
+
+        if (oldPassword === newPassword) {
+            return res.status(400).json({
+                message: 'New password cannot be the same as old password'
+            });
+        }
+
+        const checkStatus = user[0].status;
+        if (checkStatus !== 2) {
+            const isValidPassword = await bcrypt.compare(oldPassword, user[0].password);
+            if (!isValidPassword) {
+                return res.status(401).json({
+                    message: 'Invalid old password'
+                })
+            }
+            const hashedPassword = await bcrypt.hash(newPassword, 10);
+            const sql = "update user set password = ?, status = ? where id = ?";
+            const myArr = [hashedPassword, 2, id];
+
+            await query(sql, myArr);
+
+            res.status(200).json({
+                result: true,
+                message: "Password updated successfully"
+            })
+        } else {
+            res.status(200).json({
+                result: 'false',
+                message: " password already changed or status 2"
             })
         }
-        const isValidPassword = await bcrypt.compare(oldPassword, user[0].password);
-        if (!isValidPassword) {
-            return res.status(401).json({
-                message: 'Invalid old password'
-            })
-        }
-        const hashedPassword = await bcrypt.hash(newPassword, 10);
-        const sql = "update user set password = ? where id = ?";
-        const myArr = [hashedPassword, userId];
 
-        await query(sql, myArr);
-
-        res.status(200).json({
-            result: true,
-            message: "Password updated successfully"
-        })
     } catch {
         res.status(500).json({ message: "Error updating password", error: error.message });
     }
@@ -195,40 +214,39 @@ exports.getEmployee = async (req, res) => {
         });
     }
 }
-exports.updateAvarta = async (req,res)=>{
-    try{
-        let file = req.body.old_img;
-        console.log(file);
-        if (req.files && req.files.avarta && req.files.avarta.name !== 'default.png') {
-            const sampleFile = req.files.avarta;
-            const sampleFileName = Date.now() + sampleFile.name;
-
-            const uploadPath = './public/upload/' + sampleFileName;
-            console.log(`Uploading to: ${uploadPath}`);
-
-            // Move file with proper error handling
-            await new Promise((resolve, reject) => {
-                sampleFile.mv(uploadPath, (err) => {
-                    if (err) reject(err);
-                    resolve();
-                });
+// * not yet
+exports.updateAvatar = async (req, res) => {
+    try {
+      const token = req.cookies.jwtToken;
+      if (token) {
+        jwt.verify(token, process.env.JWT_SECRET_TOKEN,async (error, decodedToken) => {
+          if (error) {
+            return res.status(401).json({
+              message: 'Unauthorized access',
+              error: error.message
             });
-
-            // Delete old file if it exists and is not the default image
-            if (req.body.old_img && req.body.old_img !== 'default.png') {
-                const oldFilePath = './public/upload/' + req.body.old_img;
-                if (fs.existsSync(oldFilePath)) {
-                    fs.unlinkSync(oldFilePath);
-                }
-            }
-            file = sampleFileName; // Set the new file name
-        }
-
-    }catch(error){
-        console.error(error);
-        res.status(500).json({ message: 'Server error', error: error.message });
+          }
+          const userId = decodedToken.id;
+          const avatar = req.file.path; // Assuming you're using multer to upload the avatar
+          const sql = "UPDATE user SET avatar = ? WHERE id = ?";
+          const myArr = [avatar, userId];
+          await query(sql, myArr);
+          res.status(200).json({
+            message: "Avatar updated successfully"
+          });
+        });
+      } else {
+        return res.status(401).json({
+          message: 'Unauthorized access'
+        });
+      }
+    } catch (error) {
+      res.status(500).json({
+        message: "Error updating avatar",
+        error: error.message
+      });
     }
-}
+  };
 exports.updateEmployee = async (req, res) => {
     try {
         // Check for files
@@ -309,7 +327,7 @@ exports.updateEmployee = async (req, res) => {
         const getId = userId[0].user_id;
         const updateUserSQL = `
             UPDATE user
-            SET first_name = ?, last_name = ?, avatar = ?
+            SET first_name = ?, last_name = ?, avarta = ?
             WHERE id = ?`;
         const userParams = [first_name, last_name, file, getId];
         await query(updateUserSQL, userParams);
@@ -326,18 +344,51 @@ exports.updateEmployee = async (req, res) => {
 };
 
 // * delete employee & user
-exports.deleteEmp = async (req,res)=>{
+exports.deleteEmp = async (req, res) => {
     try {
-        let deleteImg = req.params.avarta;
-        console.log(deleteImg);
+        let id = req.params.id;
+
+        const sqlEmployee = "SELECT * FROM employees WHERE id = ?"
+        const sqlUser = "SELECT * FROM user WHERE id = ?"
+        const deleteUserSql = "DELETE FROM user WHERE id = ?"
+        const deleteEmpSql = "DELETE FROM employees WHERE id = ?"
+
+        const employee = await query(sqlEmployee, [id])
+        const userId = employee[0].user_id
+        const user = await query(sqlUser, [userId])
+
+        let avarta_name = user[0].avarta;
+        let cv_name = employee[0].cv_filename;
+
+        if (avarta_name) {
+            try {
+                if (avarta_name !== 'default.pdf') {
+                    fs.unlinkSync(`./public/upload/${avarta_name}`)
+                }
+            } catch (error) {
+                console.error(`Error deleting CV file: ${error.message}`)
+            }
+        }
+
+        if (cv_name) {
+            try {
+                if (cv_name !== 'default.png') {
+                    fs.unlinkSync(`./storage/documents/cv/${cv_name}`)
+                }
+            } catch (error) {
+                console.error(`Error deleting avarta file: ${error.message}`)
+            }
+        }
+
+        await query(deleteUserSql, [userId])
+        await query(deleteEmpSql, [id])
+
+        res.json({ message: 'Employee deleted successfully' })
     } catch (error) {
-        res.status(500).json({
-            message: 'Error get data',
-            error: error.message
-        });
+        console.error(`Error deleting employee: ${error.message}`)
+        res.status(500).json({ message: 'Error deleting employee' })
     }
 }
-
 
 
 
