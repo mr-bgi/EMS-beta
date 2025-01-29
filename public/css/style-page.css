@@ -1,0 +1,62 @@
+.department .left-item .search{
+    width: 250px;
+    height: 35px;
+    font-size: 18px;
+    padding-left: 10px;
+    padding-top: 2px;
+    align-items: center;
+    justify-content: center;
+    margin: auto;
+    border-radius: 8px;
+    border: 1px solid rgb(48, 47, 47);
+}
+
+.department .left-item .filter{
+    width: 100px;
+    height: 35px;
+    border-radius: 8px;
+    margin: auto;
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    cursor: pointer;
+    font-size: 17px;
+    border: 1px solid rgb(48, 47, 47);
+}
+
+.department .left-item .created{
+    width: 100px;
+    height: 35px;
+    border-radius: 8px;
+    margin: auto;
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    cursor: pointer;
+    color: white;
+    font-size: 17px;
+    background-color: #3A86FF;
+}
+
+th,td{
+    font-size: 16px;
+}
+
+ .card .card-body .icon-edit{
+    color: #3A86FF;
+
+}
+
+.card .card-body .modal .form-control{
+    border-radius: 10px;
+    border: 1px solid rgb(124, 124, 124);
+}
+
+.card .card-body .modal .modal-footer button{
+    /* height: 42px; */
+    width: 144px;
+    margin: auto;
+    align-items: center;
+    text-align: center;
+    border-radius: 12px;
+}

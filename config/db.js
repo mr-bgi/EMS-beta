@@ -4,9 +4,9 @@ const mysql = require('mysql');
 var con = mysql.createConnection({
     host: "localhost",
     user: "root",
-    password: "mysql1234",
-    database: "lms",
-    port: 3306 || 3308
+    password: "",
+    database: "ems1",
+    port: 3308
 });
 
 
