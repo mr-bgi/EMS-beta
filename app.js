@@ -1,6 +1,8 @@
 const express = require('express');
 const fileUpload = require('express-fileupload');
 const cookieParser = require('cookie-parser');
+const livereload = require("livereload");
+const connectLivereload = require("connect-livereload");
 // const { checkUser } = require('./middleware/auth');
 const apiAuth = require('./routes/api/auth');
 const apiEmployee = require('./routes/api/employee');
@@ -18,6 +20,7 @@ const allPlugins = require('./routes/web/allPlugins')
 const allTable = require('./routes/web/allTable')
 const allDepartment = require('./routes/web/department');
 const manageProfile = require('./routes/web/profile-manage')
+const allMobilePage = require('./routes/web/mobileUser')
 
 
 
@@ -28,7 +31,10 @@ const app = new express();
 const port = process.env.PORT || 3308 || 3306;
 
 // Web 
+const liveReloadServer = livereload.createServer();
+liveReloadServer.watch(__dirname + "/public");
 
+app.use(connectLivereload());
 app.set('view engine', 'ejs');
 app.use(express.static('public'));
 app.use(express.static('storage'));
@@ -58,6 +64,7 @@ app.use(allPlugins);
 app.use(allTable);
 app.use(allDepartment);
 app.use(manageProfile);
+app.use(allMobilePage);
 
 app.listen(port, () => {
     console.log(`Server is running on port ${port}`);
