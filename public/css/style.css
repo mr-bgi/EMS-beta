@@ -6322,9 +6322,6 @@ fieldset:disabled .btn {
   .modal-xl {
     max-width: 900px;
   }
-  .modal-md {
-    max-width: 700px;
-  }
 }
 
 @media (min-width: 1200px) {

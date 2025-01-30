@@ -6,8 +6,7 @@ const router = express.Router();
 
 router.get('/', allDashnaord.getIndex);
 router.get('/index-2', allDashnaord.getIndex);
-router.get('/calendar-page', allDashnaord.getCalender);
-router.get('/contacts', allDashnaord.getCalender);
+router.get('/calender-page', allDashnaord.getIndex);
 router.get('/kanban', allDashnaord.getKanban);
 router.get('/message', allDashnaord.getMessage);
 router.get('/project-page', allDashnaord.getProject);
