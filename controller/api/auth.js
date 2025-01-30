@@ -1,4 +1,4 @@
-const { createUser, getUser, login, updatepass, updateEmployee, getEmployee, deleteEmp, updateAvarta } = require("../../resource/user");
+const { createUser, getUser, login, updatepass, updateEmployee, getEmployee, deleteEmp } = require("../../resource/user");
 
 
 exports.registerPost = async (req, res) => {
@@ -67,12 +67,4 @@ exports.deleteEmployee = async(req,res)=>{
         console.error(error);
         res.status(500).json({ message: 'Internal Server Error' });
     } 
-}
-exports.updateAvarta = async(req,res)=>{
-    try {
-        await updateAvarta(req,res);
-    } catch (error) {
-        console.error(error);
-        res.status(500).json({ message: 'Internal Server Error' });
-    }  
 }
