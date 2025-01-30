@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/vendor/bootstrap/bootstrap.min.css">
+    <link rel="stylesheet" href="/css/mobile.css">
+    <title>Document</title>
+</head>
+
+<body>
+    <section class="qr-container position-relative d-flex flex-column align-items-center justify-content-center">
+        <div class="scan-header d-flex justify-content-between px-4 position-absolute top-0">
+            <a href="/mobile/homepage" class="img-icon">
+                <img src="/icons/mobile/cancel.png" style="transform: scale(0.75);"
+                    class="w-100 h-100 object-fit-cover">
+            </a>
+            <div class="d-flex gap-3">
+                <div class="img-icon">
+                    <img src="/icons/mobile/flash-light.png" alt="Qr Code Icon">
+                </div>
+                <div class="img-icon">
+                    <img src="/icons/mobile/gear.png" alt="Qr Code Icon" class="w-100 h-100 object-fit-cover">
+                </div>
+
+            </div>
+        </div>
+        <h1 id="reader" width="100vw" height="100vh"></h1>
+    </section>
+</body>
+<script src="/vendor/bootstrap/bootstrap.bundle.min.js"></script>
+<script src="/vendor/html5-qrcode/html5-qrcode.min.js"></script>
+<script src="https://unpkg.com/jsqr/dist/jsQR.js"></script>
+<script>
+
+    let qrScanner;
+
+    function startScanner() {
+        qrScanner = new Html5Qrcode("reader");
+        qrScanner.start(
+            { facingMode: "environment" },
+            {
+                fps: 10,
+                qrbox: { width: 300, height: 300 }
+            },
+            (decodedText, decodedResult) => {
+                // alert("Scanned: " + decodedText);
+                if (!navigator.geolocation) {
+                    messageElement.textContent = 'Geolocation is not supported by your browser.';
+                    return;
+                }
+                navigator.geolocation.getCurrentPosition(
+                    console.log(position.coords.latitude)
+                    
+                    // async (position) => {
+                    //     const latitude = position.coords.latitude;
+                    //     const longitude = position.coords.longitude;
+                    //     //     console.log();
+
+                    //     //     // try {
+                    //     //     //     const response = await fetch(code.data, {
+                    //     //     //         method: 'POST',
+                    //     //     //         headers: { 'Content-Type': 'application/json' },
+                    //     //     //         body: JSON.stringify({ id: emp_id, location: { latitude, longitude } }),
+                    //     //     //     });
+
+                    //     //     //     const result = await response.json();
+                    //     //     //     if (result.success) {
+                    //     //     //         messageElement.textContent = 'Attendance recorded successfully!';
+                    //     //     //     } else {
+                    //     //     //         messageElement.textContent = result.message || 'Error during attendance check-in.';
+                    //     //     //     }
+                    //     //     // } catch (error) {
+                    //     //     //     console.error('Fetch error:', error);
+                    //     //     //     messageElement.textContent = 'Error occurred while processing the QR code.';
+                    //     //     // }
+                    // },
+                    // { enableHighAccuracy: true, timeout: 10000 }
+                );
+                console.log(decodedText);
+
+                stopScanner();
+                window.location = 'http://localhost:3000/mobile/homepage';
+            },
+        ).catch(err => {
+            console.error("Camera Error: ", err);
+        });
+    }
+
+    function stopScanner() {
+        if (qrScanner) {
+            qrScanner.stop().then(() => {
+                console.log("Scanner stopped.");
+            }).catch(err => {
+                console.error("Error stopping scanner: ", err);
+            });
+        }
+    }
+
+    window.onload = function () {
+        startScanner();
+    };
+
+
+</script>
+
+</html>
