@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<%- include('../../partials/head.ejs') %>
+<body>
+
+    <!--*******************
+        Preloader start
+    ********************-->
+    <%- include('../../partials/preloader.ejs') %>
+    <!--*******************
+        Preloader end
+    ********************-->
+
+    <!--**********************************
+        Main wrapper start
+    ***********************************-->
+    <div id="main-wrapper">
+
+        <!--**********************************
+            Nav header start
+        ***********************************-->
+		<%- include('../../partials/nav-header.ejs') %>
+        <!--**********************************
+            Nav header end
+        ***********************************-->
+		
+		<!--**********************************
+            Chat box start
+        ***********************************-->
+		<%- include('../../partials/chatbox.ejs') %>
+		<!--**********************************
+            Chat box End
+        ***********************************-->
+
+        <!--**********************************
+            Header start
+        ***********************************-->
+        <div class="header">
+            <div class="header-content">
+                <nav class="navbar navbar-expand">
+                    <div class="collapse navbar-collapse justify-content-between">
+                        <div class="header-left">
+							<div class="dashboard_bar">
+                                បង្កើតគណនីបុគ្គលិក
+                            </div>
+							
+                        </div>
+                        <%- include('../../partials/header.ejs') %>
+                    </div>
+				</nav>
+			</div>
+		</div>
+                    
+        <!--**********************************
+            Header end ti-comment-alt
+        ***********************************-->
+
+        <!--**********************************
+            Sidebar start
+        ***********************************-->
+        <%- include('../../partials/sidebar.ejs')  %>
+        <!--**********************************
+            Sidebar end
+        ***********************************-->
+
+        <!--**********************************
+            Content body start
+        ***********************************-->
+        <div class="content-body">
+            <div class="container-fluid">
+
+                <!-- row -->
+
+                <div class="row">
+                    <div class="col-12">
+                        <div class="department d-flex align-items-center justify-content-between mb-3">
+                            <h2 class="title pb-3">បំពេញព័ត៌មានបុគ្គលិក</h2>
+
+                            <div class="left-item d-flex align-items-center pb-3 justify-content-evenly ">
+                                <div class="created">
+                                    <span>+</span>&nbsp; បង្កើត
+                                </div>
+    
+                            </div>
+
+                        </div>
+                        <div class="card shadow p-5">
+                            <form action="">
+                                <div class="row">
+                                    <div class="col-6 ">
+                                        <div class="row">
+                                            <div class="col-12">
+                                                <h4>រូបភាព</h4>
+                                                <div class="d-flex justify-content-center mb-4">
+                                                    <img src="images/pic3.jpg"
+                                                        class="img-fluid rounded-circle" alt="">
+                                                </div>
+                                            </div>
+                                            
+                                            <div class="col-6 ">
+                                                <div class="form-group ">
+                                                    <label for="firstName">គោត្តនាម</label>
+                                                    <input type="text" class="form-control" id="firstName"
+                                                        placeholder="ហិន">
+                                                </div>
+                                            </div>
+                                            <div class="col-6 ">
+                                                <div class="form-group ">
+                                                    <label for="lastName">Last Name</label>
+                                                    <input type="text" class="form-control" id="lastName"
+                                                        placeholder="Last Name">
+                                                </div>
+                                            </div>
+                                            <div class="col-6  mt-3">
+                                                <div class="form-group ">
+                                                    <label for="gender">Gender</label>
+                                                    <select class="form-control" id="gender">
+                                                        <option value="male">Male</option>
+                                                        <option value="female">Female</option>
+                                                    </select>
+                                                </div>
+                                            </div>
+                                            <div class="col-6 mt-3">
+                                                <div class="form-group">
+                                                    <label for="birthDate">Birth Date</label>
+                                                    <input type="date" class="form-control" id="birthDate">
+                                                </div>
+                                            </div>
+                                            <div class="col-12  mt-3">
+                                                <div class="form-group">
+                                                    <label for="address">Address</label>
+                                                    <textarea class="form-control" id="address"
+                                                        rows="3">ផ្លូវ៥១២ ភូមិ១ បឹងកក់ទី១ ទួលគោក ភ្នំពេញ</textarea>
+                                                </div>
+                                            </div>
+                                            <div class="col-12  mt-3">
+                                                <div class="form-group">
+                                                    <label for="email">Email</label>
+                                                    <input type="email" class="form-control" placeholder="em@gmail.com" id="email">
+                                                </div>
+                                            </div>
+                                            <div class="col-12  mt-3">
+                                                <div class="form-group">
+                                                    <label for="numPhone">Phone</label>
+                                                    <input type="text" class="form-control" id="numPhone"
+                                                        placeholder="01234567">
+                                                </div>
+                                            </div>
+                                            
+                                        </div>
+                                    </div>
+                                    <div class="col-6">
+                                        <div class="row ">
+                                            <div class="col-12 ">
+                                                <div class="form-group ">
+                                                    <label for="pass">លេខសម្ចាត់</label>
+                                                    <input type="password" name="" id="pass" class="form-control">
+    
+                                                </div>
+                                            </div>
+
+                                            <div class="col-12 mt-3">
+                                                <div class="form-group ">
+                                                    <label for="position">តួនាទី</label>
+                                                    <input type="text" name="" id="position" class="form-control" >
+
+                                                </div>
+                                            </div>
+                                            
+                                            <div class="col-12 mt-3">
+                                                <div class="form-group ">
+                                                    <label for="firstName">នាយកដ្ឋាន</label>
+                                                    <select class="form-control" id="gender">
+                                                        <option value="អប់រំ">អប់រំ</option>
+                                                        <option value="អប់រំ">អប់រំ</option>
+    
+                                                    </select>
+
+                                                </div>
+                                            </div>
+                                            <div class="col-12 mt-3">
+                                                <div class="form-group ">
+                                                    <label for="position">មុខតំណែង</label>
+                                                    <select class="form-control" id="gender">
+                                                        <option value="គ្រូបង្រៀន">គ្រូបង្រៀន</option>
+                                                        <option value="អប់រំ">អប់រំ</option>
+    
+                                                    </select>
+                                                </div>
+                                            </div>
+                                            <div class="col-12  mt-3">
+                                                <div class="form-group ">
+                                                    <label for="payroll">ប្រាក់បៀវត្សន៍</label>
+                                                    <input type="text" class="form-control" id="payroll"
+                                                        placeholder="300$">
+                                                </div>
+                                            </div>
+                                            <div class="col-12 mt-3">
+                                                <div class="form-group">
+                                                    <label for="birthDate">ថ្ងៃចូលធ្វើការ</label>
+                                                    <input type="date" class="form-control" id="birthDate">
+                                                </div>
+                                            </div>
+                                            <div class="col-12 mt-3">
+                                                <div class="form-group">
+                                                    <label for="numPhone">CV</label>
+                                                    <div class="input-group form-control">
+                                                        <div class="form-file border-0">
+                                                            <input type="file"
+                                                                class="form-file-input form-control">
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                        
+                        <div class="modal fade" id="exampleModalCenter">
+                            <div class="modal-dialog modal-lg  modal-dialog-centered" role="document">
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <h5 class="modal-title">កែតម្រូវព័ត៌មានបុគ្គលិក</h5>
+                                        <button type="button" class="btn-close" data-bs-dismiss="modal">
+                                        </button>
+                                    </div>
+                                    <div class="">
+                                        
+                                    </div>
+                                    <div class="modal-footer">
+                                        <button type="button" class="btn btn-danger light"
+                                            data-bs-dismiss="modal">បោះបង់</button>
+                                        <button type="button" class="btn btn-primary">រក្សាទុក</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                    </div>
+                    
+                   
+                </div>
+            </div>
+        </div>
+        <!--**********************************
+            Content body end
+        ***********************************-->
+
+
+        <!--**********************************
+            Footer start
+        ***********************************-->
+        <%- include('../../partials/footer.ejs') %>
+        <!--**********************************
+            Footer end
+        ***********************************-->
+
+        <!--**********************************
+           Support ticket button start
+        ***********************************-->
+
+        <!--**********************************
+           Support ticket button end
+        ***********************************-->
+
+        
+    </div>
+    <!--**********************************
+        Main wrapper end
+    ***********************************-->
+
+    <!--**********************************
+        Scripts
+    ***********************************-->
+    <!-- Required vendors -->
+    <script src="vendor/global/global.min.js"></script>
+        <script src="vendor/bootstrap-select/dist/js/bootstrap-select.min.js"></script>
+        <script src="vendor/jquery-nice-select/js/jquery.nice-select.min.js"></script>
+        <script src="vendor/chart.js/Chart.bundle.min.js"></script>
+        <script src="vendor/lightgallery/js/lightgallery-all.min.js"></script>
+        <script src="js/custom.min.js"></script>
+        <script src="js/dlabnav-init.js"></script>
+        <script src="js/demo.js"></script>
+        <script src="js/styleSwitcher.js"></script>
+</body>
+</html>

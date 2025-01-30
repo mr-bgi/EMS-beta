@@ -1,4 +1,4 @@
-.department .left-item .search{
+.department .left-item .search {
     width: 250px;
     height: 35px;
     font-size: 18px;
@@ -11,7 +11,7 @@
     border: 1px solid rgb(48, 47, 47);
 }
 
-.department .left-item .filter{
+.department .left-item .filter {
     width: 100px;
     height: 35px;
     border-radius: 8px;
@@ -24,7 +24,7 @@
     border: 1px solid rgb(48, 47, 47);
 }
 
-.department .left-item .created{
+.department .left-item .created {
     width: 100px;
     height: 35px;
     border-radius: 8px;
@@ -38,25 +38,134 @@
     background-color: #3A86FF;
 }
 
-th,td{
+th,
+td {
     font-size: 16px;
 }
 
- .card .card-body .icon-edit{
+.card .card-body .icon-edit {
     color: #3A86FF;
 
 }
 
-.card .card-body .modal .form-control{
+.card .card-body .modal .form-control {
     border-radius: 10px;
     border: 1px solid rgb(124, 124, 124);
 }
 
-.card .card-body .modal .modal-footer button{
+.card .card-body .modal .modal-footer button {
     /* height: 42px; */
     width: 144px;
     margin: auto;
     align-items: center;
     text-align: center;
     border-radius: 12px;
+}
+
+/* Pheak */
+
+.badge {
+    width: 20px !important;
+    height: 20px !important;
+    border-radius: 100%;
+    margin-top: 12px;
+    margin-right: 18px;
+    font-size: 8px !important;
+    padding-top: 1px !important;
+
+}
+
+.bi-icon {
+    font-size: 25px !important;
+}
+
+/* .form-control{
+    width: 300px !important;
+    height: 45px !important;
+} */
+.btn-style {
+    width: 90px;
+    height: 40px;
+    border-radius: 5px;
+
+}
+
+/* page view profile */
+.form-control {
+    border: 1px solid #ddd;
+}
+
+
+.pieContainer {
+    height: 150px;
+    position: relative;
+}
+
+.pieBackground {
+    position: absolute;
+    width: 150px;
+    height: 150px;
+    border-radius: 100%;
+    box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.5);
+}
+
+.pie {
+    transition: all 1s;
+    position: absolute;
+    width: 150px;
+    height: 150px;
+    border-radius: 100%;
+    clip: rect(0px, 75px, 150px, 0px);
+}
+
+.hold {
+    position: absolute;
+    width: 150px;
+    height: 150px;
+    border-radius: 100%;
+    clip: rect(0px, 150px, 150px, 75px);
+}
+#pieSlice1{
+    transform: rotate(-230deg);
+}
+#pieSlice1 .pie {
+    background-color: #ea3333;
+    transform: rotate(50deg);
+}
+#pieSlice2{
+    transform: rotate(190deg);
+
+}
+#pieSlice2 .pie {
+    background-color: #0a0;
+    transform: rotate(200deg);
+}
+
+#pieSlice3 {
+    transform: rotate(50deg);
+}
+
+#pieSlice3 .pie {
+    background-color: #fdd927;
+    transform: rotate(50deg);
+}
+
+#pieSlice4 {
+    transform: rotate(100deg);
+}
+#pieSlice4 .pie {
+    background-color: #08f;
+    transform: rotate(30deg);
+}
+.margin-button{
+    margin-top:80% !important;
+    /* margin: auto; */
+}
+
+.bi-person-workspace{
+  padding: 2px;
+  border-radius: 10px;
+   background-color: rgba(0, 170, 0, 0.246);
+   color: #fff;
+ 
 }
