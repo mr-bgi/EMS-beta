@@ -26,7 +26,7 @@ const authorize = (roles = []) => {
     return async function (req, res, next) {
         try {
             const userId = req.user.id;
-            con.query("select  role from users where id = ?", [userId], (error, result) => {
+            con.query("select  role from user where id = ?", [userId], (error, result) => {
                 if (error) {
                     return res.status(500).json({
                         message: 'Database query error',

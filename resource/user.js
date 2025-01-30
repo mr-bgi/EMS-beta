@@ -6,8 +6,8 @@ const fs = require('fs');
 const { result } = require('lodash');
 
 
-const generateToken = (id, avarta) => {
-    return jwt.sign({ id, avarta }, process.env.JWT_SECRET_TOKEN, { expiresIn: '3d' });
+const generateToken = (id) => {
+    return jwt.sign({ id }, process.env.JWT_SECRET_TOKEN, { expiresIn: '3d' });
 }
 
 exports.createUser = async (req, res) => {
@@ -34,7 +34,7 @@ exports.createUser = async (req, res) => {
             });
         }
         // Check if email already exists
-        const userExists = await query('SELECT * FROM users WHERE email = ?', [email]);
+        const userExists = await query('SELECT * FROM user WHERE email = ?', [email]);
         if (userExists.length > 0) return res.status(400).json({ message: 'Email already exists' })
 
         const phoneExist = await query('SELECT * FROM employees WHERE phone = ?', [phone]);
@@ -43,7 +43,7 @@ exports.createUser = async (req, res) => {
 
 
         const hashedPassword = await bcrypt.hash(password, 10);
-        const insertUserSQL = "INSERT INTO `users` (`first_name`, `last_name`, `email`, `role`, `avatar`, status,`password`) VALUES (?, ?, ?, ?, ?, ?,?)";
+        const insertUserSQL = "INSERT INTO `user` (`first_name`, `last_name`, `email`, `role`, `avarta`, status,`password`) VALUES (?, ?, ?, ?, ?, ?,?)";
         //* user query
         const userQuery = await query(insertUserSQL, [first_name, last_name, email, role, sampleFileName, 1, hashedPassword]);
 
@@ -86,7 +86,7 @@ exports.createUser = async (req, res) => {
 // *  getUser 
 exports.getUser = async (req, res) => {
     try {
-        const getAll = await query('select * from users');
+        const getAll = await query('select * from user');
         res.status(200).json({
             result: true,
             message: "Get all user successfully",
@@ -111,9 +111,7 @@ exports.login = async (req, res) => {
             });
         }
 
-        const checkEmail = await query("select * from users where email = ?", [email]);
-        // const getID = checkEmail[0].id;
-        // const avatar = await query("select * from user where id = ?", [getID]);
+        const checkEmail = await query("select * from user where email = ?", [email]);
         if (checkEmail.length === 0) {
             return res.status(400).json({
                 message: 'Invalid email!'
@@ -121,7 +119,7 @@ exports.login = async (req, res) => {
         }
         let decryptPassword = await bcrypt.compare(password, checkEmail[0].password);
         if (decryptPassword) {
-            const token = generateToken(checkEmail[0].id, checkEmail[0].avarta);
+            const token = generateToken(checkEmail[0].id);
             console.log(token);
             res.cookie('jwtToken', token, {
                 maxAge: 3 * 24 * 60 * 60 * 1000,
@@ -157,7 +155,7 @@ exports.updatepass = async (req, res) => {
             });
         }
 
-        const user = await query('select * from users where id = ?', [id]);
+        const user = await query('select * from user where id = ?', [id]);
         if (!user || user.length === 0) {
             return res.status(404).json({
                 message: 'User not found'
@@ -217,74 +215,38 @@ exports.getEmployee = async (req, res) => {
     }
 }
 // * not yet
-exports.updateAvarta = async (req, res) => {
+exports.updateAvatar = async (req, res) => {
     try {
-        const token = req.cookies.jwtToken;
-        if (!token) {
+      const token = req.cookies.jwtToken;
+      if (token) {
+        jwt.verify(token, process.env.JWT_SECRET_TOKEN,async (error, decodedToken) => {
+          if (error) {
             return res.status(401).json({
-                message: 'Unauthorized access: no token provided'
+              message: 'Unauthorized access',
+              error: error.message
             });
-        }
-
-        jwt.verify(token, process.env.JWT_SECRET_TOKEN, async (error, decodedToken) => {
-            if (error) {
-                return res.status(401).json({
-                    message: 'Unauthorized access: invalid token',
-                    error: error.message
-                });
-            }
-
-            if (!decodedToken || !decodedToken.id) {
-                return res.status(404).json({
-                    message: 'User not found'
-                });
-            }
-
-            const userId = decodedToken.id;
-            let file = decodedToken.avarta;
-            console.log(decodedToken)
-            console.log(userId)
-            console.log(file)
-            if (req.files && req.files.avarta && req.files.avarta.name !== 'default.png') {
-                const sampleFile = req.files.avarta;
-                const sampleFileName = Date.now() + sampleFile.name;
-
-                const uploadPath = './public/upload/' + sampleFileName;
-                console.log(`Uploading to: ${uploadPath}`);
-
-                // Move file with proper error handling
-                await new Promise((resolve, reject) => {
-                    sampleFile.mv(uploadPath, (err) => {
-                        if (err) reject(err);
-                        resolve();
-                    });
-                });
-
-                if (file && file !== 'default.png') {
-                    const oldFilePath = './public/upload/' +file;
-                    if (fs.existsSync(oldFilePath)) {
-                        await fs.promises.unlink(oldFilePath);
-                    }
-                }
-                file = sampleFileName; // Set the new file name
-            }
-
-            const sql = "UPDATE user SET avarta = ? WHERE id = ?";
-            const myArr = [file, userId];
-            await query(sql, myArr);
-
-            res.status(200).json({
-                message: "Avatar updated successfully"
-            });
+          }
+          const userId = decodedToken.id;
+          const avatar = req.file.path; // Assuming you're using multer to upload the avatar
+          const sql = "UPDATE user SET avatar = ? WHERE id = ?";
+          const myArr = [avatar, userId];
+          await query(sql, myArr);
+          res.status(200).json({
+            message: "Avatar updated successfully"
+          });
         });
+      } else {
+        return res.status(401).json({
+          message: 'Unauthorized access'
+        });
+      }
     } catch (error) {
-        res.status(500).json({
-            message: "Error updating avatar",
-            error: error.message
-        });
+      res.status(500).json({
+        message: "Error updating avatar",
+        error: error.message
+      });
     }
-};
-
+  };
 exports.updateEmployee = async (req, res) => {
     try {
         // Check for files
@@ -364,8 +326,8 @@ exports.updateEmployee = async (req, res) => {
         // * Update user
         const getId = userId[0].user_id;
         const updateUserSQL = `
-            UPDATE users
-            SET first_name = ?, last_name = ?, avatar = ?
+            UPDATE user
+            SET first_name = ?, last_name = ?, avarta = ?
             WHERE id = ?`;
         const userParams = [first_name, last_name, file, getId];
         await query(updateUserSQL, userParams);
@@ -387,8 +349,8 @@ exports.deleteEmp = async (req, res) => {
         let id = req.params.id;
 
         const sqlEmployee = "SELECT * FROM employees WHERE id = ?"
-        const sqlUser = "SELECT * FROM users WHERE id = ?"
-        const deleteUserSql = "DELETE FROM users WHERE id = ?"
+        const sqlUser = "SELECT * FROM user WHERE id = ?"
+        const deleteUserSql = "DELETE FROM user WHERE id = ?"
         const deleteEmpSql = "DELETE FROM employees WHERE id = ?"
 
         const employee = await query(sqlEmployee, [id])

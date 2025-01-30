@@ -1,5 +1,5 @@
 const express = require('express');
-const {registerPost,loginPost,logout,getUser, updatePassword, updateEmp, getAllEmp, deleteEmployee, updateAvarta} = require('../../controller/api/auth')
+const {registerPost,loginPost,logout,getUser, updatePassword, updateEmp, getAllEmp, deleteEmployee} = require('../../controller/api/auth')
 const { requireAuth } = require('../../middleware/auth');
 
 const router = express.Router();
@@ -14,8 +14,8 @@ router.put('/api/emp/edit-password/:id', updatePassword);
 
 router.put('/api/emp/edit-emp', updateEmp);
 router.get('/api/emp/getall', getAllEmp);
+// delete use post for test 
 router.delete('/api/emp/delete/:id', deleteEmployee);
-router.put('/api/emp/avarta', updateAvarta);
 
 
 router.get('/api/me',requireAuth, getUser);
