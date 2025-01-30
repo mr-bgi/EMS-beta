@@ -18,7 +18,6 @@ const allPlugins = require('./routes/web/allPlugins')
 const allTable = require('./routes/web/allTable')
 const allDepartment = require('./routes/web/department');
 const manageProfile = require('./routes/web/profile-manage')
-const employee = require('./routes/web/employee')
 
 
 
@@ -59,7 +58,6 @@ app.use(allPlugins);
 app.use(allTable);
 app.use(allDepartment);
 app.use(manageProfile);
-app.use(employee);
 
 app.listen(port, () => {
     console.log(`Server is running on port ${port}`);
