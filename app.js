@@ -6,7 +6,7 @@ const connectLivereload = require("connect-livereload");
 // const { checkUser } = require('./middleware/auth');
 const apiAuth = require('./routes/api/auth');
 const apiEmployee = require('./routes/api/employee');
-const apiEmp = require('./routes/api/position');
+const apiPosition = require('./routes/api/position');
 const apiDept = require('./routes/api/department');
 
 const allFolderApps = require('./routes/web/allApps')
@@ -50,8 +50,8 @@ app.use(cookieParser());
 // app.use(allpage);
 //API
 app.use(apiAuth);
-app.use(apiEmployee);
-app.use(apiEmp);
+// app.use apiPositionloyee);
+app.use(apiPosition);
 app.use(apiDept);
 
 //Web
