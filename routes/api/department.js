@@ -1,19 +1,18 @@
 const express = require('express');
-const DepartmentController = require('../../controller/api/department');
 const {requireAuth} = require('../../middleware/auth');
-
+const { getAllDepart, EditDepart, deleteDepart, createDepart }  = require('../../controller/api/department')
 const router = express.Router();
 
 //Get
-router.get('/getAllDept', requireAuth,  DepartmentController.getAllDepartment);
+router.get('/getAll_Dept',getAllDepart  );
 
 //Create
-router.post('/createDept',requireAuth, DepartmentController.postCreateDepartment);
+router.post('/create_Dept', createDepart);
 
 //Edit
-router.put('/editDept', requireAuth,  DepartmentController.postEditDepartment);
+router.put('/edit_Dept/:id',   EditDepart);
 
 //Delete
-router.delete('/deleteDept/:id', requireAuth,  DepartmentController.deleteDepartment);
+router.delete('/delete_Dept/:id',  deleteDepart);
 
 module.exports = router;

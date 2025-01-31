@@ -1,19 +1,20 @@
 const express = require('express');
-const PositionController = require('../../controller/api/position');
-const {requireAuth} = require('../../middleware/auth');
+const { requireAuth } = require('../../middleware/auth');
+const { createPosition, getAllPosition, EditPosition, deletePosition } = require('../../controller/api/position');
+
 
 const router = express.Router();
 
 //Get
-router.get('/getAllPostion', requireAuth,  PositionController.getAllPosition);
+router.get('/getAll_Postion', getAllPosition);
 
 //Create
-router.post('/createPosition',requireAuth, PositionController.postCreatePosition);
+router.post('/create_Position',createPosition);
 
 //Edit
-router.put('/editPosition', requireAuth,  PositionController.postEditPosition);
+router.put('/edit_Position/:id',  EditPosition);
 
 //Delete
-router.delete('/deletePosition/:id', requireAuth,  PositionController.deletePosition);
+router.delete('/delete_Position/:id', deletePosition);
 
 module.exports = router;
