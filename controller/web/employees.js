@@ -8,10 +8,14 @@ const getListEmployee = (req, res) => {
     res.render("page/employee/list-employee");
 };
 
+const payRollEmployee = (req, res)=>{
+    res.render("page/employee/payroll");
+}
 
 module.exports = {
     creatEmployee,
     getListEmployee,
+    payRollEmployee,
    
 
 }

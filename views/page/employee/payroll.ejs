@@ -1,13 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
 
-<%- include('../partials/head.ejs') %>
+<%- include('../../partials/head.ejs') %>
 <body>
 
     <!--*******************
         Preloader start
     ********************-->
-    <%- include('../partials/preloader.ejs') %>
+    <%- include('../../partials/preloader.ejs') %>
     <!--*******************
         Preloader end
     ********************-->
@@ -20,7 +20,7 @@
         <!--**********************************
             Nav header start
         ***********************************-->
-		<%- include('../partials/nav-header.ejs') %>
+		<%- include('../../partials/nav-header.ejs') %>
         <!--**********************************
             Nav header end
         ***********************************-->
@@ -28,7 +28,7 @@
 		<!--**********************************
             Chat box start
         ***********************************-->
-		<%- include('../partials/chatbox.ejs') %>
+		<%- include('../../partials/chatbox.ejs') %>
 		<!--**********************************
             Chat box End
         ***********************************-->
@@ -46,7 +46,7 @@
                             </div>
 							
                         </div>
-                        <%- include('../partials/header.ejs') %>
+                        <%- include('../../partials/header.ejs') %>
                     </div>
 				</nav>
 			</div>
@@ -59,7 +59,7 @@
         <!--**********************************
             Sidebar start
         ***********************************-->
-        <%- include('../partials/sidebar.ejs')  %>
+        <%- include('../../partials/sidebar.ejs')  %>
         <!--**********************************
             Sidebar end
         ***********************************-->
@@ -70,163 +70,156 @@
         <div class="content-body">
             <div class="container-fluid">
 
-                <!-- <div class="row page-titles">
+                <div class="row page-titles">
 					<ol class="breadcrumb">
 						<li class="breadcrumb-item active"><a href="javascript:void(0)">បុគ្គលិក</a></li>
-						<li class="breadcrumb-item"><a href="javascript:void(0)">Position</a></li>
+						<li class="breadcrumb-item"><a href="javascript:void(0)">Payroll</a></li>
 					</ol>
-                </div> -->
+                </div>
+
                 <!-- row -->
 
                 <div class="row">
-                    <div class="col-12">
-                        <div class="department d-flex align-items-center justify-content-between">
-                            <h2 class="title pb-3">មុខដំណែង</h2>
-
-                            <div class="left-item d-flex align-items-center pb-4 justify-content-evenly ">
-                                
-                                <input type="search" class="search me-4" id="search" placeholder="ស្វែងរក..." >
-    
-                                <div class="filter me-4">
-                                    <span><i class="fa-solid fa-filter"></i></span>&nbsp; Filter
-                                </div>
-                               
-                                <div class="created" data-bs-toggle="modal" data-bs-target="#createModal">
-                                    <span>+</span>&nbsp; បង្កើត
-                                </div>
-
-                                <!-- Modal -->
-                                <div class="modal modal-create fade mb-4" id="createModal" tabindex="-1" aria-labelledby="editModalLabel" aria-hidden="true">
-                                    <div class="modal-dialog">
-                                    <div class="modal-content mb-4">
-                                        <div class="modal-header">
-                                        <h1 class="modal-title fs-3 fw-medium" id="editModalLabel">បង្កើតមុខតំណែង</h1>
-                                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                                        </div>
-                                        <div class="modal-body pb-3 border-0">
-                                           <form action="">
-                                                <div class="mb-3">
-                                                    <label for="positioninput" class="form-label fs-5">មុខតំណែង</label>
-                                                    <input type="text" class="form-control bg-transparent fs-5" id="positioninput" placeholder="គ្រូបង្រៀន">
-                                                </div>
-                                                <div class="mb-3 form-group">
-                                                     <label for="message-text" class="col-form-label fs-5">Discription:</label>
-                                                     <textarea class="form-control fs-5" id="message-text" rows="5" style="height: 120px;" placeholder="បង្រៀនសិស្ស"></textarea>
-                                                    </div>
-                                              
-                                               
-                                           </form>
-                                        </div>
-                                        <div class="modal-footer border-0 d-flex justify-content-center mb-4">
-                                            <button type="button" class="btn btn-danger  text-center fs-5" data-bs-dismiss="modal"> <span class="me-3 text-center"><i class="fa-solid fa-x"></i></span>បោះបង់</button>
-                                            <button type="button" class="btn btn-primary text-center fs-5"> <span class="me-3 text-center "><i class="fa-solid fa-plus"></i></span>បង្កើត</button>
-                                        </div>
-                                    </div>
-                                    </div>
-                                </div>
-    
-                            </div>
-
-                        </div>
-                        
-                    </div>
                     <div class="col-lg-12">
                         <div class="card pb-3">
+                            <div class="card-header w-100 pb-0 d-flex justify-content-between border-0">
+                                <div class="ot w-100 d-flex align-items-center justify-content-between">
+                                  
+                                    <div class="shows d-flex justify-content-around position-relative">
+                                        <h4 class="fs-5 me-3">Shows</h4> 
+                                        <i class="fa-solid fa-chevron-down"></i>
+                                        <select class="form-control select-show bg-transparent fs-5 me-3"  name="show" id="number" >
+                                            <option value="5">5</option>
+                                            <option value="10">10</option>
+                                            <option value="15">15</option>
+                                            <option value="20">20</option>
+                                            <option value="50">50</option>
+                                        </select>
+        
+                                        <span class="fs-5">Entries</span>
+                                    </div>
+                                    <div class="left-item d-flex align-items-center pb-2 justify-content-evenly ">
+                                        <input type="search" class="search me-4" id="search" placeholder="ស្វែងរក..." >
+                                        <div class="filter me-4">
+                                            <span><i class="fa-solid fa-filter"></i></span>&nbsp; Filter
+                                        </div>
+                                        <div class="created m-auto ps-0 text-center text-black-50 "  >
+                                          <span class="me-2"><i class="fa-solid fa-bell"></i></span>  Alert All
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
                            
-                            <div class="card-body p-0">
+                            <div class="card-body card-style">
                                 <div class="table-responsive">
-                                    <table class="table table-striped table-responsive-sm">
+                                    <table class="table  table-bordered table-responsive-sm" border="1">
                                         <thead>
-                                            <tr>
-                                                <th class="ps-4">មុខដំណែង</th>
-                                                <th>ដេប៉ាតឺម៉ង់</th>
-                                                <th>បង្កើត</th>
-                                                <th>បច្ចុប្បន្នភាព</th>
-                                                <th>កែតម្រូវ</th>
+                                            <tr class="tr-head">
+                                                <th class="ps-4">ល.រ</th>
+                                                <th >ឈ្មោះបុគ្គលិក</th>
+                                                <th>ចំនួនម៉ោង​ OT</th>
+                                                <th>Bonus</th>
+                                                <th >កាលបរិច្ឆេទ បើកប្រាក់ខែ</th>
+                                                <th>ប្រាក់បៀវត្សរ៍</th>
+                                                <th>Action</th>
                                             </tr>
                                         </thead>
                                         <tbody>
                                             <tr>
-                                                <td class="ps-4">គ្រូបង្រៀន</td>
-                                                <td>អប់រំ</td>
-                                                <td>Jan 4, 2022</td>
-                                                <td>January 22</td>
+                                                <td class="ps-4">1</td>
+                                                <td class="ps-4">អូន គីមហុង</td>
+                                                <td>03</td>
+                                                <td>$50</td>
+                                                <td >05-02-2015</td>
+                                                <td>$250</td>
                                                 <td>
                                                     <span class="d-flex">
                                                         
-                                                         <!-- Delete Button -->
-                                                          <div class="deleted me-2">
-                                                            <a  href="#" class="text-danger">
-                                                                <i class="fa-regular fa-trash-can" data-bs-toggle="modal" data-bs-target="#deleteModal"></i> &nbsp;
-                                                             </a>
-                                                          </div>
-                                                        
-                                                        
-                                                         <!-- Modal -->
-                                                         <div class="modal fade mb-4 style-modal" id="deleteModal" tabindex="-1" aria-labelledby="editModalLabel" aria-hidden="true">
-                                                            <div class="modal-dialog">
-                                                            <div class="modal-content mb-4">
-                                                                <div class="modal-body pb-0 border-0">
-                                                                    <div class="">
-                                                                        <span class="fs-1 pb-2 "><i class="fa-solid fa-circle-exclamation"></i></span>
-                                                                        <h3 class="fs-3 pb-0">លុបទិន្នន័យបុគ្គលិក</h3>
-                                                                        <p class="pt-0 mt-0 fs-4">តើអ្នកប្រាកដថាចង់លុបបុគ្គលិកនេះទេ? សកម្មភាពនេះមិនអាចត្រឡប់វិញបានទេ។</p>
-                                                                     </div>
-                                                                </div>
-                                                                <div class="modal-footer border-0 d-flex mb-4">
-                                                                    <button type="button" class="btn btn-outline-dark  text-center" data-bs-dismiss="modal"> បោះបង់</button>
-                                                                    <button type="button" class="btn btn-danger text-center"> លុប</button>
-                                                                </div>
-                                                            </div>
-                                                            </div>
-                                                        </div>
-                                                        
-                                                        <!-- edit Button -->
-                                                         <div class="notification m-0">
-                                                            <a  href="#" class="icon-edit">
-                                                                <i class="fa-regular fa-pen-to-square" data-bs-toggle="modal" data-bs-target="#editModal"></i>
-                                                             </a>
+                                                        <!-- Delete Button -->
+                                                         <div class="deleted me-2">
+                                                           <a  href="#" class="text-danger">
+                                                               <i class="fa-regular fa-trash-can" data-bs-toggle="modal" data-bs-target="#deleteModal"></i> &nbsp;
+                                                            </a>
                                                          </div>
-                                                        
+                                                       
+                                                       
+                                                        <!-- Modal -->
+                                                        <div class="modal fade mb-4 style-modal" id="deleteModal" tabindex="-1" aria-labelledby="editModalLabel" aria-hidden="true">
+                                                           <div class="modal-dialog">
+                                                           <div class="modal-content mb-4">
+                                                               <div class="modal-body pb-0 border-0">
+                                                                   <div class="">
+                                                                       <span class="fs-1 pb-2 "><i class="fa-solid fa-circle-exclamation"></i></span>
+                                                                       <h3 class="fs-3 pb-0">លុប Payroll</h3>
+                                                                       <p class="pt-0 mt-0 fs-4">តើអ្នកប្រាកដថាចង់លុប Payroll នេះទេ? សកម្មភាពនេះមិនអាចត្រឡប់វិញបានទេ។</p>
+                                                                    </div>
+                                                               </div>
+                                                               <div class="modal-footer border-0 d-flex mb-4">
+                                                                   <button type="button" class="btn btn-outline-dark  text-center" data-bs-dismiss="modal"> បោះបង់</button>
+                                                                   <button type="button" class="btn btn-danger text-center"> លុប</button>
+                                                               </div>
+                                                           </div>
+                                                           </div>
+                                                       </div>
+                                                       
+                                                       <!-- edit Button -->
+                                                        <div class="edited me-2">
+                                                           <a  href="#" class="icon-edit text-success">
+                                                               <i class="fa-regular fa-pen-to-square" data-bs-toggle="modal" data-bs-target="#editModal"></i>
+                                                            </a>
+                                                        </div>
+                                                       
 
-                                                         <!-- Modal -->
-                                                         <div class="modal fade mb-4" id="editModal" tabindex="-1" aria-labelledby="editModalLabel" aria-hidden="true">
-                                                            <div class="modal-dialog">
-                                                            <div class="modal-content mb-4">
-                                                                <div class="modal-header">
-                                                                <h1 class="modal-title fs-3 fw-medium" id="editModalLabel">កែតម្រូវមុខតំណែង</h1>
-                                                                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                                                                </div>
-                                                                <div class="modal-body pb-3 border-0">
-                                                                   <form action="">
-                                                                        <div class="mb-3">
-                                                                            <label for="positioninput" class="form-label">មុខតំណែង</label>
-                                                                            <input type="text" class="form-control bg-transparent fs-5" id="positioninput" placeholder="គ្រូបង្រៀន">
+                                                        <!-- Modal -->
+                                                        <div class="modal fade mb-4" id="editModal" tabindex="-1" aria-labelledby="editModalLabel" aria-hidden="true">
+                                                           <div class="modal-dialog">
+                                                           <div class="modal-content mb-4">
+                                                               <div class="modal-header">
+                                                               <h1 class="modal-title fs-3 fw-medium" id="editModalLabel">កែតម្រូវ PayRoll</h1>
+                                                               <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                                               </div>
+                                                               <div class="modal-body pb-3 border-0">
+                                                                  <form action="">
+                                                                       <div class="mb-3">
+                                                                           <label for="positioninput" class="form-label">ឈ្មោះបុគ្គលិក</label>
+                                                                           <input type="text" class="form-control bg-transparent fs-5" id="positioninput" placeholder="អូន គីមហុង">
+                                                                       </div>
+                                                                       <div class="mb-3">
+                                                                            <label for="positioninput" class="form-label">ចំនួនម៉ោង​ OT</label>
+                                                                            <input type="text" class="form-control bg-transparent fs-5" id="positioninput" placeholder="05">
                                                                         </div>
-                                                                        <div class="mb-3 form-group">
-                                                                             <label for="message-text" class="col-form-label">Discription:</label>
-                                                                             <textarea class="form-control fs-5" id="message-text" rows="5" style="height: 120px;" placeholder="បង្រៀនសិស្ស"></textarea>
-                                                                            </div>
+                                                                        <div class="mb-3">
+                                                                            <label for="positioninput" class="form-label">Bonus</label>
+                                                                            <input type="text" class="form-control bg-transparent fs-5" id="positioninput" placeholder="$90">
+                                                                        </div>
+                                                                     
                                                                       
-                                                                       
-                                                                   </form>
-                                                                </div>
-                                                                <div class="modal-footer border-0 d-flex mb-4">
-                                                                    <button type="button" class="btn btn-danger  text-center" data-bs-dismiss="modal"> <span class="me-3 text-center"><i class="fa-solid fa-x"></i></span>បោះបង់</button>
-                                                                    <button type="button" class="btn btn-primary text-center"> <span class="me-3 text-center"><i class="fa-solid fa-download"></i></span>រក្សាទុក</button>
-                                                                </div>
-                                                            </div>
-                                                            </div>
-                                                        </div>
-                                                    </span>
+                                                                  </form>
+                                                               </div>
+                                                               <div class="modal-footer border-0 d-flex mb-4">
+                                                                   <button type="button" class="btn btn-danger  text-center" data-bs-dismiss="modal"> <span class="me-3 text-center"><i class="fa-solid fa-x"></i></span>បោះបង់</button>
+                                                                   <button type="button" class="btn btn-primary text-center"> <span class="me-3 text-center"><i class="fa-solid fa-download"></i></span>រក្សាទុក</button>
+                                                               </div>
+                                                           </div>
+                                                           </div>
+                                                       </div>
+
+                                                        <!-- notification Button -->
+                                                        <div class="notification m-0">
+                                                            <a  href="#" class="icon-edit ">
+                                                                <i class="fa-solid fa-bell"></i>
+                                                             </a>
+                                                         </div>
+                                                   </span>
                                                 </td>
                                             </tr>
-
                                             <tr>
-                                                <td class="ps-4">គ្រូបង្រៀន</td>
-                                                <td>អប់រំ</td>
-                                                <td>Jan 4, 2022</td>
-                                                <td>January 22</td>
+                                                <td class="ps-4">1</td>
+                                                <td class="ps-4">អូន គីមហុង</td>
+                                                <td>03</td>
+                                                <td>$50</td>
+                                                <td >05-02-2015</td>
+                                                <td>$250</td>
                                                 <td>
                                                     <span class="d-flex">
                                                         
@@ -245,8 +238,8 @@
                                                                <div class="modal-body pb-0 border-0">
                                                                    <div class="">
                                                                        <span class="fs-1 pb-2 "><i class="fa-solid fa-circle-exclamation"></i></span>
-                                                                       <h3 class="fs-3 pb-0">លុបទិន្នន័យបុគ្គលិក</h3>
-                                                                       <p class="pt-0 mt-0 fs-4">តើអ្នកប្រាកដថាចង់លុបបុគ្គលិកនេះទេ? សកម្មភាពនេះមិនអាចត្រឡប់វិញបានទេ។</p>
+                                                                       <h3 class="fs-3 pb-0">លុប Payroll</h3>
+                                                                       <p class="pt-0 mt-0 fs-4">តើអ្នកប្រាកដថាចង់លុប Payroll នេះទេ? សកម្មភាពនេះមិនអាចត្រឡប់វិញបានទេ។</p>
                                                                     </div>
                                                                </div>
                                                                <div class="modal-footer border-0 d-flex mb-4">
@@ -258,8 +251,8 @@
                                                        </div>
                                                        
                                                        <!-- edit Button -->
-                                                        <div class="notification m-0">
-                                                           <a  href="#" class="icon-edit">
+                                                        <div class="edited me-2">
+                                                           <a  href="#" class="icon-edit text-success">
                                                                <i class="fa-regular fa-pen-to-square" data-bs-toggle="modal" data-bs-target="#editModal"></i>
                                                             </a>
                                                         </div>
@@ -270,19 +263,23 @@
                                                            <div class="modal-dialog">
                                                            <div class="modal-content mb-4">
                                                                <div class="modal-header">
-                                                               <h1 class="modal-title fs-3 fw-medium" id="editModalLabel">កែតម្រូវមុខតំណែង</h1>
+                                                               <h1 class="modal-title fs-3 fw-medium" id="editModalLabel">កែតម្រូវ PayRoll</h1>
                                                                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                                                                </div>
                                                                <div class="modal-body pb-3 border-0">
                                                                   <form action="">
                                                                        <div class="mb-3">
-                                                                           <label for="positioninput" class="form-label">មុខតំណែង</label>
-                                                                           <input type="text" class="form-control bg-transparent fs-5" id="positioninput" placeholder="គ្រូបង្រៀន">
+                                                                           <label for="positioninput" class="form-label">ឈ្មោះបុគ្គលិក</label>
+                                                                           <input type="text" class="form-control bg-transparent fs-5" id="positioninput" placeholder="អូន គីមហុង">
                                                                        </div>
-                                                                       <div class="mb-3 form-group">
-                                                                            <label for="message-text" class="col-form-label">Discription:</label>
-                                                                            <textarea class="form-control fs-5" id="message-text" rows="5" style="height: 120px;" placeholder="បង្រៀនសិស្ស"></textarea>
-                                                                           </div>
+                                                                       <div class="mb-3">
+                                                                            <label for="positioninput" class="form-label">ចំនួនម៉ោង​ OT</label>
+                                                                            <input type="text" class="form-control bg-transparent fs-5" id="positioninput" placeholder="05">
+                                                                        </div>
+                                                                        <div class="mb-3">
+                                                                            <label for="positioninput" class="form-label">Bonus</label>
+                                                                            <input type="text" class="form-control bg-transparent fs-5" id="positioninput" placeholder="$90">
+                                                                        </div>
                                                                      
                                                                       
                                                                   </form>
@@ -294,15 +291,23 @@
                                                            </div>
                                                            </div>
                                                        </div>
+
+                                                        <!-- notification Button -->
+                                                        <div class="notification m-0">
+                                                            <a  href="#" class="icon-edit ">
+                                                                <i class="fa-solid fa-bell"></i>
+                                                             </a>
+                                                         </div>
                                                    </span>
                                                 </td>
                                             </tr>
-
                                             <tr>
-                                                <td class="ps-4">គ្រូបង្រៀន</td>
-                                                <td>អប់រំ</td>
-                                                <td>Jan 4, 2022</td>
-                                                <td>January 22</td>
+                                                <td class="ps-4">1</td>
+                                                <td class="ps-4">អូន គីមហុង</td>
+                                                <td>03</td>
+                                                <td>$50</td>
+                                                <td >05-02-2015</td>
+                                                <td>$250</td>
                                                 <td>
                                                     <span class="d-flex">
                                                         
@@ -321,8 +326,8 @@
                                                                <div class="modal-body pb-0 border-0">
                                                                    <div class="">
                                                                        <span class="fs-1 pb-2 "><i class="fa-solid fa-circle-exclamation"></i></span>
-                                                                       <h3 class="fs-3 pb-0">លុបទិន្នន័យបុគ្គលិក</h3>
-                                                                       <p class="pt-0 mt-0 fs-4">តើអ្នកប្រាកដថាចង់លុបបុគ្គលិកនេះទេ? សកម្មភាពនេះមិនអាចត្រឡប់វិញបានទេ។</p>
+                                                                       <h3 class="fs-3 pb-0">លុប Payroll</h3>
+                                                                       <p class="pt-0 mt-0 fs-4">តើអ្នកប្រាកដថាចង់លុប Payroll នេះទេ? សកម្មភាពនេះមិនអាចត្រឡប់វិញបានទេ។</p>
                                                                     </div>
                                                                </div>
                                                                <div class="modal-footer border-0 d-flex mb-4">
@@ -334,8 +339,8 @@
                                                        </div>
                                                        
                                                        <!-- edit Button -->
-                                                        <div class="notification m-0">
-                                                           <a  href="#" class="icon-edit">
+                                                        <div class="edited me-2">
+                                                           <a  href="#" class="icon-edit text-success">
                                                                <i class="fa-regular fa-pen-to-square" data-bs-toggle="modal" data-bs-target="#editModal"></i>
                                                             </a>
                                                         </div>
@@ -346,19 +351,23 @@
                                                            <div class="modal-dialog">
                                                            <div class="modal-content mb-4">
                                                                <div class="modal-header">
-                                                               <h1 class="modal-title fs-3 fw-medium" id="editModalLabel">កែតម្រូវមុខតំណែង</h1>
+                                                               <h1 class="modal-title fs-3 fw-medium" id="editModalLabel">កែតម្រូវ PayRoll</h1>
                                                                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                                                                </div>
                                                                <div class="modal-body pb-3 border-0">
                                                                   <form action="">
                                                                        <div class="mb-3">
-                                                                           <label for="positioninput" class="form-label">មុខតំណែង</label>
-                                                                           <input type="text" class="form-control bg-transparent fs-5" id="positioninput" placeholder="គ្រូបង្រៀន">
+                                                                           <label for="positioninput" class="form-label">ឈ្មោះបុគ្គលិក</label>
+                                                                           <input type="text" class="form-control bg-transparent fs-5" id="positioninput" placeholder="អូន គីមហុង">
                                                                        </div>
-                                                                       <div class="mb-3 form-group">
-                                                                            <label for="message-text" class="col-form-label">Discription:</label>
-                                                                            <textarea class="form-control fs-5" id="message-text" rows="5" style="height: 120px;" placeholder="បង្រៀនសិស្ស"></textarea>
-                                                                           </div>
+                                                                       <div class="mb-3">
+                                                                            <label for="positioninput" class="form-label">ចំនួនម៉ោង​ OT</label>
+                                                                            <input type="text" class="form-control bg-transparent fs-5" id="positioninput" placeholder="05">
+                                                                        </div>
+                                                                        <div class="mb-3">
+                                                                            <label for="positioninput" class="form-label">Bonus</label>
+                                                                            <input type="text" class="form-control bg-transparent fs-5" id="positioninput" placeholder="$90">
+                                                                        </div>
                                                                      
                                                                       
                                                                   </form>
@@ -370,15 +379,23 @@
                                                            </div>
                                                            </div>
                                                        </div>
+
+                                                        <!-- notification Button -->
+                                                        <div class="notification m-0">
+                                                            <a  href="#" class="icon-edit ">
+                                                                <i class="fa-solid fa-bell"></i>
+                                                             </a>
+                                                         </div>
                                                    </span>
                                                 </td>
                                             </tr>
-
                                             <tr>
-                                                <td class="ps-4">គ្រូបង្រៀន</td>
-                                                <td>អប់រំ</td>
-                                                <td>Jan 4, 2022</td>
-                                                <td>January 22</td>
+                                                <td class="ps-4">1</td>
+                                                <td class="ps-4">អូន គីមហុង</td>
+                                                <td>03</td>
+                                                <td>$50</td>
+                                                <td >05-02-2015</td>
+                                                <td>$250</td>
                                                 <td>
                                                     <span class="d-flex">
                                                         
@@ -397,8 +414,8 @@
                                                                <div class="modal-body pb-0 border-0">
                                                                    <div class="">
                                                                        <span class="fs-1 pb-2 "><i class="fa-solid fa-circle-exclamation"></i></span>
-                                                                       <h3 class="fs-3 pb-0">លុបទិន្នន័យបុគ្គលិក</h3>
-                                                                       <p class="pt-0 mt-0 fs-4">តើអ្នកប្រាកដថាចង់លុបបុគ្គលិកនេះទេ? សកម្មភាពនេះមិនអាចត្រឡប់វិញបានទេ។</p>
+                                                                       <h3 class="fs-3 pb-0">លុប Payroll</h3>
+                                                                       <p class="pt-0 mt-0 fs-4">តើអ្នកប្រាកដថាចង់លុប Payroll នេះទេ? សកម្មភាពនេះមិនអាចត្រឡប់វិញបានទេ។</p>
                                                                     </div>
                                                                </div>
                                                                <div class="modal-footer border-0 d-flex mb-4">
@@ -410,8 +427,8 @@
                                                        </div>
                                                        
                                                        <!-- edit Button -->
-                                                        <div class="notification m-0">
-                                                           <a  href="#" class="icon-edit">
+                                                        <div class="edited me-2">
+                                                           <a  href="#" class="icon-edit text-success">
                                                                <i class="fa-regular fa-pen-to-square" data-bs-toggle="modal" data-bs-target="#editModal"></i>
                                                             </a>
                                                         </div>
@@ -422,19 +439,23 @@
                                                            <div class="modal-dialog">
                                                            <div class="modal-content mb-4">
                                                                <div class="modal-header">
-                                                               <h1 class="modal-title fs-3 fw-medium" id="editModalLabel">កែតម្រូវមុខតំណែង</h1>
+                                                               <h1 class="modal-title fs-3 fw-medium" id="editModalLabel">កែតម្រូវ PayRoll</h1>
                                                                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                                                                </div>
                                                                <div class="modal-body pb-3 border-0">
                                                                   <form action="">
                                                                        <div class="mb-3">
-                                                                           <label for="positioninput" class="form-label">មុខតំណែង</label>
-                                                                           <input type="text" class="form-control bg-transparent fs-5" id="positioninput" placeholder="គ្រូបង្រៀន">
+                                                                           <label for="positioninput" class="form-label">ឈ្មោះបុគ្គលិក</label>
+                                                                           <input type="text" class="form-control bg-transparent fs-5" id="positioninput" placeholder="អូន គីមហុង">
                                                                        </div>
-                                                                       <div class="mb-3 form-group">
-                                                                            <label for="message-text" class="col-form-label">Discription:</label>
-                                                                            <textarea class="form-control fs-5" id="message-text" rows="5" style="height: 120px;" placeholder="បង្រៀនសិស្ស"></textarea>
-                                                                           </div>
+                                                                       <div class="mb-3">
+                                                                            <label for="positioninput" class="form-label">ចំនួនម៉ោង​ OT</label>
+                                                                            <input type="text" class="form-control bg-transparent fs-5" id="positioninput" placeholder="05">
+                                                                        </div>
+                                                                        <div class="mb-3">
+                                                                            <label for="positioninput" class="form-label">Bonus</label>
+                                                                            <input type="text" class="form-control bg-transparent fs-5" id="positioninput" placeholder="$90">
+                                                                        </div>
                                                                      
                                                                       
                                                                   </form>
@@ -446,175 +467,29 @@
                                                            </div>
                                                            </div>
                                                        </div>
-                                                   </span>
-                                                </td>
-                                            </tr>
 
-                                            <tr>
-                                                <td class="ps-4">គ្រូបង្រៀន</td>
-                                                <td>អប់រំ</td>
-                                                <td>Jan 4, 2022</td>
-                                                <td>January 22</td>
-                                                <td>
-                                                    <span class="d-flex">
-                                                        
-                                                        <!-- Delete Button -->
-                                                         <div class="deleted me-2">
-                                                           <a  href="#" class="text-danger">
-                                                               <i class="fa-regular fa-trash-can" data-bs-toggle="modal" data-bs-target="#deleteModal"></i> &nbsp;
-                                                            </a>
+                                                        <!-- notification Button -->
+                                                        <div class="notification m-0">
+                                                            <a  href="#" class="icon-edit ">
+                                                                <i class="fa-solid fa-bell"></i>
+                                                             </a>
                                                          </div>
-                                                       
-                                                       
-                                                        <!-- Modal -->
-                                                        <div class="modal fade mb-4 style-modal" id="deleteModal" tabindex="-1" aria-labelledby="editModalLabel" aria-hidden="true">
-                                                           <div class="modal-dialog">
-                                                           <div class="modal-content mb-4">
-                                                               <div class="modal-body pb-0 border-0">
-                                                                   <div class="">
-                                                                       <span class="fs-1 pb-2 "><i class="fa-solid fa-circle-exclamation"></i></span>
-                                                                       <h3 class="fs-3 pb-0">លុបទិន្នន័យបុគ្គលិក</h3>
-                                                                       <p class="pt-0 mt-0 fs-4">តើអ្នកប្រាកដថាចង់លុបបុគ្គលិកនេះទេ? សកម្មភាពនេះមិនអាចត្រឡប់វិញបានទេ។</p>
-                                                                    </div>
-                                                               </div>
-                                                               <div class="modal-footer border-0 d-flex mb-4">
-                                                                   <button type="button" class="btn btn-outline-dark  text-center" data-bs-dismiss="modal"> បោះបង់</button>
-                                                                   <button type="button" class="btn btn-danger text-center"> លុប</button>
-                                                               </div>
-                                                           </div>
-                                                           </div>
-                                                       </div>
-                                                       
-                                                       <!-- edit Button -->
-                                                        <div class="notification m-0">
-                                                           <a  href="#" class="icon-edit">
-                                                               <i class="fa-regular fa-pen-to-square" data-bs-toggle="modal" data-bs-target="#editModal"></i>
-                                                            </a>
-                                                        </div>
-                                                       
-
-                                                        <!-- Modal -->
-                                                        <div class="modal fade mb-4" id="editModal" tabindex="-1" aria-labelledby="editModalLabel" aria-hidden="true">
-                                                           <div class="modal-dialog">
-                                                           <div class="modal-content mb-4">
-                                                               <div class="modal-header">
-                                                               <h1 class="modal-title fs-3 fw-medium" id="editModalLabel">កែតម្រូវមុខតំណែង</h1>
-                                                               <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                                                               </div>
-                                                               <div class="modal-body pb-3 border-0">
-                                                                  <form action="">
-                                                                       <div class="mb-3">
-                                                                           <label for="positioninput" class="form-label">មុខតំណែង</label>
-                                                                           <input type="text" class="form-control bg-transparent fs-5" id="positioninput" placeholder="គ្រូបង្រៀន">
-                                                                       </div>
-                                                                       <div class="mb-3 form-group">
-                                                                            <label for="message-text" class="col-form-label">Discription:</label>
-                                                                            <textarea class="form-control fs-5" id="message-text" rows="5" style="height: 120px;" placeholder="បង្រៀនសិស្ស"></textarea>
-                                                                           </div>
-                                                                     
-                                                                      
-                                                                  </form>
-                                                               </div>
-                                                               <div class="modal-footer border-0 d-flex mb-4">
-                                                                   <button type="button" class="btn btn-danger  text-center" data-bs-dismiss="modal"> <span class="me-3 text-center"><i class="fa-solid fa-x"></i></span>បោះបង់</button>
-                                                                   <button type="button" class="btn btn-primary text-center"> <span class="me-3 text-center"><i class="fa-solid fa-download"></i></span>រក្សាទុក</button>
-                                                               </div>
-                                                           </div>
-                                                           </div>
-                                                       </div>
                                                    </span>
                                                 </td>
                                             </tr>
-
-                                            <tr>
-                                                <td class="ps-4">គ្រូបង្រៀន</td>
-                                                <td>អប់រំ</td>
-                                                <td>Jan 4, 2022</td>
-                                                <td>January 22</td>
-                                                <td>
-                                                    <span class="d-flex action">
-                                                        
-                                                        <!-- Delete Button -->
-                                                         <div class="deleted me-2">
-                                                           <a  href="#" class="text-danger">
-                                                               <i class="fa-regular fa-trash-can" data-bs-toggle="modal" data-bs-target="#deleteModal"></i> &nbsp;
-                                                            </a>
-                                                         </div>
-                                                       
-                                                       
-                                                        <!-- Modal -->
-                                                        <div class="modal fade mb-4 style-modal" id="deleteModal" tabindex="-1" aria-labelledby="editModalLabel" aria-hidden="true">
-                                                           <div class="modal-dialog">
-                                                           <div class="modal-content mb-4">
-                                                               <div class="modal-body pb-0 border-0">
-                                                                   <div class="">
-                                                                       <span class="fs-1 pb-2 "><i class="fa-solid fa-circle-exclamation"></i></span>
-                                                                       <h3 class="fs-3 pb-0">លុបទិន្នន័យបុគ្គលិក</h3>
-                                                                       <p class="pt-0 mt-0 fs-4">តើអ្នកប្រាកដថាចង់លុបបុគ្គលិកនេះទេ? សកម្មភាពនេះមិនអាចត្រឡប់វិញបានទេ។</p>
-                                                                    </div>
-                                                               </div>
-                                                               <div class="modal-footer border-0 d-flex mb-4">
-                                                                   <button type="button" class="btn btn-outline-dark  text-center" data-bs-dismiss="modal"> បោះបង់</button>
-                                                                   <button type="button" class="btn btn-danger text-center"> លុប</button>
-                                                               </div>
-                                                           </div>
-                                                           </div>
-                                                       </div>
-                                                       
-                                                       <!-- edit Button -->
-                                                        <div class="notification m-0">
-                                                           <a  href="#" class="icon-edit">
-                                                               <i class="fa-regular fa-pen-to-square" data-bs-toggle="modal" data-bs-target="#editModal"></i>
-                                                            </a>
-                                                        </div>
-                                                       
-
-                                                        <!-- Modal -->
-                                                        <div class="modal fade mb-4" id="editModal" tabindex="-1" aria-labelledby="editModalLabel" aria-hidden="true">
-                                                           <div class="modal-dialog">
-                                                           <div class="modal-content mb-4">
-                                                               <div class="modal-header">
-                                                               <h1 class="modal-title fs-3 fw-medium" id="editModalLabel">កែតម្រូវមុខតំណែង</h1>
-                                                               <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                                                               </div>
-                                                               <div class="modal-body pb-3 border-0">
-                                                                  <form action="">
-                                                                       <div class="mb-3">
-                                                                           <label for="positioninput" class="form-label">មុខតំណែង</label>
-                                                                           <input type="text" class="form-control bg-transparent fs-5" id="positioninput" placeholder="គ្រូបង្រៀន">
-                                                                       </div>
-                                                                       <div class="mb-3 form-group">
-                                                                            <label for="message-text" class="col-form-label">Discription:</label>
-                                                                            <textarea class="form-control fs-5" id="message-text" rows="5" style="height: 120px;" placeholder="បង្រៀនសិស្ស"></textarea>
-                                                                           </div>
-                                                                     
-                                                                      
-                                                                  </form>
-                                                               </div>
-                                                               <div class="modal-footer border-0 d-flex mb-4">
-                                                                   <button type="button" class="btn btn-danger  text-center" data-bs-dismiss="modal"> <span class="me-3 text-center"><i class="fa-solid fa-x"></i></span>បោះបង់</button>
-                                                                   <button type="button" class="btn btn-primary text-center"> <span class="me-3 text-center"><i class="fa-solid fa-download"></i></span>រក្សាទុក</button>
-                                                               </div>
-                                                           </div>
-                                                           </div>
-                                                       </div>
-                                                   </span>
-                                                </td>
-                                            </tr>
-                                          
                                         </tbody>
                                     </table>
                                 </div>
 
-                                <div class="amount mt-2 ps-4 d-flex">
-                                    <p class="fs-4 fw-medium me-2">ដេប៉ាតឺម៉ង់សរុប​</p> <span class=" amount-position ">05</span>
+                                <div class="amount-ot mt-2 ps-4 d-flex">
+                                    <p class="fs-4 fw-medium me-2">Team members</p> <span class=" amount-position ">100 users</span>
                                 </div>
 
                                 <nav aria-label="Page navigation w-100 pb-3">
                                     <ul class="pagination w-100 d-flex align-items-center justify-content-between">
                                       <div class="ps-4">
-                                        <li class="page-item disabled previous ">
-                                            <a class="page-link text-dark"><span class="text-dark"><i class="fa-solid fa-arrow-left"></i></span>&nbsp; ថយក្រោយ</a>
+                                        <li class="page-item  previous ">
+                                            <a class="page-link "><span class="text-dark"><i class="fa-solid fa-arrow-left"></i></span>&nbsp; ថយក្រោយ</a>
                                           </li>
                                       </div>
                                       <div class="d-flex justify-content-center align-items-center">
@@ -649,7 +524,7 @@
         <!--**********************************
             Footer start
         ***********************************-->
-        <%- include('../partials/footer.ejs') %>
+        <%- include('../../partials/footer.ejs') %>
         <!--**********************************
             Footer end
         ***********************************-->
@@ -697,8 +572,18 @@
         // do something...
         })
      </script>
+    <!-- Required vendors -->
     <script src="vendor/global/global.min.js"></script>
+    <script src="vendor/chart.js/Chart.bundle.min.js"></script>
+	<!-- Apex Chart -->
+	<script src="vendor/apexchart/apexchart.js"></script>
+	
+    <!-- Datatable -->
+    <script src="vendor/datatables/js/jquery.dataTables.min.js"></script>
+    <script src="js/plugins-init/datatables.init.js"></script>
+
 	<script src="vendor/jquery-nice-select/js/jquery.nice-select.min.js"></script>
+
     <script src="js/custom.min.js"></script>
 	<script src="js/dlabnav-init.js"></script>
 	<script src="js/demo.js"></script>

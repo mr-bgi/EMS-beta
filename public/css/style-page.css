@@ -170,7 +170,8 @@ th,td{
 }
 
 .card .card-body .deleted,
-.card .card-body .edited{
+.card .card-body .edited,
+.card .card-body .notification{
     width: 27px;
     height: 27px;
     position: relative;
@@ -180,11 +181,17 @@ th,td{
 }
 
 .card .card-body .edited{
+    background-color: #cdf4ba;
+   
+}
+
+.card .card-body .notification{
     background-color: #c6d7f4;
 }
 
 .card .card-body .deleted i,
-.card .card-body .edited i{
+.card .card-body .edited i,
+.card .card-body .notification i{
     position: absolute;
     top: 25%;
     left: 31%;
@@ -204,6 +211,19 @@ th,td{
     background-color: #dde3f7;
 }
 
-.style-col-3{
+.style-col-3:nth-child(1){
+   
     border-left: 2px solid white;
+    padding-left: 10px;
 }
+.style-col-3:nth-child(2){
+   
+    border-left: 2px solid white;
+    padding-left: 20px;
+}
+.style-col-3:nth-child(3){
+   
+    border-left: 2px solid white;
+    padding-left: 17px;
+}
+
