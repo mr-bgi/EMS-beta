@@ -12,6 +12,7 @@
   "dependencies": {
     "bcrypt": "^5.1.1",
     "body-parser": "^1.20.3",
+    "connect-livereload": "^0.6.1",
     "cookie-parser": "^1.4.7",
     "dotenv": "^16.4.7",
     "ejs": "^3.1.10",
@@ -21,6 +22,7 @@
     "joi": "^17.13.3",
     "jsonwebtoken": "^9.0.2",
     "jsqr": "^1.4.0",
+    "livereload": "^0.9.3",
     "lodash": "^4.17.21",
     "mysql": "^2.18.1"
   }

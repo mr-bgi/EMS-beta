@@ -46,38 +46,39 @@
             },
             (decodedText, decodedResult) => {
                 // alert("Scanned: " + decodedText);
-                if (!navigator.geolocation) {
-                    messageElement.textContent = 'Geolocation is not supported by your browser.';
-                    return;
-                }
-                navigator.geolocation.getCurrentPosition(
-                    console.log(position.coords.latitude)
+                // if (!navigator.geolocation) {
+                //     messageElement.textContent = 'Geolocation is not supported by your browser.';
+                //     return;
+                // }
+                // navigator.geolocation.getCurrentPosition(
+                //     console.log(position.coords.latitude)
                     
-                    // async (position) => {
-                    //     const latitude = position.coords.latitude;
-                    //     const longitude = position.coords.longitude;
-                    //     //     console.log();
+                //     // async (position) => {
+                //     //     const latitude = position.coords.latitude;
+                //     //     const longitude = position.coords.longitude;
+                //     //     //     console.log();
 
-                    //     //     // try {
-                    //     //     //     const response = await fetch(code.data, {
-                    //     //     //         method: 'POST',
-                    //     //     //         headers: { 'Content-Type': 'application/json' },
-                    //     //     //         body: JSON.stringify({ id: emp_id, location: { latitude, longitude } }),
-                    //     //     //     });
+                //     //     //     // try {
+                //     //     //     //     const response = await fetch(code.data, {
+                //     //     //     //         method: 'POST',
+                //     //     //     //         headers: { 'Content-Type': 'application/json' },
+                //     //     //     //         body: JSON.stringify({ id: emp_id, location: { latitude, longitude } }),
+                //     //     //     //     });
 
-                    //     //     //     const result = await response.json();
-                    //     //     //     if (result.success) {
-                    //     //     //         messageElement.textContent = 'Attendance recorded successfully!';
-                    //     //     //     } else {
-                    //     //     //         messageElement.textContent = result.message || 'Error during attendance check-in.';
-                    //     //     //     }
-                    //     //     // } catch (error) {
-                    //     //     //     console.error('Fetch error:', error);
-                    //     //     //     messageElement.textContent = 'Error occurred while processing the QR code.';
-                    //     //     // }
-                    // },
-                    // { enableHighAccuracy: true, timeout: 10000 }
-                );
+                //     //     //     //     const result = await response.json();
+                //     //     //     //     if (result.success) {
+                //     //     //     //         messageElement.textContent = 'Attendance recorded successfully!';
+                //     //     //     //     } else {
+                //     //     //     //         messageElement.textContent = result.message || 'Error during attendance check-in.';
+                //     //     //     //     }
+                //     //     //     // } catch (error) {
+                //     //     //     //     console.error('Fetch error:', error);
+                //     //     //     //     messageElement.textContent = 'Error occurred while processing the QR code.';
+                //     //     //     // }
+                //     // },
+                //     // { enableHighAccuracy: true, timeout: 10000 }
+                // );
+                alert(decodedText);
                 console.log(decodedText);
 
                 stopScanner();
