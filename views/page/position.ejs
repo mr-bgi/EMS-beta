@@ -75,7 +75,7 @@
                 <div class="row">
                     <div class="col-12">
                         <div class="department d-flex align-items-center justify-content-between">
-                            <h2 class="title pb-3">ដេប៉ាតឺម៉ង់</h2>
+                            <h2 class="title pb-3">មុខដំណែង</h2>
 
                             <div class="left-item d-flex align-items-center pb-4 justify-content-evenly ">
                                 
@@ -88,31 +88,26 @@
                                 <div class="created" data-bs-toggle="modal" data-bs-target="#createModal">
                                     <span>+</span>&nbsp; បង្កើត
                                 </div>
-                                 <!-- Modal -->
-                                 <div class="modal modal-create fade mb-4" id="createModal" tabindex="-1" aria-labelledby="editModalLabel" aria-hidden="true">
+
+                                <!-- Modal -->
+                                <div class="modal modal-create fade mb-4" id="createModal" tabindex="-1" aria-labelledby="editModalLabel" aria-hidden="true">
                                     <div class="modal-dialog">
                                     <div class="modal-content mb-4">
                                         <div class="modal-header">
-                                        <h1 class="modal-title fs-3 fw-medium" id="editModalLabel">បង្កើតដេប៉ាតឺម៉ង់</h1>
+                                        <h1 class="modal-title fs-3 fw-medium" id="editModalLabel">បង្កើតមុខតំណែង</h1>
                                         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                                         </div>
                                         <div class="modal-body pb-3 border-0">
                                            <form action="">
                                                 <div class="mb-3">
-                                                    <label for="positioninput" class="form-label fs-5">ដេប៉ាតឺម៉ង់</label>
-                                                    <input type="text" class="form-control bg-transparent fs-5" id="positioninput" placeholder="អភិវឌ្ឍគេហទំព័រ">
+                                                    <label for="positioninput" class="form-label fs-5">មុខតំណែង</label>
+                                                    <input type="text" class="form-control bg-transparent fs-5" id="positioninput" placeholder="គ្រូបង្រៀន">
                                                 </div>
-                                                <div class="mb-3 select position-relative">
-                                                    <label for="selectLeader" class="form-label fs-5">ប្រធាន</label>
-                                                    <i class="fa-solid fa-chevron-down"></i>
-                                                    <select  class="form-control bg-transparent fs-5 position-relative" name="selectLeader" id="selectLeader">
-                                                       
-                                                        <option value="អូន​ គីមហុង">អូន​ គីមហុង</option>
-                                                        <option value="អូន​ គីមហុង">អូន​ គីមហុង</option>
-                                                        <option value="អូន​ គីមហុង">អូន​ គីមហុង</option>
-                                                    </select>
-                                                   
-                                                </div>
+                                                <div class="mb-3 form-group">
+                                                     <label for="message-text" class="col-form-label fs-5">Discription:</label>
+                                                     <textarea class="form-control fs-5" id="message-text" rows="5" style="height: 120px;" placeholder="បង្រៀនសិស្ស"></textarea>
+                                                    </div>
+                                              
                                                
                                            </form>
                                         </div>
@@ -137,8 +132,8 @@
                                     <table class="table table-striped table-responsive-sm">
                                         <thead>
                                             <tr>
-                                                <th class="ps-4">ដេប៉ាតឺម៉ង់</th>
-                                                <th>ប្រធាន</th>
+                                                <th class="ps-4">មុខដំណែង</th>
+                                                <th>ដេប៉ាតឺម៉ង់</th>
                                                 <th>បង្កើត</th>
                                                 <th>បច្ចុប្បន្នភាព</th>
                                                 <th>កែតម្រូវ</th>
@@ -146,8 +141,8 @@
                                         </thead>
                                         <tbody>
                                             <tr>
-                                                <td class="ps-4">អប់រំ</td>
-                                                <td>អូន​ គីមហុង</td>
+                                                <td class="ps-4">គ្រូបង្រៀន</td>
+                                                <td>អប់រំ</td>
                                                 <td>Jan 4, 2022</td>
                                                 <td>January 22</td>
                                                 <td>
@@ -159,7 +154,7 @@
                                                                 <i class="fa-regular fa-trash-can" data-bs-toggle="modal" data-bs-target="#deleteModal"></i> &nbsp;
                                                              </a>
                                                           </div>
-                                                         
+                                                        
                                                         
                                                          <!-- Modal -->
                                                          <div class="modal fade mb-4 style-modal" id="deleteModal" tabindex="-1" aria-labelledby="editModalLabel" aria-hidden="true">
@@ -168,8 +163,8 @@
                                                                 <div class="modal-body pb-0 border-0">
                                                                     <div class="">
                                                                         <span class="fs-1 pb-2 "><i class="fa-solid fa-circle-exclamation"></i></span>
-                                                                        <h3 class="fs-3 pb-0">លុបទិន្នន័យដេប៉ាតឺម៉ង់</h3>
-                                                                        <p class="pt-0 mt-0 fs-4">Are you sure you want to delete this employee? This action cannot be undone.</p>
+                                                                        <h3 class="fs-3 pb-0">លុបទិន្នន័យបុគ្គលិក</h3>
+                                                                        <p class="pt-0 mt-0 fs-4">តើអ្នកប្រាកដថាចង់លុបបុគ្គលិកនេះទេ? សកម្មភាពនេះមិនអាចត្រឡប់វិញបានទេ។</p>
                                                                      </div>
                                                                 </div>
                                                                 <div class="modal-footer border-0 d-flex mb-4">
@@ -180,8 +175,8 @@
                                                             </div>
                                                         </div>
                                                         
-                                                        <!-- Edit Button -->
-                                                         <div class="edited">
+                                                        <!-- edit Button -->
+                                                         <div class="edited m-0">
                                                             <a  href="#" class="icon-edit">
                                                                 <i class="fa-regular fa-pen-to-square" data-bs-toggle="modal" data-bs-target="#editModal"></i>
                                                              </a>
@@ -189,30 +184,25 @@
                                                         
 
                                                          <!-- Modal -->
-                                                        <div class="modal fade mb-4" id="editModal" tabindex="-1" aria-labelledby="editModalLabel" aria-hidden="true">
+                                                         <div class="modal fade mb-4" id="editModal" tabindex="-1" aria-labelledby="editModalLabel" aria-hidden="true">
                                                             <div class="modal-dialog">
                                                             <div class="modal-content mb-4">
                                                                 <div class="modal-header">
-                                                                <h1 class="modal-title fs-4 fw-medium" id="editModalLabel">កែតម្រូវ​ ដេប៉ាតឺម៉ង់</h1>
+                                                                <h1 class="modal-title fs-3 fw-medium" id="editModalLabel">កែតម្រូវមុខតំណែង</h1>
                                                                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                                                                 </div>
                                                                 <div class="modal-body pb-3 border-0">
                                                                    <form action="">
                                                                         <div class="mb-3">
-                                                                            <label for="departmentinput" class="form-label">ដេប៉ាតឺម៉ង់</label>
-                                                                            <input type="text" class="form-control bg-transparent fs-5" id="departmentinput" placeholder="អប់រំ">
+                                                                            <label for="positioninput" class="form-label">មុខតំណែង</label>
+                                                                            <input type="text" class="form-control bg-transparent fs-5" id="positioninput" placeholder="គ្រូបង្រៀន">
                                                                         </div>
-                                                                        <div class="mb-3 select position-relative">
-                                                                            <label for="selectLeader" class="form-label">ប្រធាន</label>
-                                                                            <i class="fa-solid fa-chevron-down"></i>
-                                                                            <select  class="form-control bg-transparent fs-5 position-relative" name="selectLeader" id="selectLeader">
-                                                                               
-                                                                                <option value="អូន​ គីមហុង">អូន​ គីមហុង</option>
-                                                                                <option value="អូន​ គីមហុង">អូន​ គីមហុង</option>
-                                                                                <option value="អូន​ គីមហុង">អូន​ គីមហុង</option>
-                                                                            </select>
-                                                                           
-                                                                        </div>
+                                                                        <div class="mb-3 form-group">
+                                                                             <label for="message-text" class="col-form-label">Discription:</label>
+                                                                             <textarea class="form-control fs-5" id="message-text" rows="5" style="height: 120px;" placeholder="បង្រៀនសិស្ស"></textarea>
+                                                                            </div>
+                                                                      
+                                                                       
                                                                    </form>
                                                                 </div>
                                                                 <div class="modal-footer border-0 d-flex mb-4">
@@ -227,8 +217,8 @@
                                             </tr>
 
                                             <tr>
-                                                <td class="ps-4">អប់រំ</td>
-                                                <td>ញ៉ិក ភីឡែន</td>
+                                                <td class="ps-4">គ្រូបង្រៀន</td>
+                                                <td>អប់រំ</td>
                                                 <td>Jan 4, 2022</td>
                                                 <td>January 22</td>
                                                 <td>
@@ -240,7 +230,7 @@
                                                                <i class="fa-regular fa-trash-can" data-bs-toggle="modal" data-bs-target="#deleteModal"></i> &nbsp;
                                                             </a>
                                                          </div>
-                                                        
+                                                       
                                                        
                                                         <!-- Modal -->
                                                         <div class="modal fade mb-4 style-modal" id="deleteModal" tabindex="-1" aria-labelledby="editModalLabel" aria-hidden="true">
@@ -249,8 +239,8 @@
                                                                <div class="modal-body pb-0 border-0">
                                                                    <div class="">
                                                                        <span class="fs-1 pb-2 "><i class="fa-solid fa-circle-exclamation"></i></span>
-                                                                       <h3 class="fs-3 pb-0">លុបទិន្នន័យដេប៉ាតឺម៉ង់</h3>
-                                                                       <p class="pt-0 mt-0 fs-4">Are you sure you want to delete this employee? This action cannot be undone.</p>
+                                                                       <h3 class="fs-3 pb-0">លុបទិន្នន័យបុគ្គលិក</h3>
+                                                                       <p class="pt-0 mt-0 fs-4">តើអ្នកប្រាកដថាចង់លុបបុគ្គលិកនេះទេ? សកម្មភាពនេះមិនអាចត្រឡប់វិញបានទេ។</p>
                                                                     </div>
                                                                </div>
                                                                <div class="modal-footer border-0 d-flex mb-4">
@@ -261,8 +251,8 @@
                                                            </div>
                                                        </div>
                                                        
-                                                       <!-- Edit Button -->
-                                                        <div class="edited">
+                                                       <!-- edit Button -->
+                                                        <div class="edited m-0">
                                                            <a  href="#" class="icon-edit">
                                                                <i class="fa-regular fa-pen-to-square" data-bs-toggle="modal" data-bs-target="#editModal"></i>
                                                             </a>
@@ -270,30 +260,25 @@
                                                        
 
                                                         <!-- Modal -->
-                                                       <div class="modal fade mb-4" id="editModal" tabindex="-1" aria-labelledby="editModalLabel" aria-hidden="true">
+                                                        <div class="modal fade mb-4" id="editModal" tabindex="-1" aria-labelledby="editModalLabel" aria-hidden="true">
                                                            <div class="modal-dialog">
                                                            <div class="modal-content mb-4">
                                                                <div class="modal-header">
-                                                               <h1 class="modal-title fs-4 fw-medium" id="editModalLabel">កែតម្រូវ​ ដេប៉ាតឺម៉ង់</h1>
+                                                               <h1 class="modal-title fs-3 fw-medium" id="editModalLabel">កែតម្រូវមុខតំណែង</h1>
                                                                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                                                                </div>
                                                                <div class="modal-body pb-3 border-0">
                                                                   <form action="">
                                                                        <div class="mb-3">
-                                                                           <label for="departmentinput" class="form-label">ដេប៉ាតឺម៉ង់</label>
-                                                                           <input type="text" class="form-control bg-transparent fs-5" id="departmentinput" placeholder="អប់រំ">
+                                                                           <label for="positioninput" class="form-label">មុខតំណែង</label>
+                                                                           <input type="text" class="form-control bg-transparent fs-5" id="positioninput" placeholder="គ្រូបង្រៀន">
                                                                        </div>
-                                                                       <div class="mb-3 select position-relative">
-                                                                           <label for="selectLeader" class="form-label">ប្រធាន</label>
-                                                                           <i class="fa-solid fa-chevron-down"></i>
-                                                                           <select  class="form-control bg-transparent fs-5 position-relative" name="selectLeader" id="selectLeader">
-                                                                              
-                                                                               <option value="អូន​ គីមហុង">អូន​ គីមហុង</option>
-                                                                               <option value="អូន​ គីមហុង">អូន​ គីមហុង</option>
-                                                                               <option value="អូន​ គីមហុង">អូន​ គីមហុង</option>
-                                                                           </select>
-                                                                          
-                                                                       </div>
+                                                                       <div class="mb-3 form-group">
+                                                                            <label for="message-text" class="col-form-label">Discription:</label>
+                                                                            <textarea class="form-control fs-5" id="message-text" rows="5" style="height: 120px;" placeholder="បង្រៀនសិស្ស"></textarea>
+                                                                           </div>
+                                                                     
+                                                                      
                                                                   </form>
                                                                </div>
                                                                <div class="modal-footer border-0 d-flex mb-4">
@@ -308,8 +293,8 @@
                                             </tr>
 
                                             <tr>
-                                                <td class="ps-4">អប់រំ</td>
-                                                <td>អូន​ គីមហុង</td>
+                                                <td class="ps-4">គ្រូបង្រៀន</td>
+                                                <td>អប់រំ</td>
                                                 <td>Jan 4, 2022</td>
                                                 <td>January 22</td>
                                                 <td>
@@ -321,7 +306,7 @@
                                                                <i class="fa-regular fa-trash-can" data-bs-toggle="modal" data-bs-target="#deleteModal"></i> &nbsp;
                                                             </a>
                                                          </div>
-                                                        
+                                                       
                                                        
                                                         <!-- Modal -->
                                                         <div class="modal fade mb-4 style-modal" id="deleteModal" tabindex="-1" aria-labelledby="editModalLabel" aria-hidden="true">
@@ -330,8 +315,8 @@
                                                                <div class="modal-body pb-0 border-0">
                                                                    <div class="">
                                                                        <span class="fs-1 pb-2 "><i class="fa-solid fa-circle-exclamation"></i></span>
-                                                                       <h3 class="fs-3 pb-0">លុបទិន្នន័យដេប៉ាតឺម៉ង់</h3>
-                                                                       <p class="pt-0 mt-0 fs-4">Are you sure you want to delete this employee? This action cannot be undone.</p>
+                                                                       <h3 class="fs-3 pb-0">លុបទិន្នន័យបុគ្គលិក</h3>
+                                                                       <p class="pt-0 mt-0 fs-4">តើអ្នកប្រាកដថាចង់លុបបុគ្គលិកនេះទេ? សកម្មភាពនេះមិនអាចត្រឡប់វិញបានទេ។</p>
                                                                     </div>
                                                                </div>
                                                                <div class="modal-footer border-0 d-flex mb-4">
@@ -342,8 +327,8 @@
                                                            </div>
                                                        </div>
                                                        
-                                                       <!-- Edit Button -->
-                                                        <div class="edited">
+                                                       <!-- edit Button -->
+                                                        <div class="edited m-0">
                                                            <a  href="#" class="icon-edit">
                                                                <i class="fa-regular fa-pen-to-square" data-bs-toggle="modal" data-bs-target="#editModal"></i>
                                                             </a>
@@ -351,30 +336,25 @@
                                                        
 
                                                         <!-- Modal -->
-                                                       <div class="modal fade mb-4" id="editModal" tabindex="-1" aria-labelledby="editModalLabel" aria-hidden="true">
+                                                        <div class="modal fade mb-4" id="editModal" tabindex="-1" aria-labelledby="editModalLabel" aria-hidden="true">
                                                            <div class="modal-dialog">
                                                            <div class="modal-content mb-4">
                                                                <div class="modal-header">
-                                                               <h1 class="modal-title fs-4 fw-medium" id="editModalLabel">កែតម្រូវ​ ដេប៉ាតឺម៉ង់</h1>
+                                                               <h1 class="modal-title fs-3 fw-medium" id="editModalLabel">កែតម្រូវមុខតំណែង</h1>
                                                                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                                                                </div>
                                                                <div class="modal-body pb-3 border-0">
                                                                   <form action="">
                                                                        <div class="mb-3">
-                                                                           <label for="departmentinput" class="form-label">ដេប៉ាតឺម៉ង់</label>
-                                                                           <input type="text" class="form-control bg-transparent fs-5" id="departmentinput" placeholder="អប់រំ">
+                                                                           <label for="positioninput" class="form-label">មុខតំណែង</label>
+                                                                           <input type="text" class="form-control bg-transparent fs-5" id="positioninput" placeholder="គ្រូបង្រៀន">
                                                                        </div>
-                                                                       <div class="mb-3 select position-relative">
-                                                                           <label for="selectLeader" class="form-label">ប្រធាន</label>
-                                                                           <i class="fa-solid fa-chevron-down"></i>
-                                                                           <select  class="form-control bg-transparent fs-5 position-relative" name="selectLeader" id="selectLeader">
-                                                                              
-                                                                               <option value="អូន​ គីមហុង">អូន​ គីមហុង</option>
-                                                                               <option value="អូន​ គីមហុង">អូន​ គីមហុង</option>
-                                                                               <option value="អូន​ គីមហុង">អូន​ គីមហុង</option>
-                                                                           </select>
-                                                                          
-                                                                       </div>
+                                                                       <div class="mb-3 form-group">
+                                                                            <label for="message-text" class="col-form-label">Discription:</label>
+                                                                            <textarea class="form-control fs-5" id="message-text" rows="5" style="height: 120px;" placeholder="បង្រៀនសិស្ស"></textarea>
+                                                                           </div>
+                                                                     
+                                                                      
                                                                   </form>
                                                                </div>
                                                                <div class="modal-footer border-0 d-flex mb-4">
@@ -389,8 +369,8 @@
                                             </tr>
 
                                             <tr>
-                                                <td class="ps-4">អប់រំ</td>
-                                                <td>ញ៉ិក ភីឡែន</td>
+                                                <td class="ps-4">គ្រូបង្រៀន</td>
+                                                <td>អប់រំ</td>
                                                 <td>Jan 4, 2022</td>
                                                 <td>January 22</td>
                                                 <td>
@@ -402,7 +382,7 @@
                                                                <i class="fa-regular fa-trash-can" data-bs-toggle="modal" data-bs-target="#deleteModal"></i> &nbsp;
                                                             </a>
                                                          </div>
-                                                        
+                                                       
                                                        
                                                         <!-- Modal -->
                                                         <div class="modal fade mb-4 style-modal" id="deleteModal" tabindex="-1" aria-labelledby="editModalLabel" aria-hidden="true">
@@ -411,8 +391,8 @@
                                                                <div class="modal-body pb-0 border-0">
                                                                    <div class="">
                                                                        <span class="fs-1 pb-2 "><i class="fa-solid fa-circle-exclamation"></i></span>
-                                                                       <h3 class="fs-3 pb-0">លុបទិន្នន័យដេប៉ាតឺម៉ង់</h3>
-                                                                       <p class="pt-0 mt-0 fs-4">Are you sure you want to delete this employee? This action cannot be undone.</p>
+                                                                       <h3 class="fs-3 pb-0">លុបទិន្នន័យបុគ្គលិក</h3>
+                                                                       <p class="pt-0 mt-0 fs-4">តើអ្នកប្រាកដថាចង់លុបបុគ្គលិកនេះទេ? សកម្មភាពនេះមិនអាចត្រឡប់វិញបានទេ។</p>
                                                                     </div>
                                                                </div>
                                                                <div class="modal-footer border-0 d-flex mb-4">
@@ -423,8 +403,8 @@
                                                            </div>
                                                        </div>
                                                        
-                                                       <!-- Edit Button -->
-                                                        <div class="edited">
+                                                       <!-- edit Button -->
+                                                        <div class="edited m-0">
                                                            <a  href="#" class="icon-edit">
                                                                <i class="fa-regular fa-pen-to-square" data-bs-toggle="modal" data-bs-target="#editModal"></i>
                                                             </a>
@@ -432,30 +412,25 @@
                                                        
 
                                                         <!-- Modal -->
-                                                       <div class="modal fade mb-4" id="editModal" tabindex="-1" aria-labelledby="editModalLabel" aria-hidden="true">
+                                                        <div class="modal fade mb-4" id="editModal" tabindex="-1" aria-labelledby="editModalLabel" aria-hidden="true">
                                                            <div class="modal-dialog">
                                                            <div class="modal-content mb-4">
                                                                <div class="modal-header">
-                                                               <h1 class="modal-title fs-4 fw-medium" id="editModalLabel">កែតម្រូវ​ ដេប៉ាតឺម៉ង់</h1>
+                                                               <h1 class="modal-title fs-3 fw-medium" id="editModalLabel">កែតម្រូវមុខតំណែង</h1>
                                                                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                                                                </div>
                                                                <div class="modal-body pb-3 border-0">
                                                                   <form action="">
                                                                        <div class="mb-3">
-                                                                           <label for="departmentinput" class="form-label">ដេប៉ាតឺម៉ង់</label>
-                                                                           <input type="text" class="form-control bg-transparent fs-5" id="departmentinput" placeholder="អប់រំ">
+                                                                           <label for="positioninput" class="form-label">មុខតំណែង</label>
+                                                                           <input type="text" class="form-control bg-transparent fs-5" id="positioninput" placeholder="គ្រូបង្រៀន">
                                                                        </div>
-                                                                       <div class="mb-3 select position-relative">
-                                                                           <label for="selectLeader" class="form-label">ប្រធាន</label>
-                                                                           <i class="fa-solid fa-chevron-down"></i>
-                                                                           <select  class="form-control bg-transparent fs-5 position-relative" name="selectLeader" id="selectLeader">
-                                                                              
-                                                                               <option value="អូន​ គីមហុង">អូន​ គីមហុង</option>
-                                                                               <option value="អូន​ គីមហុង">អូន​ គីមហុង</option>
-                                                                               <option value="អូន​ គីមហុង">អូន​ គីមហុង</option>
-                                                                           </select>
-                                                                          
-                                                                       </div>
+                                                                       <div class="mb-3 form-group">
+                                                                            <label for="message-text" class="col-form-label">Discription:</label>
+                                                                            <textarea class="form-control fs-5" id="message-text" rows="5" style="height: 120px;" placeholder="បង្រៀនសិស្ស"></textarea>
+                                                                           </div>
+                                                                     
+                                                                      
                                                                   </form>
                                                                </div>
                                                                <div class="modal-footer border-0 d-flex mb-4">
@@ -470,8 +445,8 @@
                                             </tr>
 
                                             <tr>
-                                                <td class="ps-4">អប់រំ</td>
-                                                <td>អូន​ គីមហុង</td>
+                                                <td class="ps-4">គ្រូបង្រៀន</td>
+                                                <td>អប់រំ</td>
                                                 <td>Jan 4, 2022</td>
                                                 <td>January 22</td>
                                                 <td>
@@ -483,7 +458,7 @@
                                                                <i class="fa-regular fa-trash-can" data-bs-toggle="modal" data-bs-target="#deleteModal"></i> &nbsp;
                                                             </a>
                                                          </div>
-                                                        
+                                                       
                                                        
                                                         <!-- Modal -->
                                                         <div class="modal fade mb-4 style-modal" id="deleteModal" tabindex="-1" aria-labelledby="editModalLabel" aria-hidden="true">
@@ -492,8 +467,8 @@
                                                                <div class="modal-body pb-0 border-0">
                                                                    <div class="">
                                                                        <span class="fs-1 pb-2 "><i class="fa-solid fa-circle-exclamation"></i></span>
-                                                                       <h3 class="fs-3 pb-0">លុបទិន្នន័យដេប៉ាតឺម៉ង់</h3>
-                                                                       <p class="pt-0 mt-0 fs-4">Are you sure you want to delete this employee? This action cannot be undone.</p>
+                                                                       <h3 class="fs-3 pb-0">លុបទិន្នន័យបុគ្គលិក</h3>
+                                                                       <p class="pt-0 mt-0 fs-4">តើអ្នកប្រាកដថាចង់លុបបុគ្គលិកនេះទេ? សកម្មភាពនេះមិនអាចត្រឡប់វិញបានទេ។</p>
                                                                     </div>
                                                                </div>
                                                                <div class="modal-footer border-0 d-flex mb-4">
@@ -504,8 +479,8 @@
                                                            </div>
                                                        </div>
                                                        
-                                                       <!-- Edit Button -->
-                                                        <div class="edited">
+                                                       <!-- edit Button -->
+                                                        <div class="edited m-0">
                                                            <a  href="#" class="icon-edit">
                                                                <i class="fa-regular fa-pen-to-square" data-bs-toggle="modal" data-bs-target="#editModal"></i>
                                                             </a>
@@ -513,30 +488,25 @@
                                                        
 
                                                         <!-- Modal -->
-                                                       <div class="modal fade mb-4" id="editModal" tabindex="-1" aria-labelledby="editModalLabel" aria-hidden="true">
+                                                        <div class="modal fade mb-4" id="editModal" tabindex="-1" aria-labelledby="editModalLabel" aria-hidden="true">
                                                            <div class="modal-dialog">
                                                            <div class="modal-content mb-4">
                                                                <div class="modal-header">
-                                                               <h1 class="modal-title fs-4 fw-medium" id="editModalLabel">កែតម្រូវ​ ដេប៉ាតឺម៉ង់</h1>
+                                                               <h1 class="modal-title fs-3 fw-medium" id="editModalLabel">កែតម្រូវមុខតំណែង</h1>
                                                                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                                                                </div>
                                                                <div class="modal-body pb-3 border-0">
                                                                   <form action="">
                                                                        <div class="mb-3">
-                                                                           <label for="departmentinput" class="form-label">ដេប៉ាតឺម៉ង់</label>
-                                                                           <input type="text" class="form-control bg-transparent fs-5" id="departmentinput" placeholder="អប់រំ">
+                                                                           <label for="positioninput" class="form-label">មុខតំណែង</label>
+                                                                           <input type="text" class="form-control bg-transparent fs-5" id="positioninput" placeholder="គ្រូបង្រៀន">
                                                                        </div>
-                                                                       <div class="mb-3 select position-relative">
-                                                                           <label for="selectLeader" class="form-label">ប្រធាន</label>
-                                                                           <i class="fa-solid fa-chevron-down"></i>
-                                                                           <select  class="form-control bg-transparent fs-5 position-relative" name="selectLeader" id="selectLeader">
-                                                                              
-                                                                               <option value="អូន​ គីមហុង">អូន​ គីមហុង</option>
-                                                                               <option value="អូន​ គីមហុង">អូន​ គីមហុង</option>
-                                                                               <option value="អូន​ គីមហុង">អូន​ គីមហុង</option>
-                                                                           </select>
-                                                                          
-                                                                       </div>
+                                                                       <div class="mb-3 form-group">
+                                                                            <label for="message-text" class="col-form-label">Discription:</label>
+                                                                            <textarea class="form-control fs-5" id="message-text" rows="5" style="height: 120px;" placeholder="បង្រៀនសិស្ស"></textarea>
+                                                                           </div>
+                                                                     
+                                                                      
                                                                   </form>
                                                                </div>
                                                                <div class="modal-footer border-0 d-flex mb-4">
@@ -551,12 +521,12 @@
                                             </tr>
 
                                             <tr>
-                                                <td class="ps-4">អប់រំ</td>
-                                                <td>ញ៉ិក ភីឡែន</td>
+                                                <td class="ps-4">គ្រូបង្រៀន</td>
+                                                <td>អប់រំ</td>
                                                 <td>Jan 4, 2022</td>
                                                 <td>January 22</td>
                                                 <td>
-                                                    <span class="d-flex">
+                                                    <span class="d-flex action">
                                                         
                                                         <!-- Delete Button -->
                                                          <div class="deleted me-2">
@@ -564,7 +534,7 @@
                                                                <i class="fa-regular fa-trash-can" data-bs-toggle="modal" data-bs-target="#deleteModal"></i> &nbsp;
                                                             </a>
                                                          </div>
-                                                        
+                                                       
                                                        
                                                         <!-- Modal -->
                                                         <div class="modal fade mb-4 style-modal" id="deleteModal" tabindex="-1" aria-labelledby="editModalLabel" aria-hidden="true">
@@ -573,8 +543,8 @@
                                                                <div class="modal-body pb-0 border-0">
                                                                    <div class="">
                                                                        <span class="fs-1 pb-2 "><i class="fa-solid fa-circle-exclamation"></i></span>
-                                                                       <h3 class="fs-3 pb-0">លុបទិន្នន័យដេប៉ាតឺម៉ង់</h3>
-                                                                       <p class="pt-0 mt-0 fs-4">Are you sure you want to delete this employee? This action cannot be undone.</p>
+                                                                       <h3 class="fs-3 pb-0">លុបទិន្នន័យបុគ្គលិក</h3>
+                                                                       <p class="pt-0 mt-0 fs-4">តើអ្នកប្រាកដថាចង់លុបបុគ្គលិកនេះទេ? សកម្មភាពនេះមិនអាចត្រឡប់វិញបានទេ។</p>
                                                                     </div>
                                                                </div>
                                                                <div class="modal-footer border-0 d-flex mb-4">
@@ -585,8 +555,8 @@
                                                            </div>
                                                        </div>
                                                        
-                                                       <!-- Edit Button -->
-                                                        <div class="edited">
+                                                       <!-- edit Button -->
+                                                        <div class="edited m-0">
                                                            <a  href="#" class="icon-edit">
                                                                <i class="fa-regular fa-pen-to-square" data-bs-toggle="modal" data-bs-target="#editModal"></i>
                                                             </a>
@@ -594,30 +564,25 @@
                                                        
 
                                                         <!-- Modal -->
-                                                       <div class="modal fade mb-4" id="editModal" tabindex="-1" aria-labelledby="editModalLabel" aria-hidden="true">
+                                                        <div class="modal fade mb-4" id="editModal" tabindex="-1" aria-labelledby="editModalLabel" aria-hidden="true">
                                                            <div class="modal-dialog">
                                                            <div class="modal-content mb-4">
                                                                <div class="modal-header">
-                                                               <h1 class="modal-title fs-4 fw-medium" id="editModalLabel">កែតម្រូវ​ ដេប៉ាតឺម៉ង់</h1>
+                                                               <h1 class="modal-title fs-3 fw-medium" id="editModalLabel">កែតម្រូវមុខតំណែង</h1>
                                                                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                                                                </div>
                                                                <div class="modal-body pb-3 border-0">
                                                                   <form action="">
                                                                        <div class="mb-3">
-                                                                           <label for="departmentinput" class="form-label">ដេប៉ាតឺម៉ង់</label>
-                                                                           <input type="text" class="form-control bg-transparent fs-5" id="departmentinput" placeholder="អប់រំ">
+                                                                           <label for="positioninput" class="form-label">មុខតំណែង</label>
+                                                                           <input type="text" class="form-control bg-transparent fs-5" id="positioninput" placeholder="គ្រូបង្រៀន">
                                                                        </div>
-                                                                       <div class="mb-3 select position-relative">
-                                                                           <label for="selectLeader" class="form-label">ប្រធាន</label>
-                                                                           <i class="fa-solid fa-chevron-down"></i>
-                                                                           <select  class="form-control bg-transparent fs-5 position-relative" name="selectLeader" id="selectLeader">
-                                                                              
-                                                                               <option value="អូន​ គីមហុង">អូន​ គីមហុង</option>
-                                                                               <option value="អូន​ គីមហុង">អូន​ គីមហុង</option>
-                                                                               <option value="អូន​ គីមហុង">អូន​ គីមហុង</option>
-                                                                           </select>
-                                                                          
-                                                                       </div>
+                                                                       <div class="mb-3 form-group">
+                                                                            <label for="message-text" class="col-form-label">Discription:</label>
+                                                                            <textarea class="form-control fs-5" id="message-text" rows="5" style="height: 120px;" placeholder="បង្រៀនសិស្ស"></textarea>
+                                                                           </div>
+                                                                     
+                                                                      
                                                                   </form>
                                                                </div>
                                                                <div class="modal-footer border-0 d-flex mb-4">

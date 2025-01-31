@@ -1,40 +1,65 @@
-.department .left-item .search{
-    width: 250px;
-    height: 35px;
-    font-size: 18px;
-    padding-left: 10px;
-    padding-top: 2px;
+.department .left-item .search,
+.department .left-item .filter,
+.department .left-item .created{
+    margin: auto;
     align-items: center;
     justify-content: center;
-    margin: auto;
+    height: 35px;
+    font-size: 16px;
     border-radius: 8px;
-    border: 1px solid rgb(48, 47, 47);
+    display: flex;
+}
+
+
+.department .left-item .search,
+.ot .left-item .search{
+    width: 250px;
+    padding-left: 10px;
+    padding-top: 2px;
+    box-shadow: rgba(17, 17, 26, 0.1) 0px 0px 16px;
+    border: none;
+    /* border: 1px solid rgb(48, 47, 47); */
 }
 
 .department .left-item .filter{
     width: 100px;
-    height: 35px;
-    border-radius: 8px;
+    cursor: pointer;
+    box-shadow: rgba(17, 17, 26, 0.1) 0px 0px 16px;
+    /* border: 1px solid rgb(48, 47, 47); */
+} 
+
+.ot .left-item .filter,
+.ot .left-item .created,
+.ot .left-item .search{
     margin: auto;
     align-items: center;
     justify-content: center;
+    height: 35px;
+    font-size: 16px;
+    border-radius: 8px;
     display: flex;
-    cursor: pointer;
-    font-size: 17px;
-    border: 1px solid rgb(48, 47, 47);
+   
 }
+.ot .left-item .filter{
+    width: 100px;
+    transition: .5s;
+    cursor: pointer;
+    box-shadow: rgba(17, 17, 26, 0.1) 0px 0px 16px;
+    /* border: 1px solid rgb(112, 255, 124); */
+} 
+
+.ot .left-item .created{
+    cursor: pointer;
+    width: 120px;
+    background-color: rgb(106, 244, 78);;
+    box-shadow: rgba(17, 17, 26, 0.1) 0px 0px 16px;
+}
+
 
 .department .left-item .created{
     width: 100px;
-    height: 35px;
-    border-radius: 8px;
-    margin: auto;
-    align-items: center;
-    justify-content: center;
-    display: flex;
     cursor: pointer;
     color: white;
-    font-size: 17px;
     background-color: #3A86FF;
 }
 
@@ -52,11 +77,133 @@ th,td{
     border: 1px solid rgb(124, 124, 124);
 }
 
-.card .card-body .modal .modal-footer button{
+.card .card-body .modal .modal-footer button,
+.modal-create .modal-footer button{
     /* height: 42px; */
-    width: 144px;
+    width: 150px;
     margin: auto;
     align-items: center;
     text-align: center;
     border-radius: 12px;
+}
+
+.card .card-body .style-modal .modal-footer button{
+    width: 160px;
+}
+
+.card .card-body .style-modal .fa-circle-exclamation{
+    color: rgb(179, 0, 0);
+}
+
+.card .card-body .modal .select .fa-chevron-down,
+.modal-create .select .fa-chevron-down  {
+    position: absolute;
+    margin: auto;
+    left: 90%;
+    top: 60%;
+    color: black;
+    font-size: 15px;
+}
+
+.ot .shows .fa-chevron-down  {
+    position: absolute;
+    margin: auto;
+    left: 55%;
+    top: 18%;
+    color: rgb(53, 52, 52);
+    font-size: 12px;
+}
+
+.ot .shows .select-show {
+    width: 60px;
+    height: 30px;
+    margin-top: -5px;
+    padding-left: 12px;
+    border-radius: 8px;
+}
+
+.card .card-body .amount .amount-position,
+.modal-create .amount .amount-position {
+    width: 28px;
+    margin-top: 5px;
+    height: 20px;
+    padding: 2px 3px;
+    align-items: center;
+    text-align: center;
+    font-size: 11px;
+    border-radius: 10px;
+    background-color: #ede4fc;
+    color: #6941C6;
+}
+
+.card .amount-ot .amount-position{
+    width: 65px;
+    margin-top: 5px;
+    height: 20px;
+    padding: 2px 3px;
+    align-items: center;
+    text-align: center;
+    font-size: 11px;
+    border-radius: 10px;
+    background-color: #ede4fc;
+    color: #6941C6;
+}
+
+.card .card-body .approve{
+    width: 70px;
+    height: 28px;
+    font-size: 14px;
+    text-align: center;
+    border-radius: 5px;
+    padding-top: 4px;
+    background-color: #88f24f;
+}
+
+.card .card-body .reject{
+    width: 70px;
+    height: 28px;
+    font-size: 14px;
+    text-align: center;
+    border-radius: 5px;
+    padding-top: 4px;
+    background-color: rgb(247, 27, 27);
+}
+
+.card .card-body .deleted,
+.card .card-body .edited{
+    width: 27px;
+    height: 27px;
+    position: relative;
+    font-size: 13px;
+    border-radius: 5px;
+    background-color: #eacdcd;
+}
+
+.card .card-body .edited{
+    background-color: #c6d7f4;
+}
+
+.card .card-body .deleted i,
+.card .card-body .edited i{
+    position: absolute;
+    top: 25%;
+    left: 31%;
+}
+
+.pagination .next .page-link,
+.pagination .previous .page-link{
+    border: none;
+    box-shadow: rgba(17, 17, 26, 0.1) 0px 1px 0px, rgba(17, 17, 26, 0.1) 0px 8px 24px, rgba(17, 17, 26, 0.1) 0px 16px 48px;
+}
+.pagination .previous:hover .page-link{
+    color: white;
+}
+
+.card .card-body .table .tr-head{
+    border: none;
+    background-color: #dde3f7;
+}
+
+.style-col-3{
+    border-left: 2px solid white;
 }
