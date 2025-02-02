@@ -21,6 +21,7 @@ const allTable = require('./routes/web/allTable')
 const allDepartment = require('./routes/web/department');
 const allPosition = require('./routes/web/position');
 const otPage = require('./routes/web/ot-page');
+const attendanceEmp = require('./routes/web/attendanceEmp');
 const allEmployee = require('./routes/web/employee');
 const manageProfile = require('./routes/web/profile-manage')
 const allMobilePage = require('./routes/web/mobileUser')
@@ -68,6 +69,7 @@ app.use(allTable);
 app.use(allDepartment);
 app.use(allPosition);
 app.use(otPage);
+app.use(attendanceEmp);
 app.use(manageProfile);
 app.use(allEmployee);
 app.use(allMobilePage);

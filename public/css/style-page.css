@@ -30,7 +30,8 @@
 
 .ot .left-item .filter,
 .ot .left-item .created,
-.ot .left-item .search{
+.ot .left-item .search,
+.ot .left-item .filter-att{
     margin: auto;
     align-items: center;
     justify-content: center;
@@ -40,6 +41,40 @@
     display: flex;
    
 }
+
+.ot .left-item .datePicker{
+    width: 215px;
+    height: 35px;
+    font-size: 13px;
+    align-items: center;
+    text-align: center;
+    border-radius: 8px;
+    transition: .5s;
+    cursor: pointer;
+    box-shadow: rgba(17, 17, 26, 0.1) 0px 0px 16px;
+}
+
+.ot .left-item .datePicker input{
+    padding-left: 17px;
+    padding-top: 5px;
+}
+
+.ot .left-item .fa-calendar-days {
+    position: absolute;
+    margin: auto;
+    left: 5%;
+    top: 32%;
+    color: rgb(53, 52, 52);
+    font-size: 15px;
+}
+.ot .left-item .filter-att{
+    width: 170px;
+    transition: .5s;
+    border: none;
+    cursor: pointer;
+    box-shadow: rgba(17, 17, 26, 0.1) 0px 0px 16px;
+}
+
 .ot .left-item .filter{
     width: 100px;
     transition: .5s;
@@ -156,7 +191,31 @@ th,td{
     text-align: center;
     border-radius: 5px;
     padding-top: 4px;
-    background-color: #88f24f;
+    background-color: #aef389;
+}
+
+.card .card-body .late-arr,
+.card .card-body .present,
+.card .card-body .absent{
+    width: 85px;
+    height: 28px;
+    font-size: 14px;
+    text-align: center;
+    border-radius: 5px;
+    padding-top: 4px;
+    background-color: #f0f58e;
+}
+
+.card .card-body .present{
+    background-color: rgb(108, 246, 108);
+}
+
+.card .card-body .absent{
+    background-color: rgb(236, 114, 114);
+}
+
+.card .card-body .late-arr .text-color{
+    color: black;
 }
 
 .card .card-body .reject{
@@ -227,3 +286,75 @@ th,td{
     padding-left: 17px;
 }
 
+.card .card-body .sunset{
+    width: 60px;
+    height: 50px;
+
+}
+
+.card .card-body .sunset img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.card .card-body .user-icon,
+.card .card-body .user,
+.card .card-body .user-time{
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    background-color: rgb(199, 199, 249);
+}
+.card .card-body .user-time{
+    background-color: rgba(238, 241, 238, 0.907);
+}
+.card .card-body .user{
+    background-color: rgb(238, 220, 220);
+}
+.card .card-body .fa-users-slash{
+    text-align: center;
+    padding-top: 9px;
+    padding-left: 8px;
+    align-items: center;
+    font-size: 16px;
+    color: rgb(238, 34, 34);
+}
+.card .card-body .user-icon i,
+.card .card-body .user-time .fa-clock{
+    text-align: center;
+    padding-top: 9px;
+    padding-left: 8px;
+    align-items: center;
+    font-size: 16px;
+    color: #5a18f5;
+}
+
+.card .card-body .user-time .fa-clock{
+    color: rgb(0, 255, 0);
+    padding-left: 10px;
+    padding-top: 10px;
+}
+.card .card-body .fa-plus,
+.card .card-body .fa-arrow-trend-down,
+.card .card-body .fa-arrow-trend-up{
+    width: 20px;
+    color: rgb(6, 223, 6);
+    height: 20px;
+   padding-left: 5px;
+    padding-top: 4px;
+    border-radius: 50%;
+    background-color: rgba(238, 241, 238, 0.907);
+}
+.card .card-body .fa-plus{
+    background-color: rgb(199, 199, 249);
+    color: #5a18f5;
+}
+.card .card-body .fa-arrow-trend-down{
+    padding-left: 3px;
+}
+.card .card-body .fa-arrow-trend-up{
+    color: rgb(241, 12, 12);
+    padding-left: 3px;
+    background-color: rgb(247, 234, 234);
+}
