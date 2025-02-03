@@ -7,8 +7,8 @@ const router = express.Router();
 router.get('/home',allUser.getHomepage);
 router.get('/attendace',allUser.getAttendace);
 
-router.get('/user/login', mobileController.getMobileLogin);
-router.get('/user/homepage',requireAuth, mobileController.getMobileHomepage);
-router.get('/user/scanner',requireAuth, mobileController.getQrScanner);
+router.get('/user/login', allUser.getMobileLogin);
+router.get('/user/homepage',requireAuth, allUser.getMobileHomepage);
+router.get('/user/scanner',requireAuth, allUser.getQrScanner);
 
 module.exports = router;

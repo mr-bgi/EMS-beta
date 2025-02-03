@@ -16,7 +16,7 @@ const getQrScanner = async (req, res) => {
     res.render('page/user/qr-scanner');
 }
 module.exports = {
-  getHomepage,
+    getHomepage,
     getAttendace,
     getMobileLogin,
     getMobileHomepage,

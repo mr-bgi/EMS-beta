@@ -27,8 +27,6 @@ const allEmployee = require('./routes/web/employee');
 const manageProfile = require('./routes/web/profile-manage')
 const listUser = require('./routes/web/list-user')
 const allUser = require('./routes/web/user')
-const allMobilePage = require('./routes/web/mobileUser')
-const userPage = require('./routes/web/user')
 
 
 
@@ -80,7 +78,6 @@ app.use(manageProfile);
 app.use(allEmployee);
 app.use(listUser);
 app.use(allUser);
-app.use(userPage);
 
 
 app.listen(port, () => {
