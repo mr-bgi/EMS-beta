@@ -1,13 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
 
-<%- include('../../partials/head.ejs') %>
+<%- include('../partials/head.ejs') %>
 <body>
 
     <!--*******************
         Preloader start
     ********************-->
-    <%- include('../../partials/preloader.ejs') %>
+    <%- include('../partials/preloader.ejs') %>
     <!--*******************
         Preloader end
     ********************-->
@@ -20,7 +20,7 @@
         <!--**********************************
             Nav header start
         ***********************************-->
-		<%- include('../../partials/nav-header.ejs') %>
+		<%- include('../partials/nav-header.ejs') %>
         <!--**********************************
             Nav header end
         ***********************************-->
@@ -28,7 +28,7 @@
 		<!--**********************************
             Chat box start
         ***********************************-->
-		<%- include('../../partials/chatbox.ejs') %>
+		<%- include('../partials/chatbox.ejs') %>
 		<!--**********************************
             Chat box End
         ***********************************-->
@@ -42,11 +42,10 @@
                     <div class="collapse navbar-collapse justify-content-between">
                         <div class="header-left">
 							<div class="dashboard_bar">
-                                Table-Bootstrap
+                                User
                             </div>
-							
                         </div>
-                        <%- include('../../partials/header.ejs') %>
+                        <%- include('../partials/header.ejs') %>
                     </div>
 				</nav>
 			</div>
@@ -59,7 +58,7 @@
         <!--**********************************
             Sidebar start
         ***********************************-->
-        <%- include('../../partials/sidebar.ejs')  %>
+        <%- include('../partials/sidebar.ejs')  %>
         <!--**********************************
             Sidebar end
         ***********************************-->
@@ -75,7 +74,7 @@
                 <div class="row">
                     <div class="col-12">
                         <div class="department d-flex align-items-center justify-content-between">
-                            <h2 class="title pb-3">ដេប៉ាតឺម៉ង់</h2>
+                            <h2 class="title pb-3">បញ្ជីអ្នកប្រើប្រាស់</h2>
 
                             <div class="left-item d-flex align-items-center  pb-3 justify-content-evenly ">
                                 <search  class="search me-4 border shadow">
@@ -83,14 +82,14 @@
                                 </search>
                                 
     
-                                <div class="filter me-4 border shadow">
+                                <div class="filter  border shadow">
                                     <span><i class="fa-solid fa-filter"></i></span>&nbsp; Filter
                                 </div>
                                
-                                <div class="created">
+                                <!-- <div class="created">
                                     <span><i class="bi bi-credit-card" data-bs-toggle="modal"
                                         data-bs-target="#exampleModalCenter3"></i></span>&nbsp; card
-                                </div>
+                                </div> -->
     
                             </div>
 
@@ -423,7 +422,7 @@
         <!--**********************************
             Footer start
         ***********************************-->
-        <%- include('../../partials/footer.ejs') %>
+        <%- include('../partials/footer.ejs') %>
         <!--**********************************
             Footer end
         ***********************************-->

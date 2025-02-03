@@ -1,21 +1,24 @@
+
+const getHomepage = (req, res) => {
+    res.render("page/user/home");
+};
+const getAttendace = (req, res) => {
+    res.render("page/user/attendace");
+};
+
 const getMobileLogin = (req, res) =>{
     res.render('page/user/login');
 }
-
 const getMobileHomepage = (req, res) =>{
-    const userAgent = req.headers['user-agent'];
-    console.log(isMobile(userAgent));
     res.render('page/user/mobile-homepage');
 }
-const getQrScanner = (req, res) => {
+const getQrScanner = async (req, res) => {
     res.render('page/user/qr-scanner');
 }
 module.exports = {
+  getHomepage,
+    getAttendace,
     getMobileLogin,
     getMobileHomepage,
     getQrScanner
 };
-
-function isMobile(userAgent) {
-    return /Mobi|Android|iPhone|iPad|iPod/i.test(userAgent);
-}

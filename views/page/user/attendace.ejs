@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<%- include('../../partials/head.ejs') %>
+<body>
+
+    <!--*******************
+        Preloader start
+    ********************-->
+    <%- include('../../partials/preloader.ejs') %>
+    <!--*******************
+        Preloader end
+    ********************-->
+
+    <!--**********************************
+        Main wrapper start
+    ***********************************-->
+    <div id="main-wrapper">
+
+        <!--**********************************
+            Nav header start
+        ***********************************-->
+		<%- include('../../partials/nav-header.ejs') %>
+        <!--**********************************
+            Nav header end
+        ***********************************-->
+		
+		<!--**********************************
+            Chat box start
+        ***********************************-->
+		<%- include('../../partials/chatbox.ejs') %>
+		<!--**********************************
+            Chat box End
+        ***********************************-->
+
+        <!--**********************************
+            Header start
+        ***********************************-->
+        <div class="header">
+            <div class="header-content">
+                <nav class="navbar navbar-expand">
+                    <div class="collapse navbar-collapse justify-content-between">
+                        <div class="header-left">
+							<div class="dashboard_bar">
+                                User
+                            </div>
+                        </div>
+                        <%- include('../../partials/header-user.ejs') %>
+                    </div>
+				</nav>
+			</div>
+		</div>
+                    
+        <!--**********************************
+            Header end ti-comment-alt
+        ***********************************-->
+
+        <!--**********************************
+            Sidebar start
+        ***********************************-->
+        <%- include('../../partials/sidebar-user.ejs')  %>
+        <!--**********************************
+            Sidebar end
+        ***********************************-->
+
+        <!--**********************************
+            Content body start
+        ***********************************-->
+        <div class="content-body">
+            <div class="container">
+
+                <!-- row -->
+
+                <div class="row">
+                    <h3 class="mb-3">Today Attendance</h3>
+                    <div class="d-flex gap-3 mb-3">
+                        <div class="attendance-box d-flex justify-content-between ">
+                            <div class="box-arrow me-4 bg-primary-light d-flex justify-content-center">
+                                <i class="bi bi-box-arrow-right text-primary fs-2"></i>
+                            </div>
+                            <div class="text">
+                                <h5 class="fs-2 mb-0">Check In</h5>
+                                <p class="fs-1 mb-0"><strong>10:20 am</strong></p>
+                            </div>
+                        </div>
+                        <div class="attendance-box d-flex justify-content-between ">
+                            <div class="box-arrow me-4 bg-primary-light d-flex justify-content-center">
+                                <i class="bi bi-box-arrow-left text-primary fs-2"></i>
+                            </div>
+                            <div class="text">
+                                <h5 class="fs-2 mb-0">Check Out</h5>
+                                <p class="fs-1 mb-0"><strong>-- --</strong></p>
+                            </div>
+                        </div>
+                        
+                    </div>
+                    <h3 class="mt-4 mb-3">Attendance History <a href="#" >View All</a></h3>
+                    <div class="card shadow ms-3 mb-2">
+                        <div class="d-flex justify-content-between border-bottom py-3 px-3">
+                            <div class="icon d-flex pt-3">
+                                <div class="box-arrow-1 me-4 mt-1 bg-primary-light d-flex justify-content-center">
+                                    <i class="bi bi-box-arrow-right text-primary fs-4"></i>
+                                </div>
+                                <div class="text">
+                                    <span class="fs-4 fw-bold">Check In</span>
+                                    <p>April 17, 2023</p>
+                                </div>
+                            </div>
+                            <div class="time pt-3">
+                                <span class="fs-5 fw-bold">8:05 am</span>
+                                <p>On Time</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card shadow ms-3 mb-2">
+                        <div class="d-flex justify-content-between border-bottom py-3 px-3">
+                            <div class="icon d-flex pt-3">
+                                <div class="box-arrow-1 me-4 mt-1 bg-primary-light d-flex justify-content-center">
+                                    <i class="bi bi-box-arrow-right text-primary fs-4"></i>
+                                </div>
+                                <div class="text">
+                                    <span class="fs-4 fw-bold">Check In</span>
+                                    <p>April 17, 2023</p>
+                                </div>
+                            </div>
+                            <div class="time pt-3">
+                                <span class="fs-5 fw-bold">8:05 am</span>
+                                <p>On Time</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card shadow ms-3 mb-2">
+                        <div class="d-flex justify-content-between border-bottom py-3 px-3">
+                            <div class="icon d-flex pt-3">
+                                <div class="box-arrow-1 me-4 mt-1 bg-primary-light d-flex justify-content-center">
+                                    <i class="bi bi-box-arrow-right text-primary fs-4"></i>
+                                </div>
+                                <div class="text">
+                                    <span class="fs-4 fw-bold">Check In</span>
+                                    <p>April 17, 2023</p>
+                                </div>
+                            </div>
+                            <div class="time pt-3">
+                                <span class="fs-5 fw-bold">8:05 am</span>
+                                <p>On Time</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card shadow ms-3 mb-2">
+                        <div class="d-flex justify-content-between border-bottom py-3 px-3">
+                            <div class="icon d-flex pt-3">
+                                <div class="box-arrow-1 me-4 mt-1 bg-primary-light d-flex justify-content-center">
+                                    <i class="bi bi-box-arrow-right text-primary fs-4"></i>
+                                </div>
+                                <div class="text">
+                                    <span class="fs-4 fw-bold">Check In</span>
+                                    <p>April 17, 2023</p>
+                                </div>
+                            </div>
+                            <div class="time pt-3">
+                                <span class="fs-5 fw-bold">8:05 am</span>
+                                <p>On Time</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                   
+                </div>
+            </div>
+        </div>
+
+       
+
+       
+        
+
+
+        <!--**********************************
+            Content body end
+        ***********************************-->
+
+
+        <!--**********************************
+            Footer start
+        ***********************************-->
+        <%- include('../../partials/footer.ejs') %>
+        <!--**********************************
+            Footer end
+        ***********************************-->
+
+        <!--**********************************
+           Support ticket button start
+        ***********************************-->
+
+        <!--**********************************
+           Support ticket button end
+        ***********************************-->
+
+        
+    </div>
+    <!--**********************************
+        Main wrapper end
+    ***********************************-->
+
+    <!--**********************************
+        Scripts
+    ***********************************-->
+    <!-- Required vendors -->
+
+    <script src="vendor/global/global.min.js"></script>
+    <script src="vendor/chart.js/Chart.bundle.min.js"></script>
+	<!-- Apex Chart -->
+	<script src="vendor/apexchart/apexchart.js"></script>
+	
+    <!-- Datatable -->
+    <script src="vendor/datatables/js/jquery.dataTables.min.js"></script>
+    <script src="js/plugins-init/datatables.init.js"></script>
+
+	<script src="vendor/jquery-nice-select/js/jquery.nice-select.min.js"></script>
+
+    <script src="js/custom.min.js"></script>
+	<script src="js/dlabnav-init.js"></script>
+	<script src="js/demo.js"></script>
+    <script src="js/styleSwitcher.js"></script>
+     
+    
+</body>
+</html>

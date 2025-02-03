@@ -39,9 +39,6 @@
             Chat box End
         ***********************************-->
 
-
-
-
                     <!--**********************************
             Header start
         ***********************************-->
@@ -51,7 +48,7 @@
                                 <div class="collapse navbar-collapse justify-content-between">
                                     <div class="header-left">
                                         <div class="dashboard_bar">
-                                            Checkout
+                                            Profile Magement
                                         </div>
 
                                     </div>
@@ -108,17 +105,20 @@
                                                         </div>
                                                     </div>
                                                     <div class="d-flex">
-                                                        <button type="button" class="btn btn-primary btn-style p-0"
+                                                        <button type="button"
+                                                            class="btn border border-3  btn-style p-0 "
                                                             data-bs-toggle="modal"
                                                             data-bs-target="#exampleModalCenter"><span class="me-2"><i
-                                                                    class="bi bi-pencil"></i></span>Edit
+                                                                    class="bi bi-pencil "></i></span>Edit
                                                         </button>
                                                         <button type="button"
-                                                            class="btn border btn-style mx-2 p-0"><span class="me-2"><i
+                                                            class="btn border border-3  btn-style mx-2 p-0"><span
+                                                                class="me-2"><i
                                                                     class="bi bi-file-earmark-text"></i></span>CV
                                                         </button>
-                                                        <button type="button" class="btn border btn-style p-0"><span
-                                                                class="me-2"><i
+                                                        <button type="button" class="btn border border-3  btn-style p-0"
+                                                            data-bs-toggle="modal"
+                                                            data-bs-target="#exampleModalCenter1"><span class="me-2"><i
                                                                     class="bi bi-credit-card"></i></span>Card
                                                         </button>
                                                     </div>
@@ -127,23 +127,21 @@
                                             <div class="custom-tab-1 px-3 pb-4  pb-0">
                                                 <ul class="nav nav-tabs">
                                                     <li class="nav-item">
-                                                        <a class="nav-link active" data-bs-toggle="tab"
-                                                            href="#profile"><i class="la la-home me-2"></i>
+                                                        <a class="nav-link active" data-bs-toggle="tab" href="#profile">
                                                             ព័ត៌មានផ្ទាល់ខ្លួន</a>
                                                     </li>
                                                     <li class="nav-item">
-                                                        <a class="nav-link" data-bs-toggle="tab" href="#profile1"><i
-                                                                class="la la-user me-2"></i> វត្តមាន</a>
+                                                        <a class="nav-link" data-bs-toggle="tab" href="#attendance"></i>
+                                                            វត្តមាន</a>
                                                     </li>
                                                     <li class="nav-item">
-                                                        <a class="nav-link" data-bs-toggle="tab" href="#message1"><i
-                                                                class="la la-envelope me-2"></i>ប្រាក់បៀវត្តន៍</a>
+                                                        <a class="nav-link" data-bs-toggle="tab"
+                                                            href="#payroll">ប្រាក់បៀវត្តន៍</a>
                                                     </li>
                                                     <li class="nav-item">
-                                                        <a class="nav-link" data-bs-toggle="tab" href="#contact1"><i
-                                                                class="la la-phone me-2"></i> ប្រតិបត្តិការ</a>
+                                                        <a class="nav-link" data-bs-toggle="tab" href="#performance">
+                                                            ប្រតិបត្តិការ</a>
                                                     </li>
-
                                                 </ul>
                                                 <div class="tab-content">
                                                     <div class="tab-pane fade show active" id="profile" role="tabpanel">
@@ -151,7 +149,7 @@
                                                             <div class="col-6 mt-5 ">
                                                                 <h3 class="pb-4">ព័ត៌មានផ្ទាល់ខ្លួន</h3>
                                                                 <div class="card card-body bg-white shadow  z-3">
-                                                                    <table class="table ">
+                                                                    <table class="table">
                                                                         <tbody>
                                                                             <tr>
                                                                                 <td>គោត្តនាម</td>
@@ -219,48 +217,331 @@
                                                             </div>
                                                         </div>
                                                     </div>
-                                                    <div class="tab-pane fade" id="profile1">
-                                                        <div class="pt-4">
-                                                            <h4>This is profile title</h4>
-                                                            <p>Raw denim you probably haven't heard of them jean shorts
-                                                                Austin. Nesciunt tofu stumptown aliqua, retro synth
-                                                                master cleanse. Mustache cliche tempor.
-                                                            </p>
-                                                            <p>Raw denim you probably haven't heard of them jean shorts
-                                                                Austin. Nesciunt tofu stumptown aliqua, retro synth
-                                                                master cleanse. Mustache cliche tempor.
-                                                            </p>
+                                                    <div class="tab-pane fade" id="attendance">
+                                                        <div class="row">
+                                                            <div class="col-9 mt-5">
+                                                                <!-- <h3 class="pb-4">ព័ត៌មានផ្ទាល់ខ្លួន</h3> -->
+                                                                <h3 class=" pb-4">បញ្ជីវត្តមាន</h3>
+                                                                <div
+                                                                    class="card card-body bg-white shadow align-items-center">
+                                                                    <table class="table table-bordered">
+                                                                        <thead>
+                                                                            <tr>
+                                                                                <th></th>
+                                                                                <th>ចូលធ្វើការ</th>
+                                                                                <th>ចេញពីធ្វើការ</th>
+                                                                                <th>ស្ថានភាព</th>
+                                                                            </tr>
+                                                                        </thead>
+                                                                        <tbody>
+                                                                            <tr>
+                                                                                <th><input type="checkbox"></th>
+                                                                                <td>Dec 30, 09:42 PM</td>
+                                                                                <td>Dec 30, 09:42 PM</td>
+                                                                                <td><span
+                                                                                        class="badge-danger px-3 py-1 rounded text-white">Late</span>
+                                                                                </td>
+                                                                            </tr>
+
+                                                                            <tr>
+                                                                                <th><input type="checkbox"></th>
+                                                                                <td>Dec 30, 09:42 PM</td>
+                                                                                <td>Dec 30, 09:42 PM</td>
+                                                                                <td><span
+                                                                                        class="badge-success px-3 py-1 rounded text-white">Good</span>
+                                                                                </td>
+                                                                            </tr>
+                                                                            <tr>
+                                                                                <th><input type="checkbox"></th>
+                                                                                <td>Dec 30, 09:42 PM</td>
+                                                                                <td>Dec 30, 09:42 PM</td>
+                                                                                <td><span
+                                                                                        class="badge-danger px-3 py-1 rounded text-white">Late</span>
+                                                                                </td>
+                                                                            </tr>
+                                                                            <tr>
+                                                                                <th><input type="checkbox"></th>
+                                                                                <td>Dec 30, 09:42 PM</td>
+                                                                                <td>Dec 30, 09:42 PM</td>
+                                                                                <td><span
+                                                                                        class="badge-success px-3 py-1 rounded text-white">Good</span>
+                                                                                </td>
+                                                                            </tr>
+                                                                            <tr>
+                                                                                <th><input type="checkbox"></th>
+                                                                                <td>Dec 30, 09:42 PM</td>
+                                                                                <td>Dec 30, 09:42 PM</td>
+                                                                                <td><span
+                                                                                        class="badge-success px-3 py-1 rounded text-white">Good</span>
+                                                                                </td>
+                                                                            </tr>
+                                                                            <tr>
+                                                                                <th><input type="checkbox"></th>
+                                                                                <td>Dec 30, 09:42 PM</td>
+                                                                                <td>Dec 30, 09:42 PM</td>
+                                                                                <td><span
+                                                                                        class="badge-success px-3 py-1 rounded text-white">Good</span>
+                                                                                </td>
+                                                                            </tr>
+                                                                            <tr>
+                                                                                <th><input type="checkbox"></th>
+                                                                                <td>Dec 30, 09:42 PM</td>
+                                                                                <td>Dec 30, 09:42 PM</td>
+                                                                                <td><span
+                                                                                        class="badge-success px-3 py-1 rounded text-white">Good</span>
+                                                                                </td>
+                                                                            </tr>
+
+                                                                        </tbody>
+                                                                    </table>
+                                                                    <nav aria-label="Page navigation">
+                                                                        <ul class="pagination justify-content-center">
+                                                                            <li class="page-item"><a class="page-link"
+                                                                                    href="#">ថយក្រោយ</a></li>
+                                                                            <li class="page-item active"><a
+                                                                                    class="page-link" href="#">1</a>
+                                                                            </li>
+                                                                            <li class="page-item"><a class="page-link"
+                                                                                    href="#">2</a></li>
+                                                                            <li class="page-item"><a class="page-link"
+                                                                                    href="#">3</a></li>
+                                                                            <li class="page-item"><a class="page-link"
+                                                                                    href="#">...</a></li>
+                                                                            <li class="page-item"><a class="page-link"
+                                                                                    href="#">10</a></li>
+                                                                            <li class="page-item"><a class="page-link"
+                                                                                    href="#">បន្ត</a></li>
+                                                                        </ul>
+                                                                    </nav>
+                                                                </div>
+
+                                                            </div>
+                                                            <div class="col-3">
+                                                                <div class=" mt-5">
+                                                                    <h3 class=" mb-4">របាយការណ៍វត្តមាន</h3>
+                                                                    <div class="card card-body bg-white shadow ">
+                                                                        <div class="pieContainer ">
+                                                                            <div class="pieBackground"></div>
+                                                                            <div id="pieSlice1" class="hold">
+                                                                                <div class="pie"></div>
+                                                                            </div>
+                                                                            <div id="pieSlice2" class="hold">
+                                                                                <div class="pie"></div>
+                                                                            </div>
+                                                                            <div id="pieSlice3" class="hold">
+                                                                                <div class="pie"></div>
+                                                                            </div>
+                                                                            <div id="pieSlice4" class="hold">
+                                                                                <div class="pie"></div>
+                                                                            </div>
+                                                                        </div>
+                                                                        <div
+                                                                            class="d-flex align-items-center justify-content-between mb-4 mt-5">
+                                                                            <span class="fs-18 font-w500">
+                                                                                <svg class="me-3" width="40" height="20"
+                                                                                    viewbox="0 0 20 20" fill="none"
+                                                                                    xmlns="http://www.w3.org/2000/svg">
+                                                                                    <rect width="50" height="16"
+                                                                                        fill="#0a0"></rect>
+                                                                                </svg>
+                                                                                ល្អ
+                                                                            </span>
+                                                                        </div>
+                                                                        <div
+                                                                            class="d-flex align-items-center justify-content-between mb-4 ">
+                                                                            <span class="fs-18 font-w500">
+                                                                                <svg class="me-3" width="40" height="20"
+                                                                                    viewbox="0 0 20 20" fill="none"
+                                                                                    xmlns="http://www.w3.org/2000/svg">
+                                                                                    <rect width="50" height="16"
+                                                                                        fill="#fdd927"></rect>
+                                                                                </svg>
+                                                                                មកយឺត
+                                                                            </span>
+
+                                                                        </div>
+                                                                        <div
+                                                                            class="d-flex align-items-center justify-content-between mb-4 ">
+                                                                            <span class="fs-18 font-w500">
+                                                                                <svg class="me-3" width="40" height="20"
+                                                                                    viewbox="0 0 20 20" fill="none"
+                                                                                    xmlns="http://www.w3.org/2000/svg">
+                                                                                    <rect width="50" height="16"
+                                                                                        fill="#08f"></rect>
+                                                                                </svg>
+                                                                                សុំច្បាប់
+                                                                            </span>
+                                                                        </div>
+                                                                        <div
+                                                                            class="d-flex align-items-center justify-content-between mb-4 ">
+                                                                            <span class="fs-18 font-w500">
+                                                                                <svg class="me-3" width="40" height="20"
+                                                                                    viewbox="0 0 20 20" fill="none"
+                                                                                    xmlns="http://www.w3.org/2000/svg">
+                                                                                    <rect width="50" height="16"
+                                                                                        fill="#ea3333"></rect>
+                                                                                </svg>
+                                                                                អវត្តមាន
+                                                                            </span>
+                                                                        </div>
+
+                                                                    </div>
+                                                                </div>
+                                                                <div class="mt-3">
+                                                                    <div class="card card-body bg-white shadow py-0">
+                                                                        <button class="btn "><i
+                                                                                class="bi bi-person-workspace pe-3"></i>
+                                                                            បញ្ជីអវត្តមាន
+                                                                        </button>
+                                                                        <hr class="my-0">
+                                                                        <button class="btn ">
+                                                                            <i class="bi bi-person-workspace pe-3"></i>
+                                                                            ប្រវត្តិសុំច្បាប់
+                                                                        </button>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
                                                         </div>
                                                     </div>
-                                                    <div class="tab-pane fade" id="contact1">
-                                                        <div class="pt-4">
-                                                            <h4>This is contact title</h4>
-                                                            <p>Far far away, behind the word mountains, far from the
-                                                                countries Vokalia and Consonantia, there live the blind
-                                                                texts. Separated they live in Bookmarksgrove.
-                                                            </p>
-                                                            <p>Far far away, behind the word mountains, far from the
-                                                                countries Vokalia and Consonantia, there live the blind
-                                                                texts. Separated they live in Bookmarksgrove.
-                                                            </p>
+                                                    <div class="tab-pane fade" id="payroll">
+                                                        <div class="row">
+                                                            <div
+                                                                class="d-flex justify-content-between align-items-center mb-3">
+                                                                <h3 class=" pb-4 mt-5">តារាងប្រាក់បៀវត្ស</h3>
+                                                                <button class="btn shadow py-2  "><i
+                                                                        class="bi bi-calendar"></i> Month</button>
+                                                            </div>
+                                                            <!-- <h3 class=" pb-4 mt-5">ព័ត៌មានប្រាក់បៀវត្សន៍</h3> -->
+                                                            <div class="col-3">
+                                                                <div class="card shadow px-4 py-3">
+                                                                    <div class="d-flex justify-content-between">
+                                                                        <h1 class="text-yellow fw-bold display-6">300$
+                                                                        </h1>
+                                                                        <div
+                                                                            class="bg-icon bg-primary-light text-primary d-flex justify-content-center pt-1">
+                                                                            <i
+                                                                                class="bi bi-person icon fs-3 fw-bold"></i>
+                                                                        </div>
+                                                                    </div>
+                                                                    <p class="mb-1">Base Salary</p>
+                                                                    <small class="text-muted "><i
+                                                                            class="bi bi-clock text-success"></i> Until
+                                                                        January
+                                                                        30th 2025</small>
+
+                                                                </div>
+                                                            </div>
+
+                                                            <div class="col-3">
+                                                                <div class="card shadow px-4 py-3">
+                                                                    <div class="d-flex justify-content-between">
+                                                                        <h1 class="text-primary fw-bold display-6">10
+                                                                        </h1>
+                                                                        <div
+                                                                            class="bg-icon bg-primary-light text-primary d-flex justify-content-center pt-1">
+                                                                            <i
+                                                                                class="bi bi-clock-history fs-3 fw-bold "></i>
+                                                                        </div>
+                                                                    </div>
+                                                                    <p class="mb-1">Over time</p>
+                                                                    <small class="text-muted"><i
+                                                                            class="bi bi-percent text-success"></i>
+                                                                        5$ per hour</small>
+
+                                                                </div>
+                                                            </div>
+                                                            <div class="col-3">
+                                                                <div class="card shadow px-4 py-3">
+                                                                    <div class="d-flex justify-content-between">
+                                                                        <h1 class="text-danger fw-bold display-6">5%
+                                                                        </h1>
+                                                                        <div
+                                                                            class="bg-icon bg-primary-light text-primary d-flex justify-content-center pt-1">
+
+                                                                            <i class="bi bi-percent fs-3 fw-bold "></i>
+
+                                                                        </div>
+                                                                    </div>
+                                                                    <p class="mb-1">Tax</p>
+                                                                    <small class="text-muted"><i
+                                                                            class="bi bi-clock text-success"></i> Until
+                                                                        January 30th
+                                                                        2025</small>
+
+                                                                </div>
+                                                            </div>
+                                                            <div class="col-3">
+                                                                <div class="card shadow px-4 py-3">
+                                                                    <div class="d-flex justify-content-between">
+                                                                        <h1 class="text-success fw-bold display-6">333%
+                                                                        </h1>
+                                                                        <div
+                                                                            class="bg-icon bg-primary-light text-primary d-flex justify-content-center pt-1">
+                                                                            <i
+                                                                                class="bi bi-credit-card fs-3 fw-bold "></i>
+
+                                                                        </div>
+                                                                    </div>
+                                                                    <p class="mb-1">Net Salary</p>
+                                                                    <small class="text-muted"><i
+                                                                            class="bi bi-cash text-success"></i> Until
+                                                                        January 30th
+                                                                        2025</small>
+
+                                                                </div>
+                                                            </div>
                                                         </div>
                                                     </div>
-                                                    <div class="tab-pane fade" id="message1">
-                                                        <div class="pt-4">
-                                                            <h4>This is message title</h4>
-                                                            <p>Raw denim you probably haven't heard of them jean shorts
-                                                                Austin. Nesciunt tofu stumptown aliqua, retro synth
-                                                                master cleanse. Mustache cliche tempor.
-                                                            </p>
-                                                            <p>Raw denim you probably haven't heard of them jean shorts
-                                                                Austin. Nesciunt tofu stumptown aliqua, retro synth
-                                                                master cleanse. Mustache cliche tempor.
-                                                            </p>
+                                                    <div class="tab-pane fade" id="performance">
+                                                        <div class="mt-5">
+                                                            <div class="row">
+                                                                <div class="col-12">
+                                                                    <div class="row">
+                                                                        <div class="col-xl-6 col-lg-12">
+                                                                            <div class="card">
+                                                                                <div class="card-header">
+                                                                                    <h4 class="card-title">Pie chart
+                                                                                        with custom labels</h4>
+                                                                                </div>
+                                                                                <div class="card-body">
+                                                                                    <div id="pie-chart"
+                                                                                        class="ct-chart ct-golden-section chartlist-chart">
+                                                                                    </div>
+                                                                                </div>
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+
+
+                                                                <!-- <div class="d-flex justify-content-between align-items-center">
+                                                                            <div>
+                                                                                <h3 class="fw-bold">Performance</h3>
+                                                                                <p class="text-muted">From 27, Jan 2025</p>
+                                                                            </div>
+                                                                            <button class="btn shadow btn-sm">This week ▼</button>
+                                                                        </div>
+                                                                        <div class="row">
+                                                                            <div class="col-6 bg-black ">
+    
+                                                                                <canvas id="doughnutChart"></canvas>
+                                                                                
+                                                                            </div>
+                                                                            <div class="col-5 ">
+                                                                                
+                                                                            </div>
+                                                                        </div> -->
+
+
+                                                            </div>
+                                                            <div class="col-5 bg-danger w-100">
+
+                                                            </div>
                                                         </div>
                                                     </div>
+
                                                 </div>
                                             </div>
-
                                         </div>
                                     </div>
                                 </div>
@@ -268,9 +549,7 @@
                             </div>
                         </div>
 
-                        <!-- Button trigger modal -->
-                        <button type="button" class="btn btn-primary mb-2" data-bs-toggle="modal"
-                            data-bs-target="#exampleModalCenter">Modal centered</button>
+
                         <!-- Modal -->
                         <div class="modal fade" id="exampleModalCenter">
                             <div class="modal-dialog modal-lg  modal-dialog-centered" role="document">
@@ -283,16 +562,16 @@
                                     <div class="modal-body">
                                         <form action="">
                                             <div class="row">
-                                                <div class="col-6 ">      
+                                                <div class="col-6 ">
                                                     <div class="row">
                                                         <div class="col-12">
                                                             <div class="d-flex justify-content-center mb-4">
-                                                                <img src="images/pic3.jpg" class="img-fluid rounded-circle"
-                                                                    alt="">
+                                                                <img src="images/pic3.jpg"
+                                                                    class="img-fluid rounded-circle" alt="">
                                                             </div>
                                                         </div>
                                                         <div class="col-12 mb-3">
-                                                            <h5 class="modal-title">កែតម្រូវព័ត៌មានបុគ្គលិក</h5>
+                                                            <h5 class="modal-title">ព័ត៌មានផ្ទាល់ខ្លួន</h5>
                                                         </div>
                                                         <div class="col-6 ">
                                                             <div class="form-group ">
@@ -323,71 +602,103 @@
                                                                 <input type="date" class="form-control" id="birthDate">
                                                             </div>
                                                         </div>
-                                                        <div class="col-6  mt-3">
+                                                        <div class="col-12  mt-3">
                                                             <div class="form-group">
                                                                 <label for="numPhone">Phone</label>
-                                                                <input type="date" class="form-control" id="numPhone">
+                                                                <input type="text" class="form-control" id="numPhone"
+                                                                    placeholder="01234567">
                                                             </div>
                                                         </div>
                                                         <div class="col-12  mt-3">
                                                             <div class="form-group">
                                                                 <label for="address">Address</label>
-                                                                <textarea class="form-control" id="address" rows="3"></textarea>
+                                                                <textarea class="form-control" id="address"
+                                                                    rows="3">ផ្លូវ៥១២ ភូមិ១ បឹងកក់ទី១ ទួលគោក ភ្នំពេញ</textarea>
                                                             </div>
-                                
                                                         </div>
                                                     </div>
                                                 </div>
                                                 <div class="col-6">
                                                     <div class="row ">
                                                         <div class="col-12 mb-3">
-                                                            <h5 class="modal-title">កែតម្រូវព័ត៌មានបុគ្គលិក</h5>
+                                                            <h5 class="modal-title">ព័ត៌មានការងារ</h5>
                                                         </div>
                                                         <div class="col-12 ">
                                                             <div class="form-group ">
-                                                                <label for="firstName">គោត្តនាម</label>
-                                                                <input type="text" class="form-control" id="firstName"
-                                                                    placeholder="ហិន">
+                                                                <label for="firstName">នាយកដ្ឋាន</label>
+                                                                <select class="form-control" id="gender">
+                                                                    <option value="អប់រំ">អប់រំ</option>
+                                                                    <option value="អប់រំ">អប់រំ</option>
+
+                                                                </select>
+
                                                             </div>
                                                         </div>
                                                         <div class="col-12 mt-3">
                                                             <div class="form-group ">
-                                                                <label for="lastName">Last Name</label>
-                                                                <input type="text" class="form-control" id="lastName"
-                                                                    placeholder="Last Name">
+                                                                <label for="position">មុខតំណែង</label>
+                                                                <select class="form-control" id="gender">
+                                                                    <option value="គ្រូបង្រៀន">គ្រូបង្រៀន</option>
+                                                                    <option value="អប់រំ">អប់រំ</option>
+
+                                                                </select>
                                                             </div>
                                                         </div>
                                                         <div class="col-12  mt-3">
                                                             <div class="form-group ">
-                                                                <label for="gender">Gender</label>
-                                                                <select class="form-control" id="gender">
-                                                                    <option value="male">Male</option>
-                                                                    <option value="female">Female</option>
-                                                                </select>
+                                                                <label for="payroll">ប្រាក់បៀវត្សន៍</label>
+                                                                <input type="text" class="form-control" id="payroll"
+                                                                    placeholder="300$">
                                                             </div>
                                                         </div>
                                                         <div class="col-12 mt-3">
                                                             <div class="form-group">
-                                                                <label for="birthDate">Birth Date</label>
+                                                                <label for="birthDate">ថ្ងៃចូលធ្វើការ</label>
                                                                 <input type="date" class="form-control" id="birthDate">
                                                             </div>
                                                         </div>
                                                         <div class="col-12 mt-3">
                                                             <div class="form-group">
-                                                                <label for="numPhone">Phone</label>
-                                                                <input type="date" class="form-control" id="numPhone">
+                                                                <label for="numPhone">CV</label>
+                                                                <div class="input-group form-control">
+                                                                    <div class="form-file border-0">
+                                                                        <input type="file"
+                                                                            class="form-file-input form-control">
+                                                                    </div>
+                                                                </div>
                                                             </div>
                                                         </div>
-                                                        
                                                     </div>
                                                 </div>
-                                            </div>  
+                                            </div>
                                         </form>
                                     </div>
                                     <div class="modal-footer">
                                         <button type="button" class="btn btn-danger light"
-                                            data-bs-dismiss="modal">Close</button>
-                                        <button type="button" class="btn btn-primary">Save changes</button>
+                                            data-bs-dismiss="modal">បោះបង់</button>
+                                        <button type="button" class="btn btn-primary">រក្សាទុក</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="modal fade" id="exampleModalCenter1">
+                            <div class="modal-dialog modal-md modal-dialog-centered" role="document">
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <h5 class="modal-title">មើលលម្អិតកាតផ្ទាល់ខ្លួន</h5>
+                                        <button type="button" class="btn-close" data-bs-dismiss="modal">
+                                        </button>
+                                    </div>
+                                    <div class="modal-body align-items-center d-flex justify-content-center">
+                                        <img src="images/card-emp.png" class="w-75" alt="">
+                                    </div>
+                                    <div class="modal-footer">
+                                        <button type="button" class="btn btn-primary text-white fs-4"
+                                            data-bs-dismiss="modal"> <i
+                                                class="bi bi-credit-card-2-front-fill me-3 fs-3"></i>Print
+                                            Card</button>
+
                                     </div>
                                 </div>
                             </div>
@@ -434,6 +745,33 @@
         <script src="js/dlabnav-init.js"></script>
         <script src="js/demo.js"></script>
         <script src="js/styleSwitcher.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+        <!-- Chart Chartist plugin files -->
+        <script src="vendor/chartist/js/chartist.min.js"></script>
+        <script src="vendor/chartist-plugin-tooltips/js/chartist-plugin-tooltip.min.js"></script>
+        <script src="vendor/jquery-nice-select/js/jquery.nice-select.min.js"></script>
+        <script src="js/plugins-init/chartist-init.js"></script>
+
+
+        <script>
+            // Doughnut Chart
+            var ctx = document.getElementById('doughnutChart').getContext('2d');
+            new Chart(ctx, {
+                type: 'doughnut',
+                data: {
+                    // labels: ['In Office', 'On Leave', 'In Office (Other)', 'Half Day'],
+                    datasets: [{
+                        data: [55.6, 5.6, 27.8, 11.1],
+                        backgroundColor: ['#007bff', '#dc3545', '#17a2b8', '#ffc107']
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false
+                }
+            });
+        </script>
 
 
 </body>
