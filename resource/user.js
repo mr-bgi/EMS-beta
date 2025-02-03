@@ -13,8 +13,6 @@ const generateToken = (id, avarta) => {
 exports.createUser = async (req, res) => {
     try {
 
-
-
         const { first_name, last_name, email, role, password, gender, dob, phone, address, department_id, position_id, hire_date, base_salary } = req.body;
 
         // Validate input
@@ -131,7 +129,7 @@ exports.login = async (req, res) => {
             console.log(token);
             res.cookie('jwtToken', token, {
                 maxAge: 3 * 24 * 60 * 60 * 1000,
-                httpOnly: true,
+                // httpOnly: true,
             })
             res.status(200).json({
                 result: true,
