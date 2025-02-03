@@ -348,3 +348,42 @@ th,td{
 .action-style i{
     font-size: 8px !important;
 } 
+.bg-icon{
+    width: 35px;
+    height: 35px;
+    border-radius: 50%;
+}
+.bg-primary-light {
+    background: rgb(72 133 237 / 17%) !important;
+  }
+
+.metismenu .active{
+    background-color: #08f;
+    color: #fff;
+
+}
+.attendance-box {
+    width: 320px ;
+    /* background-color: #08f !important; */
+    text-align: center;
+    padding: 30px;
+    border-radius: 10px;
+    background: #ffffff;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+.attendance-box .box-arrow{
+    width: 50px;
+    height: 50px;
+    border-radius: 8px;
+    padding-top: 6px;
+    margin-top: 20px;
+
+    /* background-color: #0a0; */
+}
+.box-arrow-1{
+    width: 30px;
+    height: 30px;
+    border-radius: 4px;
+    padding-top: 5px;
+    
+}

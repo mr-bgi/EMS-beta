@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<%- include('../../partials/head.ejs') %>
+<body>
+
+    <!--*******************
+        Preloader start
+    ********************-->
+    <%- include('../../partials/preloader.ejs') %>
+    <!--*******************
+        Preloader end
+    ********************-->
+
+    <!--**********************************
+        Main wrapper start
+    ***********************************-->
+    <div id="main-wrapper">
+
+        <!--**********************************
+            Nav header start
+        ***********************************-->
+		<%- include('../../partials/nav-header.ejs') %>
+        <!--**********************************
+            Nav header end
+        ***********************************-->
+		
+		<!--**********************************
+            Chat box start
+        ***********************************-->
+		<%- include('../../partials/chatbox.ejs') %>
+		<!--**********************************
+            Chat box End
+        ***********************************-->
+
+        <!--**********************************
+            Header start
+        ***********************************-->
+        <div class="header">
+            <div class="header-content">
+                <nav class="navbar navbar-expand">
+                    <div class="collapse navbar-collapse justify-content-between">
+                        <div class="header-left">
+							<div class="dashboard_bar">
+                                User
+                            </div>
+                        </div>
+                        <%- include('../../partials/header-user.ejs') %>
+                    </div>
+				</nav>
+			</div>
+		</div>
+                    
+        <!--**********************************
+            Header end ti-comment-alt
+        ***********************************-->
+
+        <!--**********************************
+            Sidebar start
+        ***********************************-->
+        <%- include('../../partials/sidebar-user.ejs')  %>
+        <!--**********************************
+            Sidebar end
+        ***********************************-->
+
+        <!--**********************************
+            Content body start
+        ***********************************-->
+        <div class="content-body">
+            <div class="container-fluid">
+
+                <!-- row -->
+
+                <div class="row">
+                    <!-- <div class="col-12">
+                        <div class="department d-flex align-items-center justify-content-between">
+                            <h2 class="title pb-3">បញ្ជីអ្នកប្រើប្រាស់</h2>
+
+                            <div class="left-item d-flex align-items-center  pb-3 justify-content-evenly ">
+                                <search  class="search me-4 border shadow">
+                                    <span><i class="fa-solid fa-magnifying-glass"></i></span>&nbsp; Search
+                                </search>
+                                
+    
+                                <div class="filter  border shadow">
+                                    <span><i class="fa-solid fa-filter"></i></span>&nbsp; Filter
+                                </div>
+                               
+                               
+    
+                            </div>
+
+                        </div>
+                        
+                    </div> -->
+                    <div class="col-lg-12">
+                        <div class="card profile card card-body px-3 pb-4  pb-0">
+                            <div class="profile-head">
+                                <div class="photo-content">
+                                    <div class="cover-photo rounded"></div>
+                                </div>
+                                <div class="profile-info">
+                                    <div class="profile-photo">
+                                        <img src="images/pic3.jpg" class="rounded-circle"
+                                            alt="" style="width: 140px;">
+                                    </div>
+                                    <div class="profile-details">
+                                        <div class="profile-name ps-5 ms-5 pt-2">
+                                            <h2 class="text-primary mb-0 fw-bold">Tom Alison</h2>
+                                            <p class="mb-0 py-1 ">ID : 102022025</p>
+                                            <p class="text-primary fw-semibold mb-0"><i class="bi bi-clock pe-2"></i>09 : 15 : 34</p>
+                                            <p class="pt-1">អ្នកមិនទាន់បានស្កេនចូលធ្វើការ​ទេនៅថ្ងៃនេះ!!</p>
+                                        </div>
+                                    </div>
+                                    <div class="">
+                                        <div class="d-flex justify-content-end text-warning ">
+                                            <div class="d-flex gap-2">
+                                                <i class="bi bi-star-fill"></i>
+                                                <i class="bi bi-star-fill"></i>
+                                                <i class="bi bi-star-fill"></i>
+                                                <i class="bi bi-star-half"></i>
+                                                <i class="bi bi-star"></i>
+                                            </div>
+                                        </div>
+                                        <div class="d-flex mt-5 pt-5">
+                                            <button type="button"
+                                                class="btn btn-primary  btn-style p-0 me-3"
+                                                data-bs-toggle="modal"
+                                                data-bs-target="#exampleModalCenter">Check In
+                                            </button>
+                                            <button type="button"
+                                                class="btn bg-primary-light text-primary btn-style  p-0">Check Out
+                                            </button>
+                                        </div>
+
+                                        <!-- <button type="button"
+                                            class="btn border border-3  btn-style p-0 "
+                                            data-bs-toggle="modal"
+                                            data-bs-target="#exampleModalCenter"><span class="me-2"><i
+                                                    class="bi bi-pencil "></i></span>Edit
+                                        </button>
+                                        <button type="button"
+                                            class="btn border border-3  btn-style mx-2 p-0"><span
+                                                class="me-2"><i
+                                                    class="bi bi-file-earmark-text"></i></span>CV
+                                        </button>
+                                        <button type="button" class="btn border border-3  btn-style p-0"
+                                            data-bs-toggle="modal"
+                                            data-bs-target="#exampleModalCenter1"><span class="me-2"><i
+                                                    class="bi bi-credit-card"></i></span>Card
+                                        </button> -->
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                   
+                </div>
+            </div>
+        </div>
+
+       
+
+       
+        
+
+
+        <!--**********************************
+            Content body end
+        ***********************************-->
+
+
+        <!--**********************************
+            Footer start
+        ***********************************-->
+        <%- include('../../partials/footer.ejs') %>
+        <!--**********************************
+            Footer end
+        ***********************************-->
+
+        <!--**********************************
+           Support ticket button start
+        ***********************************-->
+
+        <!--**********************************
+           Support ticket button end
+        ***********************************-->
+
+        
+    </div>
+    <!--**********************************
+        Main wrapper end
+    ***********************************-->
+
+    <!--**********************************
+        Scripts
+    ***********************************-->
+    <!-- Required vendors -->
+
+    <script src="vendor/global/global.min.js"></script>
+    <script src="vendor/chart.js/Chart.bundle.min.js"></script>
+	<!-- Apex Chart -->
+	<script src="vendor/apexchart/apexchart.js"></script>
+	
+    <!-- Datatable -->
+    <script src="vendor/datatables/js/jquery.dataTables.min.js"></script>
+    <script src="js/plugins-init/datatables.init.js"></script>
+
+	<script src="vendor/jquery-nice-select/js/jquery.nice-select.min.js"></script>
+
+    <script src="js/custom.min.js"></script>
+	<script src="js/dlabnav-init.js"></script>
+	<script src="js/demo.js"></script>
+    <script src="js/styleSwitcher.js"></script>
+     
+    
+</body>
+</html>
