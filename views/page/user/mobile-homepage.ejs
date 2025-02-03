@@ -17,7 +17,7 @@
                 <a href="#" class="img-icon">
                     <img src="/icons/mobile/notification.png" class="w-100 h-100 object-fit-cover" alt="">
                 </a>
-                <a href="#" class="img-icon">
+                <a href="#" class="img-icon" data-bs-toggle="offcanvas" data-bs-target="#offcanvasTop">
                     <img src="/icons/mobile/menu-bar.png" class="w-100 h-100 object-fit-cover" alt="">
                 </a>
             </div>
@@ -47,8 +47,19 @@
                     </div>
                 </div>
                 <div class="btn-scan d-flex justify-content-between gap-3 mt-3">
-                    <a href="/mobile/qr-scanner" class="btn btn-checkin px-3">Check In</a>
-                    <a href="#" class="btn btn-checkout px-3">Check In</a>
+                    <a href="/user/scanner" class="btn btn-checkin px-3" id="btn-checkin">Check In</a>
+                    <a href="/user/scanner" class="btn btn-checkout px-3" id="btn-checkout">Check Out</a>
+                </div>
+            </section>
+            <section class="mobile-setting">
+                <div class="offcanvas offcanvas-top" tabindex="-1" id="offcanvasTop">
+                    <div class="offcanvas-header">
+                        <h5 class="offcanvas-title" id="offcanvasTopLabel">Offcanvas top</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+                    </div>
+                    <div class="offcanvas-body">
+                        ...
+                    </div>
                 </div>
             </section>
             <section class="main-menu">
@@ -116,6 +127,15 @@
 
         const currentTime = `${hours}:${minutes}:${seconds}`;
         document.getElementById("current-time").textContent = currentTime;
+
+        if (now.getHours() >= 17 && now.getHours() <= 18) {
+            document.getElementById("btn-checkout").classList.add("disabled");
+            document.getElementById("btn-checkin").classList.remove("disabled");
+        }
+        else {
+            document.getElementById("btn-checkin").classList.add("disabled");
+            document.getElementById("btn-checkout").classList.remove("disabled");
+        }
     }
     setInterval(updateTime, 1000);
     updateTime();

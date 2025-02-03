@@ -66,7 +66,7 @@
                                         <a href=""><img src="images/logo-EduVision.png" alt="" class="w-75 mb-3"></a>
                                     </div>
                                     <h4 class="text-center mb-4 fs-2 fw-bold">ចូលគណនី</h4>
-                                    <form id="loginForm">
+                                    <form id="loginForm" method="post">
                                         <div class="mb-3">
                                             <label class="mb-1"><strong>អុីម៉ែល</strong></label>
                                             <div class="d-flex align-items-center ">
@@ -156,7 +156,7 @@
             </div> -->
         </div>
     </div>
- 
+
     <script src="/js/auth/auth.js"></script>
     <!--**********************************
         Scripts
@@ -166,6 +166,32 @@
     <script src="js/custom.min.js"></script>
     <script src="js/dlabnav-init.js"></script>
     <script src="js/styleSwitcher.js"></script>
+    <script>
+        document.getElementById('loginForm').addEventListener('submit', async function (event) {
+            event.preventDefault();
+
+            const mail = document.getElementById('email').value;
+            const pwd = document.getElementById('password').value;
+
+            try {
+                const response = await fetch('http://localhost:3000/api/auth/login', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({ email: mail, password: pwd }),
+                });
+
+                const data = await response.json();
+                console.log(data);
+                if (data.result) {
+                    window.location.href = 'http://localhost:3000/';
+                }
+
+            } catch (error) {
+                console.error('Login error:', error);
+                alert('Login failed: ' + error.message);
+            }
+        });
+    </script>
 </body>
 
 </html>
