@@ -6,31 +6,30 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="/vendor/bootstrap/bootstrap.min.css">
     <link rel="stylesheet" href="/css/mobile.css">
-    <title>Document</title>
+    <title>Login</title>
 </head>
 
 <body>
-
     <div class="login-container px-3 d-flex flex-column justify-content-center align-items-center">
         <div class="container" style="transform: translateY(-50px);">
             <div class="login-logo">
                 <img src="/images/logo/EduVision.png" class="w-100 h-100 object-fit-cover" alt="">
             </div>
             <p class="login-description">Welcome back. Enter your credentials to access your account</p>
-            <form action="" method="post" class="">
+            <form action="/api/auth/login" method="post" id="loginForm">
                 <div class="mb-3 position-relative">
-                    <label for="username">អ៊ីម៉ែល</label><br>
+                    <label for="email">អ៊ីម៉ែល</label><br>
                     <div class="input-icon position-absolute">
                         <img src="/icons/mobile/mail.png" class="w-100 h-100 object-fit-cover" alt="">
                     </div>
-                    <input type="email" class="form-control login-input" placeholder="អ៊ីម៉ែល">
+                    <input type="email" class="form-control login-input" placeholder="អ៊ីម៉ែល" id="email" name="email" required>
                 </div>
                 <div class="mb-2 position-relative">
-                    <label for="username">លេខសម្ងាត់</label><br>
+                    <label for="password">លេខសម្ងាត់</label><br>
                     <div class="input-icon position-absolute">
                         <img src="/icons/mobile/lock.png" class="w-100 h-100 object-fit-cover" alt="">
                     </div>
-                    <input type="password" class="form-control login-input" placeholder="លេខសម្ងាត់">
+                    <input type="password" class="form-control login-input" placeholder="លេខសម្ងាត់" name="password" id="password" required>
                 </div>
                 <div class="form-check ms-1">
                     <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
@@ -42,7 +41,35 @@
             </form>
         </div>
     </div>
+
+    <script src="/vendor/bootstrap/bootstrap.bundle.min.js"></script>
+    <script>
+        document.getElementById('loginForm').addEventListener('submit', async function (event) {
+            event.preventDefault();
+
+            const mail = document.getElementById('email').value;
+            const pwd = document.getElementById('password').value;
+
+            try {
+                const response = await fetch('http://localhost:3000/api/auth/login', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({ email: mail, password: pwd }),
+                });
+
+                const data = await response.json();
+                console.log(data);
+                if(data.result){
+                    window.location.href = 'http://localhost:3000/user/homepage';
+                }
+                
+                
+            } catch (error) {
+                console.error('Login error:', error);
+                alert('Login failed: ' + error.message);
+            }
+        });
+    </script>
 </body>
-<script src="/vendor/bootstrap/bootstrap.bundle.min.js"></script>
 
 </html>

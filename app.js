@@ -8,6 +8,7 @@ const apiAuth = require('./routes/api/auth');
 const apiEmployee = require('./routes/api/employee');
 const apiPosition = require('./routes/api/position');
 const apiDept = require('./routes/api/department');
+const apiAttendance = require('./routes/api/attendance');
 
 const allFolderApps = require('./routes/web/allApps')
 const auth = require('./routes/web/auth')
@@ -26,6 +27,7 @@ const manageProfile = require('./routes/web/profile-manage')
 const listUser = require('./routes/web/list-user')
 const allUser = require('./routes/web/user')
 const allMobilePage = require('./routes/web/mobileUser')
+const userPage = require('./routes/web/user')
 
 
 
@@ -41,6 +43,7 @@ liveReloadServer.watch(__dirname + "/public");
 
 app.use(connectLivereload());
 app.set('view engine', 'ejs');
+app.use(express.json());
 app.use(express.static('public'));
 app.use(express.static('storage'));
 app.use(fileUpload());  
@@ -56,6 +59,7 @@ app.use(apiAuth);
 // app.use apiPositionloyee);
 app.use(apiPosition);
 app.use(apiDept);
+app.use(apiAttendance);
 
 //Web
 app.use(allFolderApps);
@@ -74,7 +78,7 @@ app.use(manageProfile);
 app.use(allEmployee);
 app.use(listUser);
 app.use(allUser);
-app.use(allMobilePage);
+app.use(userPage);
 
 
 app.listen(port, () => {
