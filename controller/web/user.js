@@ -5,7 +5,9 @@ const getHomepage = (req, res) => {
 const getAttendace = (req, res) => {
     res.render("page/user/attendace");
 };
-
+const getRequestAttendace= (req, res) => {
+    res.render("page/user/request-atten");
+};
 const getMobileLogin = (req, res) =>{
     res.render('page/user/login');
 }
@@ -18,6 +20,7 @@ const getQrScanner = async (req, res) => {
 module.exports = {
     getHomepage,
     getAttendace,
+    getRequestAttendace,
     getMobileLogin,
     getMobileHomepage,
     getQrScanner

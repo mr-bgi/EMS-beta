@@ -49,6 +49,13 @@
         .form-control {
             padding-left: 38px !important;
         }
+
+        .swal2-timer-progress-bar {
+            background-color: #4187FD !important;
+        }
+        /* .swal2-toast button:where(.swal2-close){
+            color: black;
+        } */
     </style>
 </head>
 
@@ -74,13 +81,16 @@
                                                 <input type="text" id="email" class="form-control ">
 
                                             </div>
+                                            
+                                            <p style="color: #DC3545; margin: 0; text-align: end; visibility: hidden;" id="emailCheck">សូមបញ្ជូលតាមតម្រង់ example@gmail.com</p>
                                         </div>
-                                        <div class="mb-3">
+                                        <div class="mb-2">
                                             <label class="mb-1"><strong>លេខសម្ងាត់</strong></label>
                                             <div class="d-flex align-items-center ">
                                                 <i class="bi bi-lock position-absolute icon "></i>
                                                 <input type="password" id="password" class="form-control">
                                             </div>
+                                            <p style="color: #DC3545; margin: 0; text-align: end; visibility: hidden;" id="passCheck">សូមបញ្ជូលលេខសម្ងាត់ 8 ខ្ទង់ឡើង</p>
                                         </div>
                                         <div class="row d-flex justify-content-between mt-4 mb-2">
                                             <div class="mb-3">

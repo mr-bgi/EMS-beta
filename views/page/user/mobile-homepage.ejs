@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="/vendor/bootstrap/bootstrap.min.css">
     <link rel="stylesheet" href="/css/mobile.css">
+    <link rel="stylesheet" href="/app/manifest.json">
     <title>Document</title>
 </head>
 
@@ -118,6 +119,7 @@
     </section>
 </body>
 <script src="/vendor/bootstrap/bootstrap.bundle.min.js"></script>
+<script src="../service-worker.js"></script>
 <script>
     function updateTime() {
         const now = new Date();
@@ -139,6 +141,13 @@
     }
     setInterval(updateTime, 1000);
     updateTime();
+
+    if ('serviceWorker' in navigator) {
+        navigator.serviceWorker.register('/service-worker.js')
+            .then(reg => console.log("Service Worker Registered!", reg))
+            .catch(err => console.log("Service Worker Registration Failed!", err));
+    }
+</script>
 </script>
 
 </html>

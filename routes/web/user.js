@@ -6,6 +6,7 @@ const router = express.Router();
 
 router.get('/home',allUser.getHomepage);
 router.get('/attendace',allUser.getAttendace);
+router.get('/request-atten',allUser.getRequestAttendace);
 
 router.get('/user/login', allUser.getMobileLogin);
 router.get('/user/homepage',requireAuth, allUser.getMobileHomepage);
