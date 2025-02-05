@@ -88,16 +88,7 @@
 //         });
 //     }
 // }
-function getCookie(name) {
-    const cookies = document.cookie.split(';');
-    for (let cookie of cookies) {
-        const [cookieName, cookieValue] = cookie.trim().split('=');
-        if (cookieName === name) {
-            return decodeURIComponent(cookieValue);
-        }
-    }
-    return null;
-}
+
 
 // function isValidUrl(url) {
 //     try {
@@ -125,6 +116,16 @@ function getCookie(name) {
 //         console.log(data);
 //     })
 // }
+function getCookie(name) {
+    const cookies = document.cookie.split(';');
+    for (let cookie of cookies) {
+        const [cookieName, cookieValue] = cookie.trim().split('=');
+        if (cookieName === name) {
+            return decodeURIComponent(cookieValue);
+        }
+    }
+    return null;
+}
 
 const decodedText = 'http://localhost:3000';
 
@@ -145,18 +146,6 @@ navigator.geolocation.getCurrentPosition(
                 });
                 return;
             }
-
-            // Ensure the decodedText (QR code value) exists
-            // if (!decodedText || typeof decodedText !== "string") {
-            //     console.error("Invalid backend URL:", decodedText);
-            //     Swal.fire({
-            //         title: "QR Code Error",
-            //         text: "Invalid QR code scanned. Please try again.",
-            //         icon: "warning",
-            //         confirmButtonText: "OK"
-            //     });
-            //     return;
-            // }
 
             const response = await fetch(`${decodedText}/api/attendance/checkin`, {
                 method: 'POST',
@@ -195,9 +184,27 @@ navigator.geolocation.getCurrentPosition(
     },
     (error) => {
         console.error("Geolocation error:", error.message);
+        let errorMessage = "Failed to retrieve location. Please enable GPS and try again.";
+
+        // Handle specific error codes related to permissions
+        if (error.code === error.PERMISSION_DENIED) {
+            errorMessage = "Location access denied. Please enable location services.";
+            // Suggest the user to enable the permission
+            Swal.fire({
+                title: "Permission Denied",
+                text: "Please enable location services and allow location access for this site.",
+                icon: "warning",
+                confirmButtonText: "OK"
+            });
+        } else if (error.code === error.POSITION_UNAVAILABLE) {
+            errorMessage = "Location information is unavailable. Try again later.";
+        } else if (error.code === error.TIMEOUT) {
+            errorMessage = "The request to get user location timed out.";
+        }
+
         Swal.fire({
             title: "Location Error",
-            text: "Failed to retrieve location. Please enable GPS and try again.",
+            text: errorMessage,
             icon: "error",
             confirmButtonText: "OK"
         });
