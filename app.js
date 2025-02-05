@@ -32,6 +32,7 @@ const allUser = require('./routes/web/user')
 
 require('dotenv').config();
 // * api AUTH
+console.log(process.env);
 
 const app = new express();
 const port = process.env.PORT || 3308 || 3306;
