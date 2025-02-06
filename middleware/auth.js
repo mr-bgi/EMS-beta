@@ -17,7 +17,9 @@ const requireAuth = (req, res, next) => {
             }
         })
     } else {
-        res.redirect('/user/login');
+        res.status(401).json({
+            message: "You need to login"
+        });
     }
 }
 const authorize = (roles = []) => {
