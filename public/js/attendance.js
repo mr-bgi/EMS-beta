@@ -1,3 +1,4 @@
+
 function getCookie(name) {
     const cookies = document.cookie.split(';');
     for (let cookie of cookies) {
@@ -8,8 +9,7 @@ function getCookie(name) {
     }
     return null;
 }
-
-const decodedText = 'http://localhost:3000';
+const decodedText = 'https://emsbeta.bgi.linkpc.net';
 
 navigator.geolocation.getCurrentPosition(
     async (position) => {
@@ -28,7 +28,6 @@ navigator.geolocation.getCurrentPosition(
                 });
                 return;
             }
-
             const response = await fetch(`${decodedText}/api/attendance/checkin`, {
                 method: 'POST',
                 headers: {
@@ -49,7 +48,7 @@ navigator.geolocation.getCurrentPosition(
                     confirmButtonText: "ត្រឡប់ក្រោយ"
                 });
 
-                window.location.replace('http://localhost:3000/user/homepage');
+                window.location.replace('http://emsbeta.bgi.linkpc.net/user/homepage');
             } else {
                 throw new Error(result.message || "Unknown error occurred.");
             }
@@ -61,17 +60,15 @@ navigator.geolocation.getCurrentPosition(
                 icon: "warning",
                 confirmButtonText: "ត្រឡប់ក្រោយ"
             });
-            window.location.replace('http://localhost:3000/user/scanner');
+            window.location.replace('http://emsbeta.bgi.linkpc.net/user/scanner');
         }
     },
     (error) => {
         console.error("Geolocation error:", error.message);
         let errorMessage = "Failed to retrieve location. Please enable GPS and try again.";
-
-        // Handle specific error codes related to permissions
+        
         if (error.code === error.PERMISSION_DENIED) {
-            errorMessage = "Location access denied. Please enable location services.";
-            // Suggest the user to enable the permission
+            errorMessage = "Location access denied. Please enable location services for this site.";
             Swal.fire({
                 title: "Permission Denied",
                 text: "Please enable location services and allow location access for this site.",
@@ -81,7 +78,7 @@ navigator.geolocation.getCurrentPosition(
         } else if (error.code === error.POSITION_UNAVAILABLE) {
             errorMessage = "Location information is unavailable. Try again later.";
         } else if (error.code === error.TIMEOUT) {
-            errorMessage = "The request to get user location timed out.";
+            errorMessage = "The request to get user location timed out. Please try again.";
         }
 
         Swal.fire({
@@ -91,5 +88,5 @@ navigator.geolocation.getCurrentPosition(
             confirmButtonText: "OK"
         });
     },
-    { enableHighAccuracy: true, timeout: 10000, maximumAge: 0 }
+    { enableHighAccuracy: true, timeout: 5000, maximumAge: 0 }
 );
